@@ -1,1 +1,117 @@
-Hello World
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>About autograder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="AI grading assistant" />
+		<meta name="keywords" content="AI, machine learning, education, grading, automation" />
+		<meta name="Evgeniya Ovchinnikova" content="" />
+
+		<meta property="og:title" content="Autograder"/>
+		<meta property="og:image" content="images/No_person.jpg"/>
+		<meta property="og:site_name" content="Autograder"/>
+		<meta property="og:description" content="AI-SUPPORT FOR ASSIGNMENT GRADING"/>
+
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/icomoon.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" type="images/icon.ico" href="icon.ico" />
+	</head>
+	<body>
+
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container-wrap">
+				<div class="top-menu">
+					<div class="row">
+						<div class="col-xs-2" id="fh5co-logo">
+							<div id="fh5co-logo"><img src="images/EAlogo.png" alt="logo" class="logo"><a href="about.html">E-assessment</a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1">
+							<ul>
+								<li><a href="index.html">About</a></li>
+								<li><a href="news.html">News</a></li>
+								<li><a href="team.html">Our Team</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	<div class="container-wrap">
+		<div id="fh5co-format" class="fh5co-light-grey">
+			<div class="row animate-box">
+				<div class="col-md-1 col-md-offset-3 text-left fh5co-heading">
+					<h2>Idea of E-assessment</h2>
+					  <p>Our project concentrates on development of a system for E-assessment that would cover the whole process of study:
+							from homework to exams. Now a lot of software is used for homework during the semester, but exams
+							are still pen and paper. It is important to change the workflow in such a way
+							 that students would use the same software tools for all assignments, tests and exams,
+							 because work during the semester plays a significant role in exam peparation. </p>
+					  <p> Another important goal of our project is a development of an AI assistant for grading assessments
+							 and exams in the fields computer science, electrical engineering, physics and
+							 other technical disciplines. It can allow professors more time for other teaching activities and provide
+							 students with faster and less biased feedback on their work. </p>
+						<p> We focus on automated grading of the following answer types:</p>
+							<p><ul>
+							  <li>program code</li>
+							  <li>formulas</li>
+							  <li>short text</li>
+							  <li>pictures (in the later versions)</li>
+							</ul></p>
+						<p>The task of program code autograding is easily solvable by writing tests. Formulas checking is also easy to generalize and
+								automate, but text and picture grading are harder tasks. </p>
+								Automated short answer grading
+								(<a href="https://link.springer.com/article/10.1007/s40593-014-0026-8">ASAG</a>)
+						    is a form of automated grading along with automated essay and fill the gap gradings. This answer type normally
+								consists of several sentences – from one sentence to one paragraph.  In general one is concerned neither with writing style nor with spelling or grammar
+								in ASAG. However, we are going to add a feature that would allow the professor
+								who conducts a test to set the strictness of the evaluation: he or she should be able
+								to set if the answers with misspelled words, especially specific terms, should be accepted.
+								 The teacher should also be able to estimate how large is the range
+								of synonyms that the student can use.
+						 </p>
+						 <p> As for the result of the grading, it is important to provide not only the grade, but a
+								level of certainty of the grading and in the perfect case – generate the comments to
+								each graded answer.
+					   </p>
+					<h2>Software</h2>
+					<p>The autograding system will be integrated into open-source system for creating and grading assigments
+						 <a href="https://github.com/jupyter/nbgrader">"nbgrader"</a> combined with <a href="http://jupyter.org/">"Jupyter Notebook"</a> and other
+						 "Jupyter Notebook"-compatible libraries. </p>
+				  <p> "Jupyter Notebook" is a web-based application that one can use to
+							create textual and programming documents – the assignments in our case.
+							In the picture below you can find the workflow for the its usage:</p><p> </p><p> </p>
+								<img src="images/jupyter.svg" alt="jupyter" class="gif"> <p> </p><p> </p>
+
+
+							<p>"nbgrader" allows to choose if the assignment can be graded manually or automatically.
+							Now the system allows only code assignments autograding, but we are going
+							to extend it in such a way that it is possible to autograde formulas, natural language answers and pictures as well. An
+							example of "nbgrader" usage is shown below:
+					</p>
+					<img src="images/nbgrader.gif" class="gif" alt="nbgrader">
+					<p> One can familiarize oneself with nbgrader with the following <a href="https://www.youtube.com/watch?v=5WUm0QuJdFw">video</a>.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-12 text-center fh5co-light-grey">
+				<p>
+					<ul class="fh5co-social-icons">
+						<li><a href="https://www.linkedin.com/in/paul-pl%C3%B6ger-8508991/"><i class="icon-linkedin"></i></a></li>
+						<li><a href="https://github.com/DigiKlausur"><i class="icon-github"></i></a></li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
