@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dynamic Configuration &mdash; E2X H-BRS</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deployment" href="deployment.html" />
+    <link rel="prev" title="Environment" href="environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+          
+
+          
+            
+            <img src="../_static/e2x.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research.html">Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talks.html">Talks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../people.html">People</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/sci-comp.html">Scientific Computing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">nbgrader</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/installation.html">Nbgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/instructor.html">Nbgrader Setup for Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/admin.html">Setup for Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/feature.html">Nbgrader Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E2X H-BRS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Dynamic Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/jupyterhub/dynamic-config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dynamic-configuration">
+<span id="dynamic-config"></span><h1>Dynamic Configuration<a class="headerlink" href="#dynamic-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Zero-to-JupyterHub allows extra JupyterHub config to be added to the default config. We can change or
+override the default config through the extra configuration.</p>
+<p>We use this to override some single user configuration. In the helm config, we add the following extra config
+under <cite>hub</cite>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hub</span><span class="p">:</span>
+  <span class="n">extraConfig</span><span class="p">:</span>
+      <span class="mi">00</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">override</span><span class="o">-</span><span class="n">singleuser</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+        <span class="c1"># This config will take effects once the hub is shutdown/restart through admin panel</span>
+        <span class="c1"># change this to /srv/jupyterhub/</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">import</span> <span class="nn">yaml</span>
+        <span class="n">config_mount</span> <span class="o">=</span> <span class="s1">&#39;/srv/jupyterhub/config&#39;</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config_mount</span><span class="p">,</span> <span class="s1">&#39;config.yaml&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+            <span class="n">configs</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+                <span class="n">configs</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+            <span class="n">hub_config</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="s1">&#39;server&#39;</span><span class="p">][</span><span class="s1">&#39;e2x_hub_exam_staging_01&#39;</span><span class="p">]</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;tag&#39;</span><span class="p">])</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">image_pull_policy</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;pullPolicy&#39;</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;cpu_guarantee&#39;</span><span class="p">]:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">cpu_guarantee</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;cpu_guarantee&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;cpu_limit&#39;</span><span class="p">]:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">cpu_limit</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;cpu_limit&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_guarantee&#39;</span><span class="p">]:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">mem_guarantee</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_guarantee&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_limit&#39;</span><span class="p">]:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">mem_limit</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_limit&#39;</span><span class="p">]</span>
+
+      <span class="mi">00</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">prespawn</span><span class="o">-</span><span class="n">hook</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+        <span class="c1"># Find in the database how many courses this user is registered to</span>
+        <span class="c1"># Prespawn hook and mount his/her course volumes.</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">import</span> <span class="nn">yaml</span>
+        <span class="c1">#list of command to execute during spawning</span>
+        <span class="n">cmds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">pre_spawn_hook</span><span class="p">(</span><span class="n">spawner</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">spawner</span><span class="o">.</span><span class="n">load_user_options</span><span class="p">()</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">spawner</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span>
+
+            <span class="c1">#reset commands</span>
+            <span class="n">cmds</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># clear spawner attributes as Python spawner objects are peristent</span>
+            <span class="c1"># if you dont clear them, they will be persistent across restarts</span>
+            <span class="c1"># there may be duplicate mounts</span>
+            <span class="n">spawner</span><span class="o">.</span><span class="n">volume_mounts</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># db directory in the container</span>
+            <span class="n">config_root</span> <span class="o">=</span> <span class="s1">&#39;/srv/jupyterhub/config&#39;</span>
+
+            <span class="c1"># mount user home directory</span>
+            <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config_root</span><span class="p">,</span> <span class="s1">&#39;config.yaml&#39;</span><span class="p">)</span>
+
+            <span class="c1">#list of command to be appended to file, e.g. nbgrader_config.py</span>
+            <span class="n">cmds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;echo &#39;c = get_config()&#39;  &gt;&gt; /etc/jupyter/nbgrader_config.py&quot;</span><span class="p">)</span>
+            <span class="c1">#cmds.append(r&quot;echo &#39;c.Exchange.timezone = &#39;&quot;Europe/Berlin&quot;&#39;&#39; &gt;&gt; /etc/jupyter/nbgrader_config.py&quot;)</span>
+            <span class="c1">#cmds.append(r&quot;echo &#39;c.NbGraderAPI.timezone = &#39;&quot;Europe/Berlin&quot;&#39;&#39; &gt;&gt; /etc/jupyter/nbgrader_config.py&quot;)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+                <span class="n">configs</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+                    <span class="n">configs</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+                <span class="n">hub_config</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="s1">&#39;server&#39;</span><span class="p">][</span><span class="s1">&#39;e2x_hub_exam_staging_01&#39;</span><span class="p">]</span>
+                <span class="n">hub_mode</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">semester_id</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;semester_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">pre_spawn_hook</span> <span class="o">=</span> <span class="n">pre_spawn_hook</span>
+      <span class="mi">00</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">other</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">disable_user_config</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>A complete version of this extra config can be found on <a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub">our github</a></p>
+<p>The <cite>config.yaml</cite> which is loaded in this extra config is yaml file which is shared by the NFS server,
+and mounted to the hub container under <cite>/srv/jupyterhub/config</cite>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
+  <span class="nt">e2x_hub_exam_staging_01</span><span class="p">:</span>
+    <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">exam</span>
+    <span class="nt">semester_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ss20</span>
+    <span class="nt">course_list</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MRC-Exam</span>
+    <span class="nt">image</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digiklausur/restricted-notebook</span>
+      <span class="nt">tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+      <span class="nt">pullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+    <span class="nt">resources</span><span class="p">:</span>
+      <span class="nt">cpu_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+      <span class="nt">cpu_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+      <span class="nt">mem_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.15G</span>
+      <span class="nt">mem_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75G</span>
+    <span class="nt">nbgrader</span><span class="p">:</span>
+      <span class="nt">personalized_inbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="nt">personalized_outbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+      <span class="nt">assignment_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Klausur</span>
+    <span class="nt">extra_mounts</span><span class="p">:</span>
+      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="nt">volumes</span><span class="p">:</span>
+      <span class="nt">volume_mounts</span><span class="p">:</span>
+        <span class="nt">1</span><span class="p">:</span>
+          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nfs-disk2-volume</span>
+          <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/shared_files/e2x_instruction</span>
+          <span class="nt">subPath</span><span class="p">:</span> <span class="s">&#39;shared_files/e2x_instruction&#39;</span>
+    <span class="c1">#Commands to be executed after spawning</span>
+    <span class="nt">commands</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rm -rf $HOME/.jupyter/nbconfig*</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FORCE_COPY=false</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">INSTRUCTION_EN=/srv/shared_files/e2x_instruction/e2x_instruction_en</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">if [ -d $INSTRUCTION_EN ] &amp;&amp; $FORCE_COPY;then cp -r $INSTRUCTION_EN $HOME;else if [ -d $INSTRUCTION_EN ] &amp;&amp; [ ! -d $HOME/e2x_instruction_en ];then cp -r $INSTRUCTION_EN $HOME;fi;fi</span>
+</pre></div>
+</div>
+<p>The above config is used by <cite>e2x_hub_exam_staging_01</cite> hub which is deployed on Kubernetes for examination.
+The complete configurations of both exam and teaching can be found on <a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes">our github repository</a>.</p>
+<p>Currently, the changes on the single user resources (CPU and RAM) require restart on the hub in
+order to apply them. The other configuration however will reflect the single user image directly
+when they log in. The running single user requires restart on their server in order to have the
+new config.</p>
+<p>Extra mounts can be added too via <cite>extra_mount</cite> by specifying the name of the nfs volume, the mount
+path and the sub path in the nfs shared directory. Furthermore, commands after the user spawn can be
+added. This extra command is useful when you want the server to remove or add files to the user
+container.</p>
+<p>This config is very much integrated to our system, so if you want to use it on your system, you
+should probably make some changes.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="deployment.html" class="btn btn-neutral float-right" title="Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="environment.html" class="btn btn-neutral float-left" title="Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, E2X H-BRS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

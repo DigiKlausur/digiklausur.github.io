@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>E2X JupyterHub &mdash; E2X H-BRS</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environment" href="environment.html" />
+    <link rel="prev" title="Scientific Computing" href="../usage/sci-comp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+          
+
+          
+            
+            <img src="../_static/e2x.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research.html">Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talks.html">Talks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../people.html">People</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/sci-comp.html">Scientific Computing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">nbgrader</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/installation.html">Nbgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/instructor.html">Nbgrader Setup for Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/admin.html">Setup for Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/feature.html">Nbgrader Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E2X H-BRS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>E2X JupyterHub</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/jupyterhub/e2x-jupyterhub.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="e2x-jupyterhub">
+<span id="id1"></span><h1>E2X JupyterHub<a class="headerlink" href="#e2x-jupyterhub" title="Permalink to this headline">¶</a></h1>
+<p>JupyterHub serves Jupyter Notebook to multiple users and frees them from the hassle of installing
+environment and managing resources. We use JupyterHub in most of
+<a class="reference external" href="https://www.h-brs.de/en/inf/study/master/autonomous-systems">Master Autonomous Systems</a>
+courses both for teaching and examination.</p>
+<p>We separate instructor (grading) and student JupyterHub servers.</p>
+<img alt="../_images/e2x-infra.png" class="align-center" src="../_images/e2x-infra.png" />
+<div class="section" id="grading-server">
+<h2>Grading Server<a class="headerlink" href="#grading-server" title="Permalink to this headline">¶</a></h2>
+<p>The grading server runs on a single server and also has nbgrader installed which supports multiple graders
+and courses. This server is shared among instructors, graders and professors so that they can create, release,
+collect and grade the assignments through this server. They can only have access to specific courses
+thet they teach.</p>
+<img alt="../_images/grading-server.png" class="align-center" src="../_images/grading-server.png" />
+<p>The courses are shared via JupyterHub services which give professors, instructors and graders access to the courses they teach.
+Professors and instructors have access to the formgrader to create, release, collect and grade the assignments.
+However, the graders can only grade the assignments.</p>
+<img alt="../_images/grading-server-courses.png" class="align-center" src="../_images/grading-server-courses.png" />
+<p>The assignments are released to a NFS shared directory, which resides on the grading server as well.</p>
+</div>
+<div class="section" id="teaching-and-exam-servers">
+<h2>Teaching and Exam Servers<a class="headerlink" href="#teaching-and-exam-servers" title="Permalink to this headline">¶</a></h2>
+<p>The students servers run on Kubernetes cluster provisioned using <a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io">Zero-to-JupyterHub</a>
+which provides a great step-by-step tutorial on how to install JupyterHub on Kubernetes on different cloud providers.</p>
+<p>The Hub for teaching and examination also comes with nbgrader installed. FB02 LDAP is used as the
+authentication. We mount the courses using <cite>nfs</cite> client provisioner.</p>
+<img alt="../_images/student-servers.png" class="align-center" src="../_images/student-servers.png" />
+<p>Both servers are designed in such a way that only registered students can have
+access to the courses they are registered for. Thus, students who have access to the JupyterHub are
+not necessarily able to see the courses if they are not registered.</p>
+<p>To achieve this, we add a bunch of <a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub">config</a>
+to the JupyterHub prespawn hook. Once the user log in, the hook will check the courses the user is registered for,
+if none is found no courses will be mounted. Otherwise, the user can fetch and submit all the released assigments
+of all courses he or she is registered for.</p>
+<div class="section" id="teaching-server">
+<h3>Teaching Server<a class="headerlink" href="#teaching-server" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Accessible via ssh port forwarding to <cite>home.inf.h-brs.de</cite> or via FB02 vpn.</p></li>
+<li><p>The environment can be changed by the users</p></li>
+<li><p>Internal and external network communications are allowed</p></li>
+<li><p>Support multiple courses</p></li>
+</ul>
+</div>
+<div class="section" id="exam-server">
+<h3>Exam Server<a class="headerlink" href="#exam-server" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only accessible from pool rooms, laptop pools and staff vpn</p></li>
+<li><p>The environment cannot be changed</p></li>
+<li><p>Internal and external network communications are blocked</p></li>
+<li><p><a class="reference external" href="https://github.com/DigiKlausur/Jupyter-Extensions/tree/master/nbextensions/exam_extensions">Exam view extension</a> is enabled by default and cleans up unnecessary buttons which come by default in Jupyter Notebook</p></li>
+<li><p>The submission is always hashed</p></li>
+<li><p>Using <a class="reference external" href="https://github.com/DigiKlausur/exam_kernel">E2x exam kernel</a></p></li>
+</ul>
+<p>The data under <cite>/home/{username}</cite> is persistent and is saved in the local university storage. Currently,
+this data is removed after Einsicht or evaluation on the exam which normally happens the next semester
+after the exam is scheduled. We strongly recommend the users to always backup your data locally.</p>
+<p>Both exam and teaching enviroments are opensource and available on <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks">our github</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There may be multiple environments offered for each class. For example, Robot Perception environment
+has some computer-vision related libraries and Natural Language Processing (NLP) image may come
+with some NLP database.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="environment.html" class="btn btn-neutral float-right" title="Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../usage/sci-comp.html" class="btn btn-neutral float-left" title="Scientific Computing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, E2X H-BRS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
