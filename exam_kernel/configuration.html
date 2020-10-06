@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ExamKernel Configuration &mdash; E2X H-BRS</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenStack" href="../infra/openstack.html" />
+    <link rel="prev" title="ExamKernel Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+          
+
+          
+            
+            <img src="../_static/e2x.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research.html">Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../talks.html">Talks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../people.html">People</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/sci-comp.html">Scientific Computing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">nbgrader</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/installation.html">Nbgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/instructor.html">Nbgrader Setup for Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/admin.html">Setup for Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nbgrader/feature.html">Nbgrader Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ExamKernel Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">E2X H-BRS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ExamKernel Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exam_kernel/configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examkernel-configuration">
+<span id="exam-kernel-configuration"></span><h1>ExamKernel Configuration<a class="headerlink" href="#examkernel-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The ExamKernel can be configured using the
+<a class="reference external" href="https://ipython.readthedocs.io/en/stable/config">IPython Configuration System</a>.
+This file is usually located under <code class="docutils literal notranslate"><span class="pre">~/.ipython/profile_default</span></code>.
+If it does not exist you can create it.</p>
+<p>There are three configuration options for the ExamKernel.</p>
+<div class="section" id="initialization-code">
+<h2>1. Initialization Code<a class="headerlink" href="#initialization-code" title="Permalink to this headline">¶</a></h2>
+<p>This is the code that will be executed every time the kernel is initialized
+and can be set via the configuration option <code class="docutils literal notranslate"><span class="pre">init_code</span></code>.</p>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">init_code</span> <span class="o">=</span> <span class="s1">&#39;import random&#39;</span>
+</pre></div>
+</div>
+<p>In this example the library <code class="docutils literal notranslate"><span class="pre">random</span></code> is imported every time the kernel is initialized,
+making it available to the user right away. You can execute arbitrary code here.</p>
+</div>
+<div class="section" id="allowed-imports">
+<h2>2. Allowed Imports<a class="headerlink" href="#allowed-imports" title="Permalink to this headline">¶</a></h2>
+<p>If you want to allow the user to only use certain libraries, you can specify them using
+the allowed_imports configuration option. All other libraries will be blocked by default
+if this option is set.</p>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">allowed_imports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;math&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">,</span> <span class="s1">&#39;scipy&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example the student can only import the libraries math, numpy and scipy.
+If the user tries to import any other library (e.g. matplotlib), he or she will
+see the following message:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">041</span><span class="n">c468338fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named matplotlib or matplotlib blocked by kernel.&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">matplotlib</span> <span class="ow">or</span> <span class="n">matplotlib</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="blocked-imports">
+<h2>3. Blocked Imports<a class="headerlink" href="#blocked-imports" title="Permalink to this headline">¶</a></h2>
+<p>If you want to block the user from importing certain libraries,
+but let them use all others, you can use the blocked_imports configuration option.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">allowed_import</span></code> list is not empty, the <code class="docutils literal notranslate"><span class="pre">blocked_imports</span></code> option will take no effect.</p>
+</div>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">blocked_imports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;math&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">,</span> <span class="s1">&#39;scipy&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example the user can not import the libraries <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.
+If the user tries to import a blocked library (e.g. math), he or she will see the following message:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">041</span><span class="n">c468338fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named math or math blocked by kernel.&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">math</span> <span class="ow">or</span> <span class="n">math</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../infra/openstack.html" class="btn btn-neutral float-right" title="OpenStack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="ExamKernel Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, E2X H-BRS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

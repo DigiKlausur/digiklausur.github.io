@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>News &mdash; E2X H-BRS</title>
+  <title>Incident Reports &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Incident Reports" href="incident-reports.html" />
-    <link rel="prev" title="People" href="people.html" /> 
+    <link rel="next" title="Instructors" href="usage/instructor.html" />
+    <link rel="prev" title="News" href="news.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,8 +91,8 @@
 <li class="toctree-l1"><a class="reference internal" href="research.html">Research</a></li>
 <li class="toctree-l1"><a class="reference internal" href="talks.html">Talks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="people.html">People</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">News</a></li>
-<li class="toctree-l1"><a class="reference internal" href="incident-reports.html">Incident Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Incident Reports</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
@@ -170,13 +170,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>News</li>
+      <li>Incident Reports</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/news.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/incident-reports.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,13 +189,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="news">
-<span id="id1"></span><h1>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="incident-reports">
+<span id="id1"></span><h1>Incident Reports<a class="headerlink" href="#incident-reports" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>28.11.2017</p>
-<ul>
-<li><p>Our project won a <a class="reference external" href="https://www.stifterverband.org/pressemitteilungen/2017_11_28_digital_learning_transfer_fellowship">Digital Learning Transfer Fellowship</a> offered by Stifterverband and Reinhard Frank-Stiftung.</p></li>
+<li><dl class="simple">
+<dt>15.07.2020:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Summary:</dt><dd><ul>
+<li><p>The time in the laptops did not sync with the server because the ntp server was blocked by the firewall.</p></li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ToDo:</dt><dd><ul>
+<li><p>Enable ntp server in the lernstick and recopy the image [DONE]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>24.07.2020</dt><dd><ul>
+<li><dl class="simple">
+<dt>Summary:</dt><dd><p>During WuS Klausur GrA, One of the node OOM due to being populated by 35 students (resource request calculation was wrong). One solution, double minimum requests.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Actions taken during the exam</dt><dd><ul>
+<li><p>Increased the resource req to 0.5GB per students so that they are evenly distributed</p></li>
+<li><p>Not all students server were shutdown because they were working on the exam</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Actions taken after exam for GrB</dt><dd><ul>
+<li><p>Increased the resource req to 0.5GB, and they were evenly distributed</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ToDo:</dt><dd><ul>
+<li><p>Alerting when too many pods are scheduled to one nodes?</p></li>
+<li><p>Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement))</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -208,10 +257,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="incident-reports.html" class="btn btn-neutral float-right" title="Incident Reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage/instructor.html" class="btn btn-neutral float-right" title="Instructors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="people.html" class="btn btn-neutral float-left" title="People" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="news.html" class="btn btn-neutral float-left" title="News" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
