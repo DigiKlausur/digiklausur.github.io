@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nbgrader Installation &mdash; E2X H-BRS</title>
+  <title>E2xgrader Installation &mdash; E2X H-BRS</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nbgrader Setup for Instructors" href="instructor.html" />
+    <link rel="next" title="E2xgrader Configuration" href="configuration.html" />
     <link rel="prev" title="JupyterHub Deployment on Kubernetes" href="../jupyterhub/deployment-k8s.html" /> 
 </head>
 
@@ -108,12 +108,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">nbgrader</span></p>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Nbgrader Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instructor.html">Nbgrader Setup for Instructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html">Setup for Admin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature.html">Nbgrader Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">E2xgrader Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">E2xgrader Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul>
@@ -170,13 +169,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Nbgrader Installation</li>
+      <li>E2xgrader Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/nbgrader/installation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/e2xgrader/installation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,9 +188,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nbgrader-installation">
-<span id="id1"></span><h1>Nbgrader Installation<a class="headerlink" href="#nbgrader-installation" title="Permalink to this headline">¶</a></h1>
-<p>Nbgrader installation</p>
+  <div class="section" id="e2xgrader-installation">
+<span id="id1"></span><h1>E2xgrader Installation<a class="headerlink" href="#e2xgrader-installation" title="Permalink to this headline">¶</a></h1>
+<p>The e2xgrader package needs some nbgrader functionality,
+that has not been merged yet. For now you can use the
+branch <em>clean_up</em> of our <a class="reference external" href="https://github.com/DigiKlausur/nbgrader/tree/clean_up">nbgrader fork</a>.
+It needs the custom exchange and configurable converters.</p>
+<p>Install nbgrader</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b clean_up https://github.com/DigiKlausur/nbgrader.git
+<span class="nb">cd</span> nbgrader
+pip install .
+</pre></div>
+</div>
+<p>Enable nbgrader extensions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbgrader.server_extensions.course_list --py --sys-prefix
+jupyter serverextension <span class="nb">enable</span> nbgrader.server_extensions.validate_assignment --py --sys-prefix
+jupyter nbextension install nbgrader --py --sys-prefix --overwrite
+jupyter nbextension <span class="nb">enable</span> nbgrader --py --sys-prefix
+jupyter nbextension disable create_assignment/main --sys-prefix
+</pre></div>
+</div>
+<p>Install e2xgrader</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/DigiKlausur/e2xgrader
+<span class="nb">cd</span> e2xgrader
+pip install .
+</pre></div>
+</div>
+<p>Enable e2xgrader extensions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
+jupyter nbextension install e2xgrader --py --sys-prefix --overwrite
+jupyter nbextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
+</pre></div>
+</div>
 </div>
 
 
@@ -202,7 +230,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="instructor.html" class="btn btn-neutral float-right" title="Nbgrader Setup for Instructors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="E2xgrader Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../jupyterhub/deployment-k8s.html" class="btn btn-neutral float-left" title="JupyterHub Deployment on Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

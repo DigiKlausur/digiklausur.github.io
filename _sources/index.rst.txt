@@ -44,13 +44,12 @@ for research purposes.
 
 .. toctree::
    :maxdepth: 2
-   :caption: nbgrader
+   :caption: E2xgrader
    :titlesonly:
 
-   nbgrader/installation
-   nbgrader/instructor
-   nbgrader/admin
-   nbgrader/feature
+   e2xgrader/installation
+   e2xgrader/configuration
+   e2xgrader/features
 
 .. toctree::
    :maxdepth: 2

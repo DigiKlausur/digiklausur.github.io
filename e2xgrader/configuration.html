@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nbgrader Features &mdash; E2X H-BRS</title>
+  <title>E2xgrader Configuration &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ExamKernel Installation" href="../exam_kernel/installation.html" />
-    <link rel="prev" title="Setup for Admin" href="admin.html" /> 
+    <link rel="next" title="E2xgrader Features" href="features.html" />
+    <link rel="prev" title="E2xgrader Installation" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,12 +108,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">nbgrader</span></p>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Nbgrader Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instructor.html">Nbgrader Setup for Instructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html">Setup for Admin</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Nbgrader Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">E2xgrader Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul>
@@ -170,13 +169,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Nbgrader Features</li>
+      <li>E2xgrader Configuration</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/nbgrader/feature.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/e2xgrader/configuration.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -189,13 +188,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nbgrader-features">
-<span id="nbgrader-feature"></span><h1>Nbgrader Features<a class="headerlink" href="#nbgrader-features" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Hashcode</p></li>
-<li><p>Scrambling</p></li>
-<li></li>
-</ul>
+  <div class="section" id="e2xgrader-configuration">
+<span id="id1"></span><h1>E2xgrader Configuration<a class="headerlink" href="#e2xgrader-configuration" title="Permalink to this headline">¶</a></h1>
+<p>To use the custom exchange, autograder and fetch assignment,
+we need to add it to our <em>nbgrader_config.py</em>.</p>
+<p>Information about where this file is located can be found
+in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/configuration/nbgrader_config.html">Nbgrader docs</a>.</p>
+<ol class="arabic simple">
+<li><p>Register the custom exchange</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExchangeFactory</span><span class="o">.</span><span class="n">submit</span> <span class="o">=</span> <span class="s1">&#39;e2xgrader.exchange.E2xExchangeSubmit&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ExchangeFactory</span><span class="o">.</span><span class="n">fetch_assignment</span> <span class="o">=</span> <span class="s1">&#39;e2xgrader.exchange.E2xExchangeFetchAssignment&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Register custom preprocessors for autograding and generating assignments</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">Autograde</span><span class="o">.</span><span class="n">sanitize_preprocessors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;nbgrader.preprocessors.ClearOutput&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.DeduplicateIds&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.OverwriteKernelspec&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.OverwriteCells&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.Unscramble&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">Autograde</span><span class="o">.</span><span class="n">autograde_preprocessors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;nbgrader.preprocessors.Execute&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.LimitOutput&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.SaveAutoGrades&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.AssignLatePenalties&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">GenerateAssignment</span><span class="o">.</span><span class="n">preprocessors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;nbgrader.preprocessors.IncludeHeaderFooter&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.LockCells&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.ClearSolutions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.ClearOutput&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.ComputeChecksums&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.SaveCells&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.ClearHiddenTests&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.ClearMarkScheme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.ComputeChecksums&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;e2xgrader.preprocessors.ValidateExtraCells&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>A complete example of the <em>nbgrader_config.py</em> can be found in the <a class="reference external" href="https://github.com/DigiKlausur/e2xgrader/blob/master/nbgrader_config.py">e2xgrader repository</a>.</p>
 </div>
 
 
@@ -206,10 +252,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exam_kernel/installation.html" class="btn btn-neutral float-right" title="ExamKernel Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="features.html" class="btn btn-neutral float-right" title="E2xgrader Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="admin.html" class="btn btn-neutral float-left" title="Setup for Admin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="E2xgrader Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
