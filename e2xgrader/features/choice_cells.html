@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multiple and single choice cells &mdash; E2X H-BRS</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Per cell grading view" href="task_view.html" />
+    <link rel="prev" title="E2xgrader Features" href="../features.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+          
+
+          
+            
+            <img src="../../_static/e2x.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../research.html">Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talks.html">Talks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../people.html">People</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/sci-comp.html">Scientific Computing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../features.html">E2xgrader Features</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multiple and single choice cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task_view.html">Per cell grading view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grade_export.html">Grade export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit.html">Hashing of student submissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scramble.html">Permute notebook during fetching</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infra/tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">E2X H-BRS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../features.html">E2xgrader Features</a> &raquo;</li>
+        
+      <li>Multiple and single choice cells</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/e2xgrader/features/choice_cells.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multiple-and-single-choice-cells">
+<span id="e2xgrader-choice-cells"></span><h1>Multiple and single choice cells<a class="headerlink" href="#multiple-and-single-choice-cells" title="Permalink to this headline">¶</a></h1>
+<p>E2xgrader comes with built-in support for multiple and single
+choice cells.</p>
+<div class="section" id="create-a-single-choice-cell">
+<h2>Create a single choice cell<a class="headerlink" href="#create-a-single-choice-cell" title="Permalink to this headline">¶</a></h2>
+<p>To create a single choice cell, you first have to activate the
+<em>create_assignment</em> toolbar via <em>View &gt; Cell Toolbar &gt; Create Assignment</em>.</p>
+<p>Single choice cells are based on markdown cells.</p>
+<p>First switch the cell to markdown and then select <em>Single Choice</em> from the
+dropdown menu. Any markdown list will then be converted to choices.</p>
+<img alt="../../_images/edit_single_choice.png" src="../../_images/edit_single_choice.png" />
+<p>Next you need to render the cell via the run button or <em>shift-enter</em>.
+Then select the correct option. This will be saved for autograding.</p>
+<img alt="../../_images/create_single_choice.png" src="../../_images/create_single_choice.png" />
+<p>To edit the cell just click on the <em>Edit Cell</em> button.</p>
+<p>Make sure to select one option or there will be a validation error when
+generating the release version of the assignment.</p>
+</div>
+<div class="section" id="create-a-multiple-choice-cell">
+<h2>Create a multiple choice cell<a class="headerlink" href="#create-a-multiple-choice-cell" title="Permalink to this headline">¶</a></h2>
+<p>To create a multiple choice cell, you first have to activate the
+<em>create_assignment</em> toolbar via <em>View &gt; Cell Toolbar &gt; Create Assignment</em>.</p>
+<p>Multiple choice cells are based on markdown cells.</p>
+<p>First switch the cell to markdown and then select <em>Multiple Choice</em> from the
+dropdown menu. Any markdown list will then be converted to choices.</p>
+<img alt="../../_images/edit_multiple_choice.png" src="../../_images/edit_multiple_choice.png" />
+<p>Next you need to render the cell via the run button or <em>shift-enter</em>.
+Then select the correct option. This will be saved for autograding.</p>
+<img alt="../../_images/create_multiple_choice.png" src="../../_images/create_multiple_choice.png" />
+<p>To edit the cell just click on the <em>Edit Cell</em> button.</p>
+<p>If you do not select any choices for autograding, the student will get points
+for not selecting any option.</p>
+</div>
+<div class="section" id="grading-scheme-for-multiple-choice-cells">
+<h2>Grading scheme for multiple choice cells<a class="headerlink" href="#grading-scheme-for-multiple-choice-cells" title="Permalink to this headline">¶</a></h2>
+<p>When grading multiple choice cells there are some grading rules specific
+to German universities.</p>
+<p>Additionally to getting points for correctly selecting the right answers,
+students have to get points for correctly <strong>not</strong> selecting the wrong answers.</p>
+<p>Consider the following example question:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Which numbers are even? [5 points]
+- 1
+- 2
+- 3
+- 4
+- 5
+</pre></div>
+</div>
+<p>Assume the student selects the options marked with a plus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Which numbers are even? [5 points]
+- 1
++ 2
++ 3
++ 4
+- 5
+</pre></div>
+</div>
+<p>Then the student will receive 3 points. See the annotations per answer
+in the next block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Which numbers are even? [5 Points]
+- 1   [+ 1 point, correctly not selected]
++ 2   [+ 1 point, correctly selected]
++ 3   [- 1 point, incorrectly selected]
++ 4   [+ 1 point, correctly selected]
+- 5   [+ 1 point, correctly not selected]
+</pre></div>
+</div>
+<p>This can lead to situations, where the student will receive points for
+not selecting any answer.</p>
+</div>
+<div class="section" id="enabling-choice-cells-for-students">
+<h2>Enabling choice cells for students<a class="headerlink" href="#enabling-choice-cells-for-students" title="Permalink to this headline">¶</a></h2>
+<p>To make sure choice cells are correctly displayed on the student side,
+you can either install the <em>e2xstudent</em> extensions or just the <em>extra_cell</em>
+nbextension shipped with e2xgrader.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/DigiKlausur/e2xgrader
+<span class="nb">cd</span> e2xgrader/nbextensions
+jupyter nbextension install extra_cells --sys-prefix
+jupyter nbextension <span class="nb">enable</span> extra_cells/main --sys-prefix
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="task_view.html" class="btn btn-neutral float-right" title="Per cell grading view" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../features.html" class="btn btn-neutral float-left" title="E2xgrader Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, E2X H-BRS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

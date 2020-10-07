@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Per cell grading view &mdash; E2X H-BRS</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Grade export" href="grade_export.html" />
+    <link rel="prev" title="Multiple and single choice cells" href="choice_cells.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+          
+
+          
+            
+            <img src="../../_static/e2x.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../research.html">Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../talks.html">Talks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../people.html">People</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/sci-comp.html">Scientific Computing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../features.html">E2xgrader Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="choice_cells.html">Multiple and single choice cells</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Per cell grading view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grade_export.html">Grade export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit.html">Hashing of student submissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scramble.html">Permute notebook during fetching</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../infra/tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">E2X H-BRS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../features.html">E2xgrader Features</a> &raquo;</li>
+        
+      <li>Per cell grading view</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/e2xgrader/features/task_view.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="per-cell-grading-view">
+<span id="e2xgrader-task-view"></span><h1>Per cell grading view<a class="headerlink" href="#per-cell-grading-view" title="Permalink to this headline">¶</a></h1>
+<p>Nbgrader comes with a per notebook view for grading, where you
+always see the full submission of each student.</p>
+<p>E2xgrader adds a view where you can look at a single student answer
+to a specific question.
+This is based on the grade ids of the solution cells in the notebook.</p>
+<p>The per cell grading view can be activated by selecting
+<em>Manual Grading (Task View)</em>. First you select the assignment, then the notebook
+and finally the name of the solution cell you want to look at.
+Suppose you select a solution cell with the name <em>ColorA</em>.
+Then additionally to showing this cell, the per cell grading view will show
+all cells where the grade id contains the string <em>ColorA</em>.
+To make sure, that the question is displayed alongside the answer, you have to
+adhere to a specific naming scheme.</p>
+<div class="section" id="naming-scheme-for-cells">
+<h2>Naming scheme for cells<a class="headerlink" href="#naming-scheme-for-cells" title="Permalink to this headline">¶</a></h2>
+<p>The per cell grading view is just a cell filter, that only displays
+cells containing a the id of a solution cell.</p>
+<p>Assume you have cells with the following ids:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ColorA_ColorB_Description (A cell with information for ColorA and ColorB)</p></li>
+<li><p>ColorA_Description (The question for ColorA)</p></li>
+<li><p>ColorA (The solution cell, where the students put their answer)</p></li>
+<li><p>test_ColorA (A test cell for ColorA)</p></li>
+<li><p>ColorB_Description (The question for ColorB)</p></li>
+<li><p>ColorB (The solution cell for ColorB)</p></li>
+<li><p>test_ColorB (A test cell for ColorB)</p></li>
+</ul>
+</div></blockquote>
+<p>The per cell grading view will let you select one of the two solution
+cells <em>ColorA</em> and <em>ColorB</em>.</p>
+<p>Assume we select the cell <em>ColorA</em>. Then all cells with the substring
+<em>ColorA</em> will be displayed together. In the example above these are
+<em>ColorA_ColorB_Description</em>, <em>ColorA_Description</em>, <em>ColorA</em> and <em>test_ColorA</em>.</p>
+<p>All cells that do not contain the id <em>ColorA</em> will be hidden.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="grade_export.html" class="btn btn-neutral float-right" title="Grade export" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="choice_cells.html" class="btn btn-neutral float-left" title="Multiple and single choice cells" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, E2X H-BRS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
