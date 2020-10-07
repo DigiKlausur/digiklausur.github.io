@@ -21,12 +21,11 @@ Enable nbgrader extensions
 
 .. code-block:: bash
 
-   jupyter serverextension enable nbgrader.server_extensions.course_list --py --sys-prefix
-   jupyter serverextension enable nbgrader.server_extensions.validate_assignment --py --sys-prefix
+   jupyter serverextension enable nbgrader --py --sys-prefix
+   jupyter serverextension disable nbgrader.server_extensions.formgrader --sys-prefix
+   jupyter serverextension disable nbgrader.server_extensions.assignment_list --sys-prefix
    jupyter nbextension install nbgrader --py --sys-prefix --overwrite
    jupyter nbextension enable nbgrader --py --sys-prefix
-   jupyter nbextension disable create_assignment/main --sys-prefix
-
 
 Install e2xgrader
 

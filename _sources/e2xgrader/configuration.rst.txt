@@ -43,6 +43,7 @@ in the `Nbgrader docs`_.
    ]
 
    c.GenerateAssignment.preprocessors = [
+       'e2xgrader.preprocessors.ValidateExtraCells',
        'nbgrader.preprocessors.IncludeHeaderFooter',
        'nbgrader.preprocessors.LockCells',
        'e2xgrader.preprocessors.ClearSolutions',
@@ -54,7 +55,6 @@ in the `Nbgrader docs`_.
        'nbgrader.preprocessors.ClearMarkScheme',
        'nbgrader.preprocessors.ComputeChecksums',
        'nbgrader.preprocessors.CheckCellMetadata',
-       'e2xgrader.preprocessors.ValidateExtraCells'
    ]
 
 A complete example of the *nbgrader_config.py* can be found in the `e2xgrader repository`_.

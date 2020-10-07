@@ -201,11 +201,11 @@ pip install .
 </pre></div>
 </div>
 <p>Enable nbgrader extensions</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbgrader.server_extensions.course_list --py --sys-prefix
-jupyter serverextension <span class="nb">enable</span> nbgrader.server_extensions.validate_assignment --py --sys-prefix
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbgrader --py --sys-prefix
+jupyter serverextension disable nbgrader.server_extensions.formgrader --sys-prefix
+jupyter serverextension disable nbgrader.server_extensions.assignment_list --sys-prefix
 jupyter nbextension install nbgrader --py --sys-prefix --overwrite
 jupyter nbextension <span class="nb">enable</span> nbgrader --py --sys-prefix
-jupyter nbextension disable create_assignment/main --sys-prefix
 </pre></div>
 </div>
 <p>Install e2xgrader</p>
