@@ -50,6 +50,7 @@ for research purposes.
    e2xgrader/installation
    e2xgrader/configuration
    e2xgrader/features
+   e2xgrader/student
 
 .. toctree::
    :maxdepth: 2

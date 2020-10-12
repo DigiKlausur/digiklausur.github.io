@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setting up Load Balancer for JupyterHub &mdash; E2X H-BRS</title>
+  <title>E2xgrader Student Version &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deploy Monitoring for Kubernetes" href="monitoring.html" />
-    <link rel="prev" title="Setting up Storage for Kubernetes" href="k8s-storage.html" /> 
+    <link rel="next" title="Nbassignment" href="../nbassignment/nbassignment.html" />
+    <link rel="prev" title="Permute notebook during fetching" href="features/scramble.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,11 +109,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../e2xgrader/features.html">E2xgrader Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../e2xgrader/student.html">E2xgrader Student Version</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">E2xgrader Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">E2xgrader Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Student Version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
@@ -126,17 +126,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="kubespray.html">Install Kubernetes Cluster with Kubespray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kubernetes.html">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="k8s-storage.html">Setting up Storage for Kubernetes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up Load Balancer for JupyterHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="monitoring.html">Deploy Monitoring for Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lernstick.html">Lernstick OS for Exam</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -183,15 +175,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
-        
-      <li>Setting up Load Balancer for JupyterHub</li>
+      <li>E2xgrader Student Version</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/infra/loadbalancer.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/e2xgrader/student.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -204,9 +194,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="setting-up-load-balancer-for-jupyterhub">
-<span id="loadbalancer"></span><h1>Setting up Load Balancer for JupyterHub<a class="headerlink" href="#setting-up-load-balancer-for-jupyterhub" title="Permalink to this headline">¶</a></h1>
-<p>Setting up Load Balancer for JupyterHub</p>
+  <div class="section" id="e2xgrader-student-version">
+<span id="e2xgrader-student"></span><h1>E2xgrader Student Version<a class="headerlink" href="#e2xgrader-student-version" title="Permalink to this headline">¶</a></h1>
+<p>E2xstudent bundles the student side extensions for e2xgrader.</p>
+<p>There are two sets of extensions:</p>
+<ul class="simple">
+<li><p>exam</p></li>
+<li><p>assignment</p></li>
+</ul>
+<p>The assignment extensions come with multiple and single choice support
+and a toolbar that indicates which cells students should put their answer
+in.</p>
+<p>The exam extensions include:</p>
+<ul class="simple">
+<li><p>Restricted tree (disables creating notebooks and files)</p></li>
+<li><p>Restricted notebook (disable functionality such as adding or deleting cells)</p></li>
+<li><p>Exam toolbar with custom submit</p></li>
+</ul>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install e2xstudent</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone  https://github.com/DigiKlausur/e2xstudent.git
+<span class="nb">cd</span> e2xstudent
+pip install .
+</pre></div>
+</div>
+<p>Enable custom assignment list (for configuration see <a class="reference internal" href="configuration.html#e2xgrader-configuration"><span class="std std-ref">E2xgrader Configuration</span></a>)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbgrader --py --sys-prefix
+jupyter serverextension disable nbgrader.server_extensions.formgrader --sys-prefix
+jupyter serverextension disable nbgrader.server_extensions.assignment_list --sys-prefix
+jupyter nbextension install nbgrader --py --sys-prefix --overwrite
+jupyter nbextension <span class="nb">enable</span> nbgrader --py --sys-prefix
+jupyter serverextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
+jupyter nbextension install e2xgrader --py --sys-prefix --overwrite
+jupyter nbextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
+</pre></div>
+</div>
+<p>Enable all extensions (exam and assignment):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter nbextension install e2xstudent --py --sys-prefix
+jupyter nbextension <span class="nb">enable</span> e2xstudent --py --sys-prefix
+</pre></div>
+</div>
+<p>Enable only assignment extensions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter nbextension install e2xstudent --py --sys-prefix
+jupyter nbextension <span class="nb">enable</span> e2xstudent --py --sys-prefix
+jupyter nbextension disable exam_view/main --sys-prefix
+jupyter nbextension disable restricted_tree/main --sys-prefix
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -217,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="monitoring.html" class="btn btn-neutral float-right" title="Deploy Monitoring for Kubernetes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../nbassignment/nbassignment.html" class="btn btn-neutral float-right" title="Nbassignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="k8s-storage.html" class="btn btn-neutral float-left" title="Setting up Storage for Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="features/scramble.html" class="btn btn-neutral float-left" title="Permute notebook during fetching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
