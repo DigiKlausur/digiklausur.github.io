@@ -44,4 +44,7 @@ Enable e2xgrader extensions
    jupyter nbextension install e2xgrader --py --sys-prefix --overwrite
    jupyter nbextension enable e2xgrader --py --sys-prefix
 
+Finally we need to edit our *nbgrader_config.py* to register our changes.
+See the :ref:`e2xgrader-configuration` section for details.
+
 .. _nbgrader fork: https://github.com/DigiKlausur/nbgrader/tree/clean_up

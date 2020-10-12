@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deployment &mdash; E2X H-BRS</title>
+  <title>Nbassignment Installation &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deployment on a Single Machine" href="deployment-singlemachine.html" />
-    <link rel="prev" title="Dynamic Configuration" href="dynamic-config.html" /> 
+    <link rel="next" title="ExamKernel Installation" href="../exam_kernel/installation.html" />
+    <link rel="prev" title="Nbassignment" href="nbassignment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,17 +102,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage/sci-comp.html">Scientific Computing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">JupyterHub</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic-config.html">Dynamic Configuration</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Deployment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="deployment-singlemachine.html">Deployment on a Single Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-gce.html">Deployment on GCE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-gke.html">Deployment on GKE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-k8s.html">JupyterHub Deployment on Kubernetes</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul>
@@ -121,9 +115,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/features.html">E2xgrader Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Nbassignment</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nbassignment.html">Nbassignment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nbassignment Installation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul>
@@ -180,13 +174,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Deployment</li>
+      <li>Nbassignment Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/jupyterhub/deployment.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/nbassignment/installation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,15 +193,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deployment">
-<span id="id1"></span><h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="deployment-singlemachine.html">Deployment on a Single Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-gce.html">Deployment on GCE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-gke.html">Deployment on GKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-k8s.html">JupyterHub Deployment on Kubernetes</a></li>
-</ul>
+  <div class="section" id="nbassignment-installation">
+<span id="id1"></span><h1>Nbassignment Installation<a class="headerlink" href="#nbassignment-installation" title="Permalink to this headline">¶</a></h1>
+<p>The nbassignment package needs some e2xgrader functionality.
+For information on how to install e2xgrader, see <a class="reference internal" href="../e2xgrader/installation.html#e2xgrader-installation"><span class="std std-ref">E2xgrader Installation</span></a>.</p>
+<p>Install nbassignment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/DigiKlausur/nbassignment.git
+<span class="nb">cd</span> nbassignment
+pip install .
+</pre></div>
+</div>
+<p>Enable nbassignment extensions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbassignment --py --sys-prefix
+jupyter nbextension install nbassignment --py --sys-prefix --overwrite
+jupyter nbextension <span class="nb">enable</span> nbassignment --py --sys-prefix
+</pre></div>
 </div>
 </div>
 
@@ -219,10 +219,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deployment-singlemachine.html" class="btn btn-neutral float-right" title="Deployment on a Single Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exam_kernel/installation.html" class="btn btn-neutral float-right" title="ExamKernel Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dynamic-config.html" class="btn btn-neutral float-left" title="Dynamic Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="nbassignment.html" class="btn btn-neutral float-left" title="Nbassignment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
