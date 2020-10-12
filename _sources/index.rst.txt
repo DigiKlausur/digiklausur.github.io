@@ -53,6 +53,14 @@ for research purposes.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Nbassignment
+   :titlesonly:
+
+   nbassignment/nbassignment
+   nbassignment/installation
+
+.. toctree::
+   :maxdepth: 2
    :caption: ExamKernel
    :titlesonly:
 
