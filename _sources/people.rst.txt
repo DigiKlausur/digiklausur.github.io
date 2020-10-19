@@ -13,4 +13,3 @@ People
 * Student assistant
 
   * Protyush Kumar Das.
-    * Incoming.
