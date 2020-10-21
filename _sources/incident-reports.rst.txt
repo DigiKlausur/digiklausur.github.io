@@ -23,18 +23,18 @@ Incident Reports
 		* Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)).
       * This is actually not necessary since we already have c2.m12
 
-* 21.10.2020 (RP)
+* 21.10.2020(RP)
 	* Summary:
-    Autosave was broken during the exam and this happened to three student servers.
-		The manual save did not work too. When they saved the notebook, it says "Autosave Failed! last checkpoint 1 Hour ago".
+		Autosave was broken during the exam and this happened to three student servers. The manual save did not work too. When they saved the notebook, it says "Autosave Failed! last checkpoint 1 Hour ago".
 	* Actions taken during the exam
-    * Asked them to back up the notebook locally
+		* Asked them to back up the notebook locally
+		
 			* Print it into pdf
 			* Bakcup all answer cells into a text file
 		* Close and shutdown the notebook server
 		* Copy the answers from backup file to the notebook
 	* ToDo:
-    * Reproduce this error
+		* Reproduce this error
 		* Enable create notebook for student to make a backup into a jupyter notebook file instead of backing it up locally
-		* Enable "Clear output and restart kernel" button
-			* Sometimes clearing the output makes the autosave work again (This solution was suggested by some students, and it worked for them). This was caused by some plots.
+		* Enable "Clear output" button
+		* Clearing the output makes the autosave work again (This solution was suggested by some students, and it worked for them). This was caused by some plots.
