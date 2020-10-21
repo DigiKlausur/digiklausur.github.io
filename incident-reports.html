@@ -196,9 +196,9 @@
             
   <div class="section" id="incident-reports">
 <span id="id1"></span><h1>Incident Reports<a class="headerlink" href="#incident-reports" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
+<ul>
 <li><dl class="simple">
-<dt>15.07.2020:</dt><dd><ul>
+<dt>15.07.2020:</dt><dd><ul class="simple">
 <li><dl class="simple">
 <dt>Summary:</dt><dd><ul>
 <li><p>The time in the laptops did not sync with the server because the ntp server was blocked by the firewall.</p></li>
@@ -217,8 +217,9 @@
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt>24.07.2020</dt><dd><ul>
+<li><dl>
+<dt>24.07.2020(WUS)</dt><dd><blockquote>
+<div><ul class="simple">
 <li><dl class="simple">
 <dt>Summary:</dt><dd><p>During WuS Klausur GrA, One of the node OOM due to being populated by 35 students (resource request calculation was wrong). One solution, double minimum requests.</p>
 </dd>
@@ -241,8 +242,65 @@
 </li>
 <li><dl class="simple">
 <dt>ToDo:</dt><dd><ul>
-<li><p>Alerting when too many pods are scheduled to one nodes?</p></li>
-<li><p>Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement))</p></li>
+<li><p>Double min cpu and mem so that they can be scheduled evenly across multiple nodes [DONE]</p></li>
+<li><p>Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>This is actually not necessary since we already have c2.m12</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>21.10.2020 (RP)</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>Summary:</p></li>
+</ul>
+</div></blockquote>
+<dl>
+<dt>Autosave was broken during the exam and this happened to three student servers.</dt><dd><blockquote>
+<div><p>The manual save did not work too. When they saved the notebook, it says “Autosave Failed! last checkpoint 1 Hour ago”.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Actions taken during the exam</p></li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li><dl>
+<dt>Asked them to back up the notebook locally</dt><dd><blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>Print it into pdf</p></li>
+<li><p>Bakcup all answer cells into a text file</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Close and shutdown the notebook server</p></li>
+<li><p>Copy the answers from backup file to the notebook</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>ToDo:</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Reproduce this error</dt><dd><ul class="simple">
+<li><p>Enable create notebook for student to make a backup into a jupyter notebook file instead of backing it up locally</p></li>
+<li><dl class="simple">
+<dt>Enable “Clear output and restart kernel” button</dt><dd><ul>
+<li><p>Sometimes clearing the output makes the autosave work again (This solution was suggested by some students, and it worked for them). This was caused by some plots.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
