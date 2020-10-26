@@ -10,6 +10,7 @@ branch *clean_up* of our `nbgrader fork`_.
 It needs the custom exchange and configurable converters.
 
 Install nbgrader
+----------------
 
 .. code-block:: bash
 
@@ -17,17 +18,8 @@ Install nbgrader
    cd nbgrader
    pip install .
 
-Enable nbgrader extensions
-
-.. code-block:: bash
-
-   jupyter serverextension enable nbgrader --py --sys-prefix
-   jupyter serverextension disable nbgrader.server_extensions.formgrader --sys-prefix
-   jupyter serverextension disable nbgrader.server_extensions.assignment_list --sys-prefix
-   jupyter nbextension install nbgrader --py --sys-prefix --overwrite
-   jupyter nbextension enable nbgrader --py --sys-prefix
-
 Install e2xgrader
+-----------------
 
 .. code-block:: bash
 
@@ -36,13 +28,29 @@ Install e2xgrader
    pip install .
 
 Enable e2xgrader extensions
+---------------------------
 
+E2xgrader comes with three modes:
+    * teacher
+    * student
+    * student_exam
+
+In teacher mode all grading extensions are activated.
+In student mode only the *assignment_list* extension and a toolbar is enabled.
+In student_exam mode, you get a restricted notebook interface
+
+You can easily switch between modes via:
 
 .. code-block:: bash
 
-   jupyter serverextension enable e2xgrader --py --sys-prefix
-   jupyter nbextension install e2xgrader --py --sys-prefix --overwrite
-   jupyter nbextension enable e2xgrader --py --sys-prefix
+   python -m e2xgrader activate <mode> --sys-prefix
+
+
+Enable teacher mode:
+
+.. code-block:: bash
+
+   python -m e2xgrader activate teacher --sys-prefix
 
 Finally we need to edit our *nbgrader_config.py* to register our changes.
 See the :ref:`e2xgrader-configuration` section for details.

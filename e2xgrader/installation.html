@@ -200,34 +200,46 @@
 that has not been merged yet. For now you can use the
 branch <em>clean_up</em> of our <a class="reference external" href="https://github.com/DigiKlausur/nbgrader/tree/clean_up">nbgrader fork</a>.
 It needs the custom exchange and configurable converters.</p>
-<p>Install nbgrader</p>
+<div class="section" id="install-nbgrader">
+<h2>Install nbgrader<a class="headerlink" href="#install-nbgrader" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b clean_up https://github.com/DigiKlausur/nbgrader.git
 <span class="nb">cd</span> nbgrader
 pip install .
 </pre></div>
 </div>
-<p>Enable nbgrader extensions</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> nbgrader --py --sys-prefix
-jupyter serverextension disable nbgrader.server_extensions.formgrader --sys-prefix
-jupyter serverextension disable nbgrader.server_extensions.assignment_list --sys-prefix
-jupyter nbextension install nbgrader --py --sys-prefix --overwrite
-jupyter nbextension <span class="nb">enable</span> nbgrader --py --sys-prefix
-</pre></div>
 </div>
-<p>Install e2xgrader</p>
+<div class="section" id="install-e2xgrader">
+<h2>Install e2xgrader<a class="headerlink" href="#install-e2xgrader" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/DigiKlausur/e2xgrader
 <span class="nb">cd</span> e2xgrader
 pip install .
 </pre></div>
 </div>
-<p>Enable e2xgrader extensions</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter serverextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
-jupyter nbextension install e2xgrader --py --sys-prefix --overwrite
-jupyter nbextension <span class="nb">enable</span> e2xgrader --py --sys-prefix
+</div>
+<div class="section" id="enable-e2xgrader-extensions">
+<h2>Enable e2xgrader extensions<a class="headerlink" href="#enable-e2xgrader-extensions" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>E2xgrader comes with three modes:</dt><dd><ul class="simple">
+<li><p>teacher</p></li>
+<li><p>student</p></li>
+<li><p>student_exam</p></li>
+</ul>
+</dd>
+</dl>
+<p>In teacher mode all grading extensions are activated.
+In student mode only the <em>assignment_list</em> extension and a toolbar is enabled.
+In student_exam mode, you get a restricted notebook interface</p>
+<p>You can easily switch between modes via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate &lt;mode&gt; --sys-prefix
+</pre></div>
+</div>
+<p>Enable teacher mode:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate teacher --sys-prefix
 </pre></div>
 </div>
 <p>Finally we need to edit our <em>nbgrader_config.py</em> to register our changes.
 See the <a class="reference internal" href="configuration.html#e2xgrader-configuration"><span class="std std-ref">E2xgrader Configuration</span></a> section for details.</p>
+</div>
 </div>
 
 
