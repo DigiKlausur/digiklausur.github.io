@@ -60,4 +60,4 @@ Enable only assignment extensions:
    jupyter nbextension install e2xstudent --py --sys-prefix
    jupyter nbextension enable e2xstudent --py --sys-prefix
    jupyter nbextension disable exam_view/main --sys-prefix
-   jupyter nbextension disable restricted_tree/main --sys-prefix
+   jupyter nbextension disable restricted_tree/main --section=tree --sys-prefix
