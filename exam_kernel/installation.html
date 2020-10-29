@@ -203,11 +203,9 @@ For this cell magics and terminal commands are blocked.
 It also allows for executing an initialization code and blocking
 or allowing certain imports. For more details see the
 <a class="reference internal" href="configuration.html#exam-kernel-configuration"><span class="std std-ref">ExamKernel Configuration</span></a> section.</p>
-<p>To install, clone the repository and do</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/DigiKlausur/exam_kernel
-<span class="nb">cd</span> exam_kernel
-pip install .
-jupyter kernelspec install exam_kernel --sys-prefix
+<p>To install do the following</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --no-cache-dir git+https://github.com/DigiKlausur/exam_kernel@master
+python -m exam_kernel install --sys-prefix
 </pre></div>
 </div>
 </div>

@@ -13,11 +13,9 @@ It also allows for executing an initialization code and blocking
 or allowing certain imports. For more details see the 
 :ref:`exam_kernel-configuration` section.
 
-To install, clone the repository and do
+To install do the following
 
 .. code-block:: bash
 
-  git clone https://github.com/DigiKlausur/exam_kernel
-  cd exam_kernel
-  pip install .
-  jupyter kernelspec install exam_kernel --sys-prefix
+  pip install --no-cache-dir git+https://github.com/DigiKlausur/exam_kernel@master
+  python -m exam_kernel install --sys-prefix
