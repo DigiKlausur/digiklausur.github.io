@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Aufsicht (Invigilator)" href="aufsicht.html" />
-    <link rel="prev" title="Instructors" href="instructor.html" /> 
+    <link rel="next" title="Instructors" href="instructor.html" />
+    <link rel="prev" title="Incident Reports" href="../incident-reports.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,10 +96,20 @@
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Students</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#login-to-e2x-jupyterhub">Login to E2x JupyterHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1. https://notebooks.inf.h-brs.de</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2. Local server (10.20.168.244:30300)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignments">Assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resources-and-quota">Resources and Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-on-the-assignments-locally">Working on the assignments locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-don-ts">The DON’Ts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faq">FaQ</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="instructor.html">Instructors</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Students</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aufsicht.html">Aufsicht (Invigilator)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sci-comp.html">Scientific Computing</a></li>
 </ul>
 <p class="caption"><span class="caption-text">JupyterHub</span></p>
 <ul>
@@ -233,11 +243,16 @@ accessible from inside the university network, VPN or via ssh tunneling to the F
 <cite>home.inf.h-brs.de</cite></p>
 <div class="section" id="id2">
 <h3>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">https://notebooks.inf.h-brs.de</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Courses:</dt><dd><ul class="simple">
+<li><p>Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)</p></li>
+</ul>
+</dd>
+</dl>
 <p>First, you need to sign up to the server if you have not done so, then the instructor will authorize you.
 Keep in mind that you need to be registered in the corresponding <a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA course</a>,
 otherwise you will not be able to log in.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p><strong>Signup</strong></p>
 <p>Click on Signup and fill in your username (FB02 UID, for examlple <cite>mwasil2s</cite>) and your password.
 The server only accepts <strong>FB02 UID</strong> as username. Also, do not use the same password as your
@@ -255,6 +270,8 @@ on the top right,</p>
 <img alt="../_images/e2x-hub-control-panel.png" class="align-center" src="../_images/e2x-hub-control-panel.png" />
 <p>Then on the top left, you will find a button <strong>Change password</strong> which brings you to <cite>change-password</cite> form</p>
 <img alt="../_images/e2x-hub-home-native.png" class="align-center" src="../_images/e2x-hub-home-native.png" />
+<p><strong>Change password form</strong></p>
+<img alt="../_images/e2x-hub-native-change-pw.png" class="align-center" src="../_images/e2x-hub-native-change-pw.png" />
 </li>
 </ul>
 <div class="admonition warning">
@@ -262,10 +279,18 @@ on the top right,</p>
 <p>Do not use the same password as your username.
 If you forget your password, please contact your instructors or e2x admin.</p>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="id4">
 <h3>2. <a class="reference external" href="10.20.168.244:30300">Local server (10.20.168.244:30300)</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Courses:</dt><dd><ul class="simple">
+<li><p>Mathematics for Robotics and Control (MRC WS20)</p></li>
+<li><p>Robot Perception (RP SS20)</p></li>
+<li><p>Robot Manipulation (RM SS20)</p></li>
+<li><p>Natural Language Processing (NLP SS20)</p></li>
+</ul>
+</dd>
+</dl>
 <ul>
 <li><p><strong>Access</strong></p>
 <p>There are two ways to connect to the local-hosted JupyterHub:</p>
@@ -385,8 +410,9 @@ assignment directory. Only files under <cite>assignment directory</cite> are upl
 Also, make sure all the files required to run your assignment are also uploaded and the paths to the files
 are properly given in the notebook file.</p>
 </div>
+</div>
 <div class="section" id="the-don-ts">
-<h3>The DON’Ts<a class="headerlink" href="#the-don-ts" title="Permalink to this headline">¶</a></h3>
+<h2>The DON’Ts<a class="headerlink" href="#the-don-ts" title="Permalink to this headline">¶</a></h2>
 <font color="red">You are not allowed to:</font><ul class="simple">
 <li><p>Change the cell metadata</p></li>
 <li><p>Change directory structure of the assignment</p></li>
@@ -395,7 +421,6 @@ are properly given in the notebook file.</p>
 <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/blob/master/notebook/requirements.txt">our environment</a></p></li>
 <li><p>Use different version of our libraries</p></li>
 </ul>
-</div>
 </div>
 <div class="section" id="faq">
 <h2>FaQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
@@ -414,10 +439,10 @@ contact your instructors to authorize you.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="aufsicht.html" class="btn btn-neutral float-right" title="Aufsicht (Invigilator)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="instructor.html" class="btn btn-neutral float-right" title="Instructors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="instructor.html" class="btn btn-neutral float-left" title="Instructors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../incident-reports.html" class="btn btn-neutral float-left" title="Incident Reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -20,8 +20,7 @@ Incident Reports
 		* Increased the resource req to 0.5GB, and they were evenly distributed
 	* ToDo:
 		* Double min cpu and mem so that they can be scheduled evenly across multiple nodes [DONE]
-		* Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)).
-      * This is actually not necessary since we already have c2.m12
+		* Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)). This is actually not necessary since we already have c2.m12
 
 * 21.10.2020(RP)
 	* Summary:

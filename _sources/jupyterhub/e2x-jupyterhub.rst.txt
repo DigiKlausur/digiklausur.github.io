@@ -1,4 +1,4 @@
-.. _e2x-jupyterHub:
+.. _e2x-jupyterhub:
 
 *****************
 E2X JupyterHub

@@ -25,17 +25,13 @@ for research purposes.
 .. toctree::
    :maxdepth: 2
    :caption: Usage
-   :titlesonly:
 
-   usage/instructor
    usage/student
-   usage/aufsicht
-   usage/sci-comp
+   usage/instructor
 
 .. toctree::
    :maxdepth: 2
    :caption: JupyterHub
-   :titlesonly:
 
    jupyterhub/e2x-jupyterhub
    jupyterhub/environment
@@ -45,7 +41,6 @@ for research purposes.
 .. toctree::
    :maxdepth: 2
    :caption: E2xgrader
-   :titlesonly:
 
    e2xgrader/installation
    e2xgrader/configuration
@@ -55,7 +50,6 @@ for research purposes.
 .. toctree::
    :maxdepth: 2
    :caption: Nbassignment
-   :titlesonly:
 
    nbassignment/nbassignment
    nbassignment/installation
@@ -63,7 +57,6 @@ for research purposes.
 .. toctree::
    :maxdepth: 2
    :caption: ExamKernel
-   :titlesonly:
 
    exam_kernel/installation
    exam_kernel/configuration
@@ -71,7 +64,6 @@ for research purposes.
 .. toctree::
    :maxdepth: 2
    :caption: Infrastructure
-   :titlesonly:
 
    infra/openstack
    infra/tutorials

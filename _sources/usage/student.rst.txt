@@ -39,45 +39,59 @@ accessible from inside the university network, VPN or via ssh tunneling to the F
 1. `https://notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 ----------------------------------------------------------------------
 
+Courses:
+  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)
+
 First, you need to sign up to the server if you have not done so, then the instructor will authorize you. 
 Keep in mind that you need to be registered in the corresponding `LEA course <https://lea.hochschule-bonn-rhein-sieg.de>`_, 
 otherwise you will not be able to log in.
 
-  * **Signup**
-  
-    Click on Signup and fill in your username (FB02 UID, for examlple `mwasil2s`) and your password.
-    The server only accepts **FB02 UID** as username. Also, do not use the same password as your 
-    username.
+* **Signup**
 
-    .. image:: images/e2x-native-login.jpg
-      :align: center
+  Click on Signup and fill in your username (FB02 UID, for examlple `mwasil2s`) and your password.
+  The server only accepts **FB02 UID** as username. Also, do not use the same password as your 
+  username.
 
-    .. note::
-      
-      If you are already registered on the LEA course, you can sign in automatically. Otherwise, you will
-      need to wait until the instructor authorizes you.
+  .. image:: images/e2x-native-login.jpg
+    :align: center
 
-  * **Change password**
+  .. note::
+    
+    If you are already registered on the LEA course, you can sign in automatically. Otherwise, you will
+    need to wait until the instructor authorizes you.
 
-    If you are not happy with your password, you can change it via JupyterHub home. Open **control panel**
-    on the top right,
+* **Change password**
 
-    .. image:: images/e2x-hub-control-panel.png
-      :align: center
+  If you are not happy with your password, you can change it via JupyterHub home. Open **control panel**
+  on the top right,
 
-    Then on the top left, you will find a button **Change password** which brings you to `change-password` form
+  .. image:: images/e2x-hub-control-panel.png
+    :align: center
 
-    .. image:: images/e2x-hub-home-native.png
-      :align: center
-  
-  .. warning::
-      
-      Do not use the same password as your username.
-      If you forget your password, please contact your instructors or e2x admin.
+  Then on the top left, you will find a button **Change password** which brings you to `change-password` form
+
+  .. image:: images/e2x-hub-home-native.png
+    :align: center
+
+  **Change password form**
+
+  .. image:: images/e2x-hub-native-change-pw.png
+    :align: center
+
+.. warning::
+    
+    Do not use the same password as your username.
+    If you forget your password, please contact your instructors or e2x admin.
 
 
 2. `Local server (10.20.168.244:30300) <10.20.168.244:30300>`_
 ---------------------------------------------------------------
+
+Courses:
+  * Mathematics for Robotics and Control (MRC WS20)
+  * Robot Perception (RP SS20)
+  * Robot Manipulation (RM SS20)
+  * Natural Language Processing (NLP SS20)
 
 * **Access**
 
@@ -217,7 +231,7 @@ our docker image and mount the assignments you have downloaded from the server t
   are properly given in the notebook file.
 
 The DON'Ts
-----------
+==========
 
 .. raw:: html
   

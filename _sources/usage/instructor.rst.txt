@@ -1,7 +1,17 @@
 .. _instructor:
 
-*****************************************
+***********
 Instructors
-*****************************************
+***********
 
-Usage for instructors
+Login
+=====
+
+Requesting a server for a course
+================================
+
+Course management
+=================
+
+User management
+===============

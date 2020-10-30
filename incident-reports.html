@@ -37,7 +37,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Instructors" href="usage/instructor.html" />
+    <link rel="next" title="Students" href="usage/student.html" />
     <link rel="prev" title="News" href="news.html" /> 
 </head>
 
@@ -96,10 +96,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/instructor.html">Instructors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage/student.html">Students</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/aufsicht.html">Aufsicht (Invigilator)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/sci-comp.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/instructor.html">Instructors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">JupyterHub</span></p>
 <ul>
@@ -217,9 +215,8 @@
 </dd>
 </dl>
 </li>
-<li><dl>
-<dt>24.07.2020(WUS)</dt><dd><blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>24.07.2020(WUS)</dt><dd><ul class="simple">
 <li><dl class="simple">
 <dt>Summary:</dt><dd><p>During WuS Klausur GrA, One of the node OOM due to being populated by 35 students (resource request calculation was wrong). One solution, double minimum requests.</p>
 </dd>
@@ -243,15 +240,11 @@
 <li><dl class="simple">
 <dt>ToDo:</dt><dd><ul>
 <li><p>Double min cpu and mem so that they can be scheduled evenly across multiple nodes [DONE]</p></li>
-<li><p>Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)).</p></li>
+<li><p>Ask Christoph (FB02) to provide c4.m24 (4Vcpu and 24Gb mem), node with this resource can handle up to 40 students (assuming the requirement is about 250MB to run the notebook, and thus the request is 500MB (twice as much as requirement)). This is actually not necessary since we already have c2.m12</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-</ul>
-</div></blockquote>
-<ul class="simple">
-<li><p>This is actually not necessary since we already have c2.m12</p></li>
 </ul>
 </dd>
 </dl>
@@ -304,7 +297,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usage/instructor.html" class="btn btn-neutral float-right" title="Instructors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage/student.html" class="btn btn-neutral float-right" title="Students" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="news.html" class="btn btn-neutral float-left" title="News" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
