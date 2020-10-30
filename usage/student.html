@@ -196,7 +196,214 @@
             
   <div class="section" id="students">
 <span id="student"></span><h1>Students<a class="headerlink" href="#students" title="Permalink to this headline">¶</a></h1>
-<p>Usage for students</p>
+<p>Depending on the courses, students can use one of two JupyterHub servers to work on
+assignments. These servers can also be used for a light computing or programming. However, if you
+need more resources (CPU, RAM and GPU) for your projects, you can have a look at
+<a class="reference external" href="https://wr0.wr.inf.h-brs.de">Bonn-Rhein-Sieg university scientific computing</a>.</p>
+<p>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">Publicly accessible server (https://notebooks.inf.h-brs.de)</a>
+used for the following courses:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="10.20.168.244:30300">Local server (10.20.168.244:30300)</a> used for the following courses:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Mathematics for Robotics and Control (MRC WS20)</p></li>
+<li><p>Robot Perception (RP SS20)</p></li>
+<li><p>Robot Manipulation (RM SS20)</p></li>
+<li><p>Natural Language Processing (NLP SS20)</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These JupyterHub servers are not a replacement of the current LMS
+(<a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA</a>.). These are just compute
+resource for students to work on their assignments. The assignments and feedback might also be
+released on <a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA</a>. LEA forum is also available
+should you have any problem with the assignments or the server.</p>
+</div>
+<div class="section" id="login-to-e2x-jupyterhub">
+<h2>Login to E2x JupyterHub<a class="headerlink" href="#login-to-e2x-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<p>One server has a public IP which can be accessed from everywhere and one server which is only
+accessible from inside the university network, VPN or via ssh tunneling to the FB02 homepage
+<cite>home.inf.h-brs.de</cite></p>
+<div class="section" id="id2">
+<h3>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">https://notebooks.inf.h-brs.de</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>First, you need to sign up to the server if you have not done so, then the instructor will authorize you.
+Keep in mind that you need to be registered in the corresponding <a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA course</a>,
+otherwise you will not be able to log in.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Signup</strong></p>
+<p>Click on Signup and fill in your username (FB02 UID, for examlple <cite>mwasil2s</cite>) and your password.
+The server only accepts <strong>FB02 UID</strong> as username. Also, do not use the same password as your
+username.</p>
+<img alt="../_images/e2x-native-login.jpg" class="align-center" src="../_images/e2x-native-login.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are already registered on the LEA course, you can sign in automatically. Otherwise, you will
+need to wait until the instructor authorizes you.</p>
+</div>
+</li>
+<li><p><strong>Change password</strong></p>
+<p>If you are not happy with your password, you can change it via JupyterHub home. Open <strong>control panel</strong>
+on the top right,</p>
+<img alt="../_images/e2x-hub-control-panel.png" class="align-center" src="../_images/e2x-hub-control-panel.png" />
+<p>Then on the top left, you will find a button <strong>Change password</strong> which brings you to <cite>change-password</cite> form</p>
+<img alt="../_images/e2x-hub-home-native.png" class="align-center" src="../_images/e2x-hub-home-native.png" />
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use the same password as your username.
+If you forget your password, please contact your instructors or e2x admin.</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>2. <a class="reference external" href="10.20.168.244:30300">Local server (10.20.168.244:30300)</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Access</strong></p>
+<p>There are two ways to connect to the local-hosted JupyterHub:</p>
+<ul>
+<li><p><strong>VPN</strong></p>
+<p>You need to setup VPN in order to get access to the hub. To use FB02 VPN, you need to follow a complete
+instruction from <a class="reference external" href="https://ux-2s18.inf.h-brs.de/faq/vpn">https://ux-2s18.inf.h-brs.de/faq/vpn</a>.
+Once you get connected to the VPN, you can open the browser and go to <a class="reference external" href="10.20.168.244:30300">10.20.168.244:30300</a>.</p>
+</li>
+<li><p><strong>SSH port forwarding</strong></p>
+<p>The server can also be accessed using ssh port forwarding through the FB02 homepage <cite>home.inf.h-brs.de</cite>.
+This will tunnel the server hub port to your local machine.
+If you use Linux, you can just open terminal and type the following</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -L <span class="m">30300</span>:10.20.168.244:30300 username2s@home.inf.h-brs.de
+</pre></div>
+</div>
+<p>replace <cite>username2s</cite> with your FB02 UID.</p>
+<p>Then you can open browser, and go to <a class="reference external" href="localhost:30300">localhost:30300</a></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Login</strong></p>
+<p>The local server uses FB02 LDAP to authenticate the users. Thus, you do not need to signup to get
+access to the servers. However, the instructor is required to add your FB02 UID to the allowed list,
+and student course list.</p>
+<img alt="../_images/e2x-jupyterhub-login.png" class="align-center" src="../_images/e2x-jupyterhub-login.png" />
+<p>You may be prompted with different server options during spawning. In some cases, we provide different environments
+with datasets, particular libraries, etc. However, the default will be loaded with general libraries
+required for all courses.</p>
+<img alt="../_images/e2x-spawner-default.png" class="align-center" src="../_images/e2x-spawner-default.png" />
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="assignments">
+<h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
+<p>We use <cite>nbgrader</cite> to manage the assignments. The due date should be the same as in LEA. So you have
+to submit the assignments before the due date.</p>
+<ul>
+<li><p><strong>Fetch Assignments</strong></p>
+<ul>
+<li><p>Navigate to the <strong>assignments</strong> tab and click <strong>fetch</strong></p>
+<img alt="../_images/assignment-fetch.png" class="align-center" src="../_images/assignment-fetch.png" />
+</li>
+<li><p>Open the fetched assignments</p>
+<img alt="../_images/assignment-open.png" class="align-center" src="../_images/assignment-open.png" />
+<p>You can also go to <strong>Files</strong> tab, and refresh the page to see all fetched assignments.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not open the exam in multiple tabs, windows or browser. You might overwrite unsaved changes!</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Submit Assignments</strong></p>
+<p>To submit the assignments, go to <strong>Assignments</strong> tab again, and click <strong>Submit</strong>. You can submit your
+assignments multiple time as long it is before the due date. This due date is the same as in LEA.</p>
+<img alt="../_images/assignment-submit.png" class="align-center" src="../_images/assignment-submit.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have problems submiting the assignments via the servers, you can of course submit them via
+<a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="resources-and-quota">
+<h2>Resources and Quota<a class="headerlink" href="#resources-and-quota" title="Permalink to this headline">¶</a></h2>
+<p>The server is limited to server core of CPUs and 1GB of RAM. Each student only gets 1GB of storage.
+Anything under <cite>/home/jovyan</cite> is persistent and the rest will be regenerated when you restart the
+server. This storage can be increased according to the request from the instructors, but this can only
+be done if the request is proposed before the semester start.</p>
+<p>This persistent data will be deleted after <cite>Einsicht</cite> which normally happens in the next semester after
+you do the exam. We suggest you to always backup you data.</p>
+</div>
+<div class="section" id="working-on-the-assignments-locally">
+<h2>Working on the assignments locally<a class="headerlink" href="#working-on-the-assignments-locally" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to setup your local environment is via docker. With docker, you can just pull
+our docker image and mount the assignments you have downloaded from the server to your container.</p>
+<ul>
+<li><p><strong>Linux</strong></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine</a></p></li>
+<li><p>Run our image (this will automatically pull and run the docker image)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments <span class="se">\</span>
+--rm -p <span class="m">8888</span>:8888 digiklausur/notebook:latest
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Replace the following:</dt><dd><ul class="simple">
+<li><p><cite>/home/myhome/assignments</cite> –&gt; replace this with the path to your assignment in your local machine</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The output should look like the following</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>I <span class="m">13</span>:24:27.563 NotebookApp<span class="o">]</span> The Jupyter Notebook is running at:
+<span class="o">[</span>I <span class="m">13</span>:24:27.564 NotebookApp<span class="o">]</span> http://8ad5cc4be28c:8888/?token<span class="o">=</span>b537e4e4a92b8ba7ac0ca2f5ea2034ac36fcc1d20d0eb53a
+<span class="o">[</span>I <span class="m">13</span>:24:27.564 NotebookApp<span class="o">]</span>  or http://127.0.0.1:8888/?token<span class="o">=</span>b537e4e4a92b8ba7ac0ca2f5ea2034ac36fcc1d20d0eb53a
+</pre></div>
+</div>
+<p>Click on the <cite>http://127.0.0.1:8888/?token=…</cite>.</p>
+<p>This should open the browser automatically after you click that link.</p>
+</li>
+<li><p>You can also open your browser manually and go to <a class="reference external" href="localhost:8888">localhost:8888</a>. Then input your token manually if asked.</p>
+<p>In this example, your token is <cite>b537e4e4a92b8ba7ac0ca2f5ea2034ac36fcc1d20d0eb53a</cite>.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Windows</strong></p></li>
+<li><p><strong>Mac</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you work locally on your machine, you should re-upload your work to the server, under the corresponding
+assignment directory. Only files under <cite>assignment directory</cite> are uploaded to the grading server.
+Also, make sure all the files required to run your assignment are also uploaded and the paths to the files
+are properly given in the notebook file.</p>
+</div>
+<div class="section" id="the-don-ts">
+<h3>The DON’Ts<a class="headerlink" href="#the-don-ts" title="Permalink to this headline">¶</a></h3>
+<font color="red">You are not allowed to:</font><ul class="simple">
+<li><p>Change the cell metadata</p></li>
+<li><p>Change directory structure of the assignment</p></li>
+<li><p>Rename directories or files</p></li>
+<li><p>Use other libraries which are not define in
+<a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/blob/master/notebook/requirements.txt">our environment</a></p></li>
+<li><p>Use different version of our libraries</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="faq">
+<h2>FaQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>I cannot login after signup on notebooks.inf.h-brs.de</strong>. You may not be registered on the LEA course,
+contact your instructors to authorize you.</p></li>
+</ul>
+</div>
 </div>
 
 

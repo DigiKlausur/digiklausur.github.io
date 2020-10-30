@@ -51,22 +51,14 @@ The autograding system will be integrated into open-source system for creating a
 grading assigments `nbgrader <https://github.com/jupyter/nbgrader>`_ combined with 
 `Jupyter Notebook <http://jupyter.org/>`_ and other Jupyter Notebook"-compatible libraries.
 
-We use Jupyter Notebook as ....
-
-
 Jupyter Notebook is a web-based application that one can use to create textual and 
-programming documents – the assignments in our case.
-ToDo: continue
+programming documents.
 
-"nbgrader" allows to choose if the assignment can be graded manually or automatically.
+We use `nbgrader <https://nbgrader.readthedocs.io/>`_ to manage assignments.
+`nbgrader` allows to choose if the assignment can be graded manually or automatically.
 Now the system allows only code assignments autograding, but we are going
 to extend it in such a way that it is possible to autograde formulas, 
 natural language answers and pictures as well. An example of "nbgrader" usage is shown below:
-
-ToDo: update image, write more about what nbgrader can do
-
-This is not a replacement of our LMS system ...
-
 
 Infrastructure
 ==============
@@ -80,7 +72,7 @@ collect all students work after the exam. We might possibly loose students work
 if the stick is failed during the exam.
 
 After years using usb sticks, we switched to JupyterHub which is running on a single 
-machine.... ToDo.
+machine.
 
 The number of course using Jupyter Notebook jumps. WuS, gke, gdpr
 
