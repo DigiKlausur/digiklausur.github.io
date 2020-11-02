@@ -7,10 +7,8 @@
 E2X E-assessment
 ################
 
-The documentation of E2X scientific computing for electronic assessments which include, 
-but not limited to teaching and examination of some courses at the departement of 
-Computer Science, Hochschule Bonn-Rhein-Sieg. The resources can also be used
-for research purposes.
+The documentation and guidelines of e2x e-assessment project for teaching and examinations for some courses 
+at the departement of Computer Science (FB02), Hochschule Bonn-Rhein-Sieg.
 
 .. toctree::
    :maxdepth: 2
