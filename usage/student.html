@@ -105,8 +105,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#assignments">Assignments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resources-and-quota">Resources and Quota</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-on-the-assignments-locally">Working on the assignments locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-don-ts">The DON’Ts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#faq">FaQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-dont-s">The DONT’S</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faqs">FAQs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="instructor.html">Instructors</a></li>
@@ -238,7 +239,7 @@ should you have any problem with the assignments or the server.</p>
 </div>
 <div class="section" id="login-to-e2x-jupyterhub">
 <h2>Login to E2x JupyterHub<a class="headerlink" href="#login-to-e2x-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<p>One server has a public IP which can be accessed from everywhere and one server which is only
+<p>One server has a public IP which can be accessed from everywhere and the other server is only
 accessible from inside the university network, VPN or via ssh tunneling to the FB02 homepage
 <cite>home.inf.h-brs.de</cite></p>
 <div class="section" id="id2">
@@ -303,7 +304,7 @@ Once you get connected to the VPN, you can open the browser and go to <a class="
 <li><p><strong>SSH port forwarding</strong></p>
 <p>The server can also be accessed using ssh port forwarding through the FB02 homepage <cite>home.inf.h-brs.de</cite>.
 This will tunnel the server hub port to your local machine.
-If you use Linux, you can just open terminal and type the following</p>
+If you use Linux or Mac OS, you can just open terminal and type the following</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -L <span class="m">30300</span>:10.20.168.244:30300 username2s@home.inf.h-brs.de
 </pre></div>
 </div>
@@ -327,7 +328,7 @@ required for all courses.</p>
 </div>
 <div class="section" id="assignments">
 <h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
-<p>We use <cite>nbgrader</cite> to manage the assignments. The due date should be the same as in LEA. So you have
+<p>We use <cite>nbgrader</cite> to manage the assignments. The due date should be the same as on LEA. So you have
 to submit the assignments before the due date.</p>
 <ul>
 <li><p><strong>Fetch Assignments</strong></p>
@@ -340,14 +341,14 @@ to submit the assignments before the due date.</p>
 <p>You can also go to <strong>Files</strong> tab, and refresh the page to see all fetched assignments.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not open the exam in multiple tabs, windows or browser. You might overwrite unsaved changes!</p>
+<p>Do not open the assignment in multiple tabs, windows or browser. You might overwrite unsaved changes!</p>
 </div>
 </li>
 </ul>
 </li>
 <li><p><strong>Submit Assignments</strong></p>
 <p>To submit the assignments, go to <strong>Assignments</strong> tab again, and click <strong>Submit</strong>. You can submit your
-assignments multiple time as long it is before the due date. This due date is the same as in LEA.</p>
+assignments multiple time as long as you do it before the due date.</p>
 <img alt="../_images/assignment-submit.png" class="align-center" src="../_images/assignment-submit.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -359,24 +360,28 @@ assignments multiple time as long it is before the due date. This due date is th
 </div>
 <div class="section" id="resources-and-quota">
 <h2>Resources and Quota<a class="headerlink" href="#resources-and-quota" title="Permalink to this headline">¶</a></h2>
-<p>The server is limited to server core of CPUs and 1GB of RAM. Each student only gets 1GB of storage.
+<p>The student server is limited to 2 cores of CPUs and 1GB of RAM, and 1GB of storage.
 Anything under <cite>/home/jovyan</cite> is persistent and the rest will be regenerated when you restart the
 server. This storage can be increased according to the request from the instructors, but this can only
-be done if the request is proposed before the semester start.</p>
+be done if the request is proposed before the semester starts.</p>
 <p>This persistent data will be deleted after <cite>Einsicht</cite> which normally happens in the next semester after
-you do the exam. We suggest you to always backup you data.</p>
+you do the exam.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We suggest you to always backup you data in your local machine.</p>
+</div>
 </div>
 <div class="section" id="working-on-the-assignments-locally">
 <h2>Working on the assignments locally<a class="headerlink" href="#working-on-the-assignments-locally" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to setup your local environment is via docker. With docker, you can just pull
 our docker image and mount the assignments you have downloaded from the server to your container.</p>
 <ul>
-<li><p><strong>Linux</strong></p>
+<li><p><strong>Linux and Mac OS</strong></p>
 <ul>
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine</a></p></li>
-<li><p>Run our image (this will automatically pull and run the docker image)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments <span class="se">\</span>
---rm -p <span class="m">8888</span>:8888 digiklausur/notebook:latest
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine for Linux</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Install docker engine for Mac OS</a></p></li>
+<li><p>Open terminal and run our image (this will automatically pull and run the docker image)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments --rm -p <span class="m">8888</span>:8888 digiklausur/notebook-dev:latest
 </pre></div>
 </div>
 <dl class="simple">
@@ -384,7 +389,12 @@ our docker image and mount the assignments you have downloaded from the server t
 <li><p><cite>/home/myhome/assignments</cite> –&gt; replace this with the path to your assignment in your local machine</p></li>
 </ul>
 </dd>
+<dt>You can also replace the image,</dt><dd><ul class="simple">
+<li><p>digiklausur/notebook-dev:latest –&gt; digiklausur/notebook-dev-wus:8bf9827</p></li>
+</ul>
+</dd>
 </dl>
+<p>where <cite>latest</cite> and <cite>8bf9827</cite> are the image tags.</p>
 </li>
 <li><p>The output should look like the following</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>I <span class="m">13</span>:24:27.563 NotebookApp<span class="o">]</span> The Jupyter Notebook is running at:
@@ -400,8 +410,39 @@ our docker image and mount the assignments you have downloaded from the server t
 </li>
 </ul>
 </li>
-<li><p><strong>Windows</strong></p></li>
-<li><p><strong>Mac</strong></p></li>
+<li><p><strong>Windows</strong></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">Follow this instruction to install docker engine on Windows 10</a></p></li>
+<li><p>Once it gets installed, open <cite>Command Prompt</cite></p></li>
+<li><p>Run our docker image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v C:<span class="se">\U</span>sers<span class="se">\M</span>ohammadWasil<span class="se">\D</span>ownloads<span class="se">\W</span>uS-WS20 --rm -p <span class="m">8888</span>:8888 digiklausur/notebook-dev:latest
+</pre></div>
+</div>
+<p>This may take some times to pull from docker image.</p>
+<p>Replace <em>C:\Users\MohammadWasil\Downloads\WuS-WS20</em> with the proper path to your assignments or course.</p>
+</li>
+<li><p>Once it is done pulling from docker hub, you will get the link and the token, copy that link and open
+it in your browser</p>
+<img alt="../_images/e2x-docker-windows-run-token.png" class="align-center" src="../_images/e2x-docker-windows-run-token.png" />
+</li>
+<li><p>Open Jupyter Notebook server</p>
+<div class="figure align-default" id="id7">
+<img alt="../_images/e2x-docker-windows-nb-tree.png" src="../_images/e2x-docker-windows-nb-tree.png" />
+<p class="caption"><span class="caption-text">Notebook tree which shows all files and directories under <em>C:\Users\MohammadWasil\Downloads\WuS-WS20</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Open the assignment</p>
+<div class="figure align-default" id="id8">
+<img alt="../_images/e2x-docker-windows-nb-tree-assignment.png" src="../_images/e2x-docker-windows-nb-tree-assignment.png" />
+<p class="caption"><span class="caption-text">Assignment 01 directory <cite>(WuS-HW01)</cite> for WuS.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id9">
+<img alt="../_images/e2x-docker-windows-nb-hw.png" src="../_images/e2x-docker-windows-nb-hw.png" />
+<p class="caption"><span class="caption-text">SuperTest.ipynb is the notebook file that you have to work on.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ul>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -411,19 +452,37 @@ Also, make sure all the files required to run your assignment are also uploaded 
 are properly given in the notebook file.</p>
 </div>
 </div>
-<div class="section" id="the-don-ts">
-<h2>The DON’Ts<a class="headerlink" href="#the-don-ts" title="Permalink to this headline">¶</a></h2>
-<font color="red">You are not allowed to:</font><ul class="simple">
+<div class="section" id="the-dont-s">
+<h2>The DONT’S<a class="headerlink" href="#the-dont-s" title="Permalink to this headline">¶</a></h2>
+<font color="red"><b>You are not allowed to:</b></font><ul class="simple">
 <li><p>Change the cell metadata</p></li>
 <li><p>Change directory structure of the assignment</p></li>
 <li><p>Rename directories or files</p></li>
 <li><p>Use other libraries which are not define in
 <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/blob/master/notebook/requirements.txt">our environment</a></p></li>
 <li><p>Use different version of our libraries</p></li>
+<li><p>Change the kernel</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your submission can be failed to run on the grading server, or cannot be graded if you do the DONT’S.</p>
 </div>
-<div class="section" id="faq">
-<h2>FaQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="environment">
+<h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
+<p>All environments we use in the servers can be found on our github repository
+<a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/dev">https://github.com/DigiKlausur/docker-stacks</a>.</p>
+<p>The docker image we use for each course:</p>
+<ul class="simple">
+<li><p>WuS: <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/8bf9827cc2431e92d09adacb364b3344af84c27c/notebook-dev-wus">digiklausur/notebook-dev-wus:8bf9827</a></p></li>
+<li><p>MRC: <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/0b277052175e1d89a57d838cec73bac67dac66a5/notebook-dev">digiklausur/notebook-dev:0b27705</a></p></li>
+</ul>
+<p>If you want some libraries to be available on the servers, feel free to contribute to our github repositories.</p>
+<p>All the software we use and develop are open on our github <a class="reference external" href="https://github.com/DigiKlausur/">https://github.com/DigiKlausur/</a>,
+feel free to comment or raise issues on our github repositories if you want to help us with other things.</p>
+</div>
+<div class="section" id="faqs">
+<h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>I cannot login after signup on notebooks.inf.h-brs.de</strong>. You may not be registered on the LEA course,
 contact your instructors to authorize you.</p></li>

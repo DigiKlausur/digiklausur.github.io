@@ -32,7 +32,7 @@ used for the following courses:
 Login to E2x JupyterHub
 =======================
 
-One server has a public IP which can be accessed from everywhere and one server which is only 
+One server has a public IP which can be accessed from everywhere and the other server is only 
 accessible from inside the university network, VPN or via ssh tunneling to the FB02 homepage
 `home.inf.h-brs.de`
 
@@ -107,7 +107,7 @@ Courses:
 
     The server can also be accessed using ssh port forwarding through the FB02 homepage `home.inf.h-brs.de`.
     This will tunnel the server hub port to your local machine.
-    If you use Linux, you can just open terminal and type the following
+    If you use Linux or Mac OS, you can just open terminal and type the following
 
     .. code-block:: bash
 
@@ -137,7 +137,7 @@ Courses:
 Assignments
 ===========
 
-We use `nbgrader` to manage the assignments. The due date should be the same as in LEA. So you have 
+We use `nbgrader` to manage the assignments. The due date should be the same as on LEA. So you have 
 to submit the assignments before the due date.
 
 * **Fetch Assignments**
@@ -156,12 +156,12 @@ to submit the assignments before the due date.
 
     .. warning::
 
-      Do not open the exam in multiple tabs, windows or browser. You might overwrite unsaved changes!
+      Do not open the assignment in multiple tabs, windows or browser. You might overwrite unsaved changes!
 
 * **Submit Assignments**
 
   To submit the assignments, go to **Assignments** tab again, and click **Submit**. You can submit your 
-  assignments multiple time as long it is before the due date. This due date is the same as in LEA.
+  assignments multiple time as long as you do it before the due date.
 
   .. image:: images/assignment-submit.png
     :align: center
@@ -175,13 +175,17 @@ to submit the assignments before the due date.
 Resources and Quota
 ===================
 
-The server is limited to server core of CPUs and 1GB of RAM. Each student only gets 1GB of storage.
+The student server is limited to 2 cores of CPUs and 1GB of RAM, and 1GB of storage.
 Anything under `/home/jovyan` is persistent and the rest will be regenerated when you restart the 
 server. This storage can be increased according to the request from the instructors, but this can only 
-be done if the request is proposed before the semester start.
+be done if the request is proposed before the semester starts.
 
 This persistent data will be deleted after `Einsicht` which normally happens in the next semester after 
-you do the exam. We suggest you to always backup you data.
+you do the exam. 
+
+.. note::
+
+  We suggest you to always backup you data in your local machine.
 
 
 Working on the assignments locally
@@ -190,18 +194,23 @@ Working on the assignments locally
 The easiest way to setup your local environment is via docker. With docker, you can just pull 
 our docker image and mount the assignments you have downloaded from the server to your container.
 
-* **Linux**
+* **Linux and Mac OS**
 
-  * `Install docker engine <https://docs.docker.com/engine/install/ubuntu/>`_
-  * Run our image (this will automatically pull and run the docker image)
+  * `Install docker engine for Linux <https://docs.docker.com/engine/install/ubuntu/>`_
+  * `Install docker engine for Mac OS <https://docs.docker.com/docker-for-mac/install/>`_
+  * Open terminal and run our image (this will automatically pull and run the docker image)
 
     .. code-block:: bash
 
-      docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments \
-      --rm -p 8888:8888 digiklausur/notebook:latest
+      docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments --rm -p 8888:8888 digiklausur/notebook-dev:latest
 
     Replace the following:
       * `/home/myhome/assignments` --> replace this with the path to your assignment in your local machine
+    
+    You can also replace the image, 
+      * digiklausur/notebook-dev:latest --> digiklausur/notebook-dev-wus:8bf9827
+
+    where `latest` and `8bf9827` are the image tags.
 
   * The output should look like the following
 
@@ -221,8 +230,40 @@ our docker image and mount the assignments you have downloaded from the server t
 
 * **Windows**
 
-* **Mac**
+  * `Follow this instruction to install docker engine on Windows 10 <https://docs.docker.com/docker-for-windows/install/>`_
+  * Once it gets installed, open `Command Prompt`
+  * Run our docker image:
 
+    .. code-block:: bash
+
+      docker run -it --name notebook -v C:\Users\MohammadWasil\Downloads\WuS-WS20 --rm -p 8888:8888 digiklausur/notebook-dev:latest
+
+    This may take some times to pull from docker image.
+    
+    Replace *C:\\Users\\MohammadWasil\\Downloads\\WuS-WS20* with the proper path to your assignments or course.
+
+  * Once it is done pulling from docker hub, you will get the link and the token, copy that link and open 
+    it in your browser
+
+    .. image:: images/e2x-docker-windows-run-token.png
+      :align: center
+
+  * Open Jupyter Notebook server
+
+    .. figure:: images/e2x-docker-windows-nb-tree.png
+      
+      Notebook tree which shows all files and directories under *C:\\Users\\MohammadWasil\\Downloads\\WuS-WS20*
+  
+  * Open the assignment
+
+    .. figure:: images/e2x-docker-windows-nb-tree-assignment.png
+      
+      Assignment 01 directory `(WuS-HW01)` for WuS.
+
+    .. figure:: images/e2x-docker-windows-nb-hw.png
+      
+      SuperTest.ipynb is the notebook file that you have to work on.
+      
 .. note::
 
   If you work locally on your machine, you should re-upload your work to the server, under the corresponding
@@ -230,12 +271,12 @@ our docker image and mount the assignments you have downloaded from the server t
   Also, make sure all the files required to run your assignment are also uploaded and the paths to the files
   are properly given in the notebook file.
 
-The DON'Ts
+The DONT'S
 ==========
 
 .. raw:: html
   
-  <font color="red">You are not allowed to:</font>
+  <font color="red"><b>You are not allowed to:</b></font>
 
 * Change the cell metadata
 * Change directory structure of the assignment
@@ -243,10 +284,30 @@ The DON'Ts
 * Use other libraries which are not define in 
   `our environment <https://github.com/DigiKlausur/docker-stacks/blob/master/notebook/requirements.txt>`_ 
 * Use different version of our libraries
+* Change the kernel
 
+.. warning::
 
-FaQ
-===================
+  Your submission can be failed to run on the grading server, or cannot be graded if you do the DONT'S.
+
+Environment
+===========
+
+All environments we use in the servers can be found on our github repository 
+`https://github.com/DigiKlausur/docker-stacks <https://github.com/DigiKlausur/docker-stacks/tree/dev>`_.
+
+The docker image we use for each course:
+
+* WuS: `digiklausur/notebook-dev-wus:8bf9827 <https://github.com/DigiKlausur/docker-stacks/tree/8bf9827cc2431e92d09adacb364b3344af84c27c/notebook-dev-wus>`_
+* MRC: `digiklausur/notebook-dev:0b27705 <https://github.com/DigiKlausur/docker-stacks/tree/0b277052175e1d89a57d838cec73bac67dac66a5/notebook-dev>`_
+
+If you want some libraries to be available on the servers, feel free to contribute to our github repositories.
+
+All the software we use and develop are open on our github `https://github.com/DigiKlausur/ <https://github.com/DigiKlausur/>`_,
+feel free to comment or raise issues on our github repositories if you want to help us with other things.
+
+FAQs
+====
 
 * **I cannot login after signup on notebooks.inf.h-brs.de**. You may not be registered on the LEA course,
   contact your instructors to authorize you.
