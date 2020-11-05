@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Permute notebook during fetching &mdash; E2X H-BRS</title>
+  <title>Custom Exchange &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="E2xgrader Installation" href="../installation.html" />
-    <link rel="prev" title="Hashing of student submissions" href="submit.html" /> 
+    <link rel="next" title="Multiple and single choice cells" href="choice_cells.html" />
+    <link rel="prev" title="Student Exam Mode" href="../modes/exam.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,15 +111,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-features">E2xgrader Features</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="exchange.html">Custom Exchange</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Custom Exchange</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#personalized-inbound">Personalized Inbound</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#personalized-outbound">Personalized Outbound</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-exchange">Configuring the Exchange</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="choice_cells.html">Multiple and single choice cells</a></li>
 <li class="toctree-l3"><a class="reference internal" href="task_view.html">Per cell grading view</a></li>
 <li class="toctree-l3"><a class="reference internal" href="grade_export.html">Grade export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="submit.html">Hashing of student submissions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Permute notebook during fetching</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="scramble.html">Permute notebook during fetching</a></li>
 </ul>
 </li>
 </ul>
@@ -189,13 +191,13 @@
         
           <li><a href="../e2xgrader.html">E2xgrader</a> &raquo;</li>
         
-      <li>Permute notebook during fetching</li>
+      <li>Custom Exchange</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/e2xgrader/features/scramble.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/e2xgrader/features/exchange.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,39 +210,91 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="permute-notebook-during-fetching">
-<span id="e2xgrader-scramble"></span><h1>Permute notebook during fetching<a class="headerlink" href="#permute-notebook-during-fetching" title="Permalink to this headline">¶</a></h1>
-<p>You can change the order of questions in a notebook randomly during fetching
-the assignment.</p>
-<p>For this you have to make sure to adhere to the naming scheme for cells
-described in the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a> section.
-Otherwise e2xgrader will not find all the cells associated to a solution cell.</p>
-<p>To enable permutation of questions, you have to add a cell to your notebook
-at the top. It does not matter what type (code, markdown, …) the cell is.
-This cell should only contain a single keyword:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">scramble</span>
+  <div class="section" id="custom-exchange">
+<span id="e2xgrader-exchange"></span><h1>Custom Exchange<a class="headerlink" href="#custom-exchange" title="Permalink to this headline">¶</a></h1>
+<p>E2xgrader comes with a custom exchange that has the following
+features:</p>
+<div class="section" id="personalized-inbound">
+<h2>Personalized Inbound<a class="headerlink" href="#personalized-inbound" title="Permalink to this headline">¶</a></h2>
+<p>If activated, the custom exchange uses a personalized inbound
+directory for each student.</p>
+<p>Assume you have the course <em>MyCourse</em> and the assignment
+<em>MyAssignment</em>. In the original nbgrader exchange the student
+will submit to <code class="code docutils literal notranslate"><span class="pre">&lt;exchange_directory&gt;/MyCourse/inbound/</span></code>.
+This will be the same for each student and causes a potential security
+issue. If a student knows the name of the submission of another student,
+they can read their submission.</p>
+<p>If the personalized inbound is used, the student will submit to
+<code class="code docutils literal notranslate"><span class="pre">&lt;exchange_directory&gt;/MyCourse/personalized-inbound/&lt;student_id&gt;/</span></code>.
+This directory is only readable by the student.</p>
+</div>
+<div class="section" id="personalized-outbound">
+<h2>Personalized Outbound<a class="headerlink" href="#personalized-outbound" title="Permalink to this headline">¶</a></h2>
+<p>If activated, the custom exchange uses a personalized outbound
+directory for each student.</p>
+<p>This allows for creating custom versions of an assignment per student.
+Students will fetch from
+<code class="code docutils literal notranslate"><span class="pre">&lt;exchange_directory&gt;/MyCourse/outbound/MyAssignment/&lt;student_id&gt;/</span></code>.</p>
+<p>For this to work you will need a release version for each student.
+In your formgrader you will need to create a folder for each student
+under the release version of an assignment.</p>
+<p>Instead of having your notebooks under
+<code class="code docutils literal notranslate"><span class="pre">release/MyAssignment/MyNotebook.ipynb</span></code> you will need to create a
+directory for each student as
+<code class="code docutils literal notranslate"><span class="pre">release/MyAssignment/&lt;student_id&gt;/MyNotebook.ipynb</span></code>. These notebooks
+can then be personalized.</p>
+</div>
+<div class="section" id="configuring-the-exchange">
+<span id="e2xgrader-exchange-config"></span><h2>Configuring the Exchange<a class="headerlink" href="#configuring-the-exchange" title="Permalink to this headline">¶</a></h2>
+<p>To activate the custom exchange you need to edit to your <em>nbgrader_config.py</em>.</p>
+<div class="section" id="activating-the-exchange">
+<h3>Activating the Exchange<a class="headerlink" href="#activating-the-exchange" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
+<span class="kn">from</span> <span class="nn">e2xgrader.config</span> <span class="kn">import</span> <span class="n">configure_exchange</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="c1"># Register the custom exchange</span>
+<span class="n">configure_exchange</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>During fetching the username of the student is used as a seed for the
-pseudo-random number generator.
-Next the notebook is partitioned into questions using the following
-approach:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Find all solution cells</p></li>
-<li><p>Find all cells where the grade id contains a solution cell id</p></li>
-<li><p>If a cell contains multiple solution cell ids, the solution cells
-and associated cells are grouped together</p></li>
-<li><p>All cells not associated to a solution cell will be moved to the
-top of the notebook</p></li>
-<li><p>The remaining grouped cells will be shuffled and appended to the
-notebook</p></li>
-</ol>
-</div></blockquote>
-<p>When permuting notebooks, it is favorable to use the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a>
-since questions for submitted notebooks are not ordered again.</p>
+</div>
+<div class="section" id="activating-the-personalized-inbound">
+<h3>Activating the Personalized Inbound<a class="headerlink" href="#activating-the-personalized-inbound" title="Permalink to this headline">¶</a></h3>
+<p>By default the personalized inbound is deactivated. To activate it, add the
+option <code class="code docutils literal notranslate"><span class="pre">c.Exchange.personalized_inbound</span> <span class="pre">=</span> <span class="pre">True</span></code> to your
+<em>nbgrader_config.py</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
+<span class="kn">from</span> <span class="nn">e2xgrader.config</span> <span class="kn">import</span> <span class="n">configure_exchange</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="c1"># Register the custom exchange</span>
+<span class="n">configure_exchange</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Activate the personalized inbound directory</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Exchange</span><span class="o">.</span><span class="n">personalized_inbound</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="activating-the-personalized-outbound">
+<h3>Activating the Personalized Outbound<a class="headerlink" href="#activating-the-personalized-outbound" title="Permalink to this headline">¶</a></h3>
+<p>By default the personalized outbound is deactivated. To activate it, add the
+option <code class="code docutils literal notranslate"><span class="pre">c.Exchange.personalized_outbound</span> <span class="pre">=</span> <span class="pre">True</span></code> to your
+<em>nbgrader_config.py</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
+<span class="kn">from</span> <span class="nn">e2xgrader.config</span> <span class="kn">import</span> <span class="n">configure_exchange</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="c1"># Register the custom exchange</span>
+<span class="n">configure_exchange</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Activate the personalized outbound directory</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Exchange</span><span class="o">.</span><span class="n">personalized_outbound</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -252,10 +306,10 @@ since questions for submitted notebooks are not ordered again.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../installation.html" class="btn btn-neutral float-right" title="E2xgrader Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="choice_cells.html" class="btn btn-neutral float-right" title="Multiple and single choice cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="submit.html" class="btn btn-neutral float-left" title="Hashing of student submissions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modes/exam.html" class="btn btn-neutral float-left" title="Student Exam Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

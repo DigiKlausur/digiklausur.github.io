@@ -37,7 +37,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="E2xgrader Features" href="features.html" />
+    <link rel="next" title="Nbassignment" href="../nbassignment/nbassignment.html" />
     <link rel="prev" title="E2xgrader Installation" href="installation.html" /> 
 </head>
 
@@ -108,10 +108,13 @@
 </ul>
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">E2xgrader Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="student.html">E2xgrader Student Version</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-configuration">Basic Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-exchange">Configuring the Exchange</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
@@ -194,58 +197,28 @@
             
   <div class="section" id="e2xgrader-configuration">
 <span id="id1"></span><h1>E2xgrader Configuration<a class="headerlink" href="#e2xgrader-configuration" title="Permalink to this headline">¶</a></h1>
-<p>To use the custom exchange, autograder and fetch assignment,
-we need to add it to our <em>nbgrader_config.py</em>.</p>
+<p>To make sure all E2xgrader features are working as expected,
+you need to edit your <em>nbgrader_config.py</em>.</p>
 <p>Information about where this file is located can be found
 in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/configuration/nbgrader_config.html">Nbgrader docs</a>.</p>
-<ol class="arabic simple">
-<li><p>Register the custom exchange</p></li>
-</ol>
+<div class="section" id="basic-configuration">
+<h2>Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
+
+<span class="kn">from</span> <span class="nn">e2xgrader.config</span> <span class="kn">import</span> <span class="n">configure_base</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
 
-<span class="n">c</span><span class="o">.</span><span class="n">ExchangeFactory</span><span class="o">.</span><span class="n">submit</span> <span class="o">=</span> <span class="s1">&#39;e2xgrader.exchange.E2xExchangeSubmit&#39;</span>
-<span class="n">c</span><span class="o">.</span><span class="n">ExchangeFactory</span><span class="o">.</span><span class="n">fetch_assignment</span> <span class="o">=</span> <span class="s1">&#39;e2xgrader.exchange.E2xExchangeFetchAssignment&#39;</span>
+<span class="c1"># Register custom preprocessors for autograding and generating assignments</span>
+<span class="n">configure_base</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Register custom preprocessors for autograding and generating assignments</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">Autograde</span><span class="o">.</span><span class="n">sanitize_preprocessors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;nbgrader.preprocessors.ClearOutput&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.DeduplicateIds&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.OverwriteKernelspec&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.OverwriteCells&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.Unscramble&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">c</span><span class="o">.</span><span class="n">Autograde</span><span class="o">.</span><span class="n">autograde_preprocessors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;nbgrader.preprocessors.Execute&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.LimitOutput&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.SaveAutoGrades&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.AssignLatePenalties&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">c</span><span class="o">.</span><span class="n">GenerateAssignment</span><span class="o">.</span><span class="n">preprocessors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.ValidateExtraCells&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.IncludeHeaderFooter&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.LockCells&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.ClearSolutions&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.ClearOutput&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.ComputeChecksums&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.SaveCells&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;e2xgrader.preprocessors.ClearHiddenTests&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.ClearMarkScheme&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.ComputeChecksums&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nbgrader.preprocessors.CheckCellMetadata&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</pre></div>
 </div>
+<div class="section" id="configuring-the-exchange">
+<h2>Configuring the Exchange<a class="headerlink" href="#configuring-the-exchange" title="Permalink to this headline">¶</a></h2>
+<p>For configuring the exchange look at the section <a class="reference internal" href="features/exchange.html#e2xgrader-exchange-config"><span class="std std-ref">Configuring the Exchange</span></a>.</p>
 <p>A complete example of the <em>nbgrader_config.py</em> can be found in the <a class="reference external" href="https://github.com/DigiKlausur/e2xgrader/blob/master/nbgrader_config.py">e2xgrader repository</a>.</p>
+</div>
 </div>
 
 
@@ -256,7 +229,7 @@ in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/st
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="features.html" class="btn btn-neutral float-right" title="E2xgrader Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../nbassignment/nbassignment.html" class="btn btn-neutral float-right" title="Nbassignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral float-left" title="E2xgrader Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

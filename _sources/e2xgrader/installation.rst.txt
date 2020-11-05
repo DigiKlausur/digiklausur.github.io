@@ -27,6 +27,8 @@ Install e2xgrader
    cd e2xgrader
    pip install .
 
+.. _e2xgrader-modes:
+
 Enable e2xgrader extensions
 ---------------------------
 

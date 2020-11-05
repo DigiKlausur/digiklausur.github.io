@@ -40,10 +40,9 @@ at the departement of Computer Science (FB02), Hochschule Bonn-Rhein-Sieg.
    :maxdepth: 2
    :caption: E2xgrader
 
+   e2xgrader/e2xgrader
    e2xgrader/installation
    e2xgrader/configuration
-   e2xgrader/features
-   e2xgrader/student
 
 .. toctree::
    :maxdepth: 2

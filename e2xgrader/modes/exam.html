@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Permute notebook during fetching &mdash; E2X H-BRS</title>
+  <title>Student Exam Mode &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="E2xgrader Installation" href="../installation.html" />
-    <link rel="prev" title="Hashing of student submissions" href="submit.html" /> 
+    <link rel="next" title="Custom Exchange" href="../features/exchange.html" />
+    <link rel="prev" title="Student Assignment Mode" href="student.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,19 +109,21 @@
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-features">E2xgrader Features</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="exchange.html">Custom Exchange</a></li>
-<li class="toctree-l3"><a class="reference internal" href="choice_cells.html">Multiple and single choice cells</a></li>
-<li class="toctree-l3"><a class="reference internal" href="task_view.html">Per cell grading view</a></li>
-<li class="toctree-l3"><a class="reference internal" href="grade_export.html">Grade export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="submit.html">Hashing of student submissions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Permute notebook during fetching</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="teacher.html">Teacher Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="student.html">Student Assignment Mode</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Student Exam Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restricted-tree">Restricted Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-control">Run Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remap-keys">Remap Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exam-view">Exam View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-submit">Custom Submit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activate-exam-mode">Activate Exam Mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-features">E2xgrader Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
@@ -189,13 +191,13 @@
         
           <li><a href="../e2xgrader.html">E2xgrader</a> &raquo;</li>
         
-      <li>Permute notebook during fetching</li>
+      <li>Student Exam Mode</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/e2xgrader/features/scramble.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/e2xgrader/modes/exam.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,39 +210,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="permute-notebook-during-fetching">
-<span id="e2xgrader-scramble"></span><h1>Permute notebook during fetching<a class="headerlink" href="#permute-notebook-during-fetching" title="Permalink to this headline">¶</a></h1>
-<p>You can change the order of questions in a notebook randomly during fetching
-the assignment.</p>
-<p>For this you have to make sure to adhere to the naming scheme for cells
-described in the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a> section.
-Otherwise e2xgrader will not find all the cells associated to a solution cell.</p>
-<p>To enable permutation of questions, you have to add a cell to your notebook
-at the top. It does not matter what type (code, markdown, …) the cell is.
-This cell should only contain a single keyword:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">scramble</span>
+  <div class="section" id="student-exam-mode">
+<span id="e2xgrader-exam-mode"></span><h1>Student Exam Mode<a class="headerlink" href="#student-exam-mode" title="Permalink to this headline">¶</a></h1>
+<p>The student exam mode includes all extensions from the
+student assignment mode. Additionally it comes with a
+very restricted notebook interface.</p>
+<div class="section" id="restricted-tree">
+<h2>Restricted Tree<a class="headerlink" href="#restricted-tree" title="Permalink to this headline">¶</a></h2>
+<p>The restricted tree extension blocks students from
+creating new files or notebooks. It also removes
+the shutdown button so students can’t accidentally
+shutdown their notebook server.</p>
+<img alt="../../_images/restricted_tree.png" src="../../_images/restricted_tree.png" />
+</div>
+<div class="section" id="run-control">
+<h2>Run Control<a class="headerlink" href="#run-control" title="Permalink to this headline">¶</a></h2>
+<p>Run control blocks students from unrendering read-only
+nbgrader cells.</p>
+</div>
+<div class="section" id="remap-keys">
+<h2>Remap Keys<a class="headerlink" href="#remap-keys" title="Permalink to this headline">¶</a></h2>
+<p>Remap keys blocks and changes some keyboard shortcuts.</p>
+<p>By default executing the last cell in a notebook via
+<em>Shift-Enter</em> will append a new cell to the notebook.
+After remaping the keys it will just execute the cell.</p>
+<p>Shortcuts for copying cells, deleting cells or inserting
+cells are also blocked.</p>
+</div>
+<div class="section" id="exam-view">
+<h2>Exam View<a class="headerlink" href="#exam-view" title="Permalink to this headline">¶</a></h2>
+<p>The exam view extension changes the look of a Jupyter notebook.
+It removes all menus and toolbars and replaces them with
+a limited menu that only includes kernel information, buttons
+for saving the notebook, running cells, stopping cells or
+restarting the kernel.</p>
+<img alt="../../_images/exam_view.png" src="../../_images/exam_view.png" />
+</div>
+<div class="section" id="custom-submit">
+<h2>Custom Submit<a class="headerlink" href="#custom-submit" title="Permalink to this headline">¶</a></h2>
+<p>In exam mode a submit button is added to the menu that lets
+students submit directly from their notebook.
+When students click this button, the notebook is saved and
+a dialog is opened displaying the timestamp and hashcode of
+the submission.</p>
+<img alt="../../_images/submit_exam.png" src="../../_images/submit_exam.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The hashcode is displayed only if your assignment is set up
+accordingly. See <a class="reference internal" href="../features/submit.html#e2xgrader-submit"><span class="std std-ref">Hashing of student submissions</span></a>.</p>
+</div>
+</div>
+<div class="section" id="activate-exam-mode">
+<h2>Activate Exam Mode<a class="headerlink" href="#activate-exam-mode" title="Permalink to this headline">¶</a></h2>
+<p>To activate student exam mode execute the following
+in a terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate student_exam --sys-prefix
 </pre></div>
 </div>
-<div class="section" id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>During fetching the username of the student is used as a seed for the
-pseudo-random number generator.
-Next the notebook is partitioned into questions using the following
-approach:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Find all solution cells</p></li>
-<li><p>Find all cells where the grade id contains a solution cell id</p></li>
-<li><p>If a cell contains multiple solution cell ids, the solution cells
-and associated cells are grouped together</p></li>
-<li><p>All cells not associated to a solution cell will be moved to the
-top of the notebook</p></li>
-<li><p>The remaining grouped cells will be shuffled and appended to the
-notebook</p></li>
-</ol>
-</div></blockquote>
-<p>When permuting notebooks, it is favorable to use the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a>
-since questions for submitted notebooks are not ordered again.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Exam mode needs the <a class="reference internal" href="../features/exchange.html#e2xgrader-exchange"><span class="std std-ref">Custom Exchange</span></a>.
+See <a class="reference internal" href="../features/exchange.html#e2xgrader-exchange-config"><span class="std std-ref">Configuring the Exchange</span></a>.</p>
+</div>
 </div>
 </div>
 
@@ -252,10 +283,10 @@ since questions for submitted notebooks are not ordered again.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../installation.html" class="btn btn-neutral float-right" title="E2xgrader Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../features/exchange.html" class="btn btn-neutral float-right" title="Custom Exchange" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="submit.html" class="btn btn-neutral float-left" title="Hashing of student submissions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="student.html" class="btn btn-neutral float-left" title="Student Assignment Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

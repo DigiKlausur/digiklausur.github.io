@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Permute notebook during fetching &mdash; E2X H-BRS</title>
+  <title>Teacher Mode &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="E2xgrader Installation" href="../installation.html" />
-    <link rel="prev" title="Hashing of student submissions" href="submit.html" /> 
+    <link rel="next" title="Student Assignment Mode" href="student.html" />
+    <link rel="prev" title="E2xgrader" href="../e2xgrader.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,19 +109,16 @@
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-features">E2xgrader Features</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="exchange.html">Custom Exchange</a></li>
-<li class="toctree-l3"><a class="reference internal" href="choice_cells.html">Multiple and single choice cells</a></li>
-<li class="toctree-l3"><a class="reference internal" href="task_view.html">Per cell grading view</a></li>
-<li class="toctree-l3"><a class="reference internal" href="grade_export.html">Grade export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="submit.html">Hashing of student submissions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Permute notebook during fetching</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Teacher Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#activate-teacher-mode">Activate Teacher Mode</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="student.html">Student Assignment Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exam.html">Student Exam Mode</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-features">E2xgrader Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
@@ -189,13 +186,13 @@
         
           <li><a href="../e2xgrader.html">E2xgrader</a> &raquo;</li>
         
-      <li>Permute notebook during fetching</li>
+      <li>Teacher Mode</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/e2xgrader/features/scramble.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/e2xgrader/modes/teacher.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,39 +205,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="permute-notebook-during-fetching">
-<span id="e2xgrader-scramble"></span><h1>Permute notebook during fetching<a class="headerlink" href="#permute-notebook-during-fetching" title="Permalink to this headline">¶</a></h1>
-<p>You can change the order of questions in a notebook randomly during fetching
-the assignment.</p>
-<p>For this you have to make sure to adhere to the naming scheme for cells
-described in the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a> section.
-Otherwise e2xgrader will not find all the cells associated to a solution cell.</p>
-<p>To enable permutation of questions, you have to add a cell to your notebook
-at the top. It does not matter what type (code, markdown, …) the cell is.
-This cell should only contain a single keyword:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="n">scramble</span>
+  <div class="section" id="teacher-mode">
+<span id="e2xgrader-teacher-mode"></span><h1>Teacher Mode<a class="headerlink" href="#teacher-mode" title="Permalink to this headline">¶</a></h1>
+<p>In teacher mode all grading extensions (formgrader etc) are
+enabled.</p>
+<div class="section" id="activate-teacher-mode">
+<h2>Activate Teacher Mode<a class="headerlink" href="#activate-teacher-mode" title="Permalink to this headline">¶</a></h2>
+<p>To activate teacher mode execute the following in a terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate teacher --sys-prefix
 </pre></div>
 </div>
-<div class="section" id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>During fetching the username of the student is used as a seed for the
-pseudo-random number generator.
-Next the notebook is partitioned into questions using the following
-approach:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Find all solution cells</p></li>
-<li><p>Find all cells where the grade id contains a solution cell id</p></li>
-<li><p>If a cell contains multiple solution cell ids, the solution cells
-and associated cells are grouped together</p></li>
-<li><p>All cells not associated to a solution cell will be moved to the
-top of the notebook</p></li>
-<li><p>The remaining grouped cells will be shuffled and appended to the
-notebook</p></li>
-</ol>
-</div></blockquote>
-<p>When permuting notebooks, it is favorable to use the <a class="reference internal" href="task_view.html#e2xgrader-task-view"><span class="std std-ref">Per cell grading view</span></a>
-since questions for submitted notebooks are not ordered again.</p>
+<p>Don’t forget to edit the <em>nbgrader_config.py</em>
+(see <a class="reference internal" href="../configuration.html#e2xgrader-configuration"><span class="std std-ref">E2xgrader Configuration</span></a>).</p>
 </div>
 </div>
 
@@ -252,10 +228,10 @@ since questions for submitted notebooks are not ordered again.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../installation.html" class="btn btn-neutral float-right" title="E2xgrader Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="student.html" class="btn btn-neutral float-right" title="Student Assignment Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="submit.html" class="btn btn-neutral float-left" title="Hashing of student submissions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../e2xgrader.html" class="btn btn-neutral float-left" title="E2xgrader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

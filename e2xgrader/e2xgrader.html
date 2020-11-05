@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>E2xgrader Features &mdash; E2X H-BRS</title>
+  <title>E2xgrader &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Multiple and single choice cells" href="features/choice_cells.html" />
-    <link rel="prev" title="E2xgrader Configuration" href="configuration.html" /> 
+    <link rel="next" title="Teacher Mode" href="modes/teacher.html" />
+    <link rel="prev" title="JupyterHub Deployment on Kubernetes" href="../jupyterhub/deployment-k8s.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,17 +108,26 @@
 </ul>
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">E2xgrader Configuration</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="features/choice_cells.html">Multiple and single choice cells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features/task_view.html">Per cell grading view</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features/grade_export.html">Grade export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features/submit.html">Hashing of student submissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features/scramble.html">Permute notebook during fetching</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#e2xgrader-modes">E2xgrader Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modes/teacher.html">Teacher Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modes/student.html">Student Assignment Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modes/exam.html">Student Exam Mode</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="student.html">E2xgrader Student Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e2xgrader-features">E2xgrader Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="features/exchange.html">Custom Exchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features/choice_cells.html">Multiple and single choice cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features/task_view.html">Per cell grading view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features/grade_export.html">Grade export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features/submit.html">Hashing of student submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features/scramble.html">Permute notebook during fetching</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">E2xgrader Configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
@@ -180,13 +189,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>E2xgrader Features</li>
+      <li>E2xgrader</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/e2xgrader/features.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/e2xgrader/e2xgrader.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,17 +208,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="e2xgrader-features">
-<span id="id1"></span><h1>E2xgrader Features<a class="headerlink" href="#e2xgrader-features" title="Permalink to this headline">¶</a></h1>
-<p>E2xgrader comes with the following features:</p>
+  <div class="section" id="e2xgrader">
+<span id="e2xgrader-intro"></span><h1>E2xgrader<a class="headerlink" href="#e2xgrader" title="Permalink to this headline">¶</a></h1>
+<p>E2xgrader is an add-on for nbgrader that adds functionality
+for teachers and students to nbgrader.</p>
+<div class="section" id="e2xgrader-modes">
+<h2>E2xgrader Modes<a class="headerlink" href="#e2xgrader-modes" title="Permalink to this headline">¶</a></h2>
+<p>E2xgrader comes in different flavors for teachers and students.</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="modes/teacher.html">Teacher Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes/student.html">Student Assignment Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes/exam.html">Student Exam Mode</a></li>
+</ul>
+</div>
+<p>To switch between modes look at the section <a class="reference internal" href="installation.html#e2xgrader-modes"><span class="std std-ref">Enable e2xgrader extensions</span></a>.</p>
+</div>
+<div class="section" id="e2xgrader-features">
+<h2>E2xgrader Features<a class="headerlink" href="#e2xgrader-features" title="Permalink to this headline">¶</a></h2>
+<p>The following features are included in e2xgrader.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="features/exchange.html">Custom Exchange</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/choice_cells.html">Multiple and single choice cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/task_view.html">Per cell grading view</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/grade_export.html">Grade export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/submit.html">Hashing of student submissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features/scramble.html">Permute notebook during fetching</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -221,10 +248,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="features/choice_cells.html" class="btn btn-neutral float-right" title="Multiple and single choice cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="modes/teacher.html" class="btn btn-neutral float-right" title="Teacher Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="configuration.html" class="btn btn-neutral float-left" title="E2xgrader Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../jupyterhub/deployment-k8s.html" class="btn btn-neutral float-left" title="JupyterHub Deployment on Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
