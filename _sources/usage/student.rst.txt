@@ -222,7 +222,7 @@ our docker image and mount the assignments you have downloaded from the server t
 
     Click on the `http://127.0.0.1:8888/?token=...`.
 
-    This should open the browser automatically after you click that link.
+    This will take you to your browser once you click that link.
 
   * You can also open your browser manually and go to `localhost:8888 <localhost:8888>`_. Then input your token manually if asked. 
   
@@ -281,7 +281,7 @@ The DONT'S
 * Change the cell metadata
 * Change directory structure of the assignment
 * Rename directories or files
-* Use other libraries which are not define in 
+* Use other libraries which are not defined in 
   `our environment <https://github.com/DigiKlausur/docker-stacks/blob/master/notebook/requirements.txt>`_ 
 * Use different version of our libraries
 * Change the kernel
@@ -309,5 +309,7 @@ feel free to comment or raise issues on our github repositories if you want to h
 FAQs
 ====
 
-* **I cannot login after signup on notebooks.inf.h-brs.de**. You may not be registered on the LEA course,
+* **[notebooks.inf.h-brs.de] I cannot login after signup**. You may not be registered on the LEA course,
   contact your instructors to authorize you.
+* **[notebooks.inf.h-brs.de] my username is already used**. Please contact your instructors, e2x admins 
+  or post this on LEA forum so that they can check and come back to you as soon as possible.
