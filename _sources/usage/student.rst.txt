@@ -188,6 +188,23 @@ you do the exam.
   We suggest you to always backup you data in your local machine.
 
 
+**Automatic kernel and server culling**
+
+* Culling idle kernel
+
+  Idle notebook kernel whithout any activities for *one hour* will be culled automatically.
+  If this happens and you want to come back to your work, you should restart your kernel by going 
+  to **Kernel** tab and choose **Restart and Clear Output**.
+
+  You can also restart your server by going to **Control Panel** menu (on the top right) and choose 
+  **Stop My Server** and once it's done stopping the server, click **Start My Server** to 
+  start your server.
+
+* Culling idle server
+
+  The idle culler automatically shuts down singleuser notebook servers when they are not used for 
+  *one hour* to reduce the resource usage. Users need to relogin to spawn a new server.
+
 Working on the assignments locally
 ==================================
 
