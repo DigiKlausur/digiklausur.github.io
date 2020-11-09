@@ -52,7 +52,7 @@ otherwise you will not be able to log in.
   The server only accepts **FB02 UID** as username. Also, do not use the same password as your 
   username.
 
-  .. image:: images/e2x-native-login.jpg
+  .. figure:: images/e2x-native-login.jpg
     :align: center
 
   .. note::
@@ -65,17 +65,17 @@ otherwise you will not be able to log in.
   If you are not happy with your password, you can change it via JupyterHub home. Open **control panel**
   on the top right,
 
-  .. image:: images/e2x-hub-control-panel.png
+  .. figure:: images/e2x-hub-control-panel.png
     :align: center
 
   Then on the top left, you will find a button **Change password** which brings you to `change-password` form
 
-  .. image:: images/e2x-hub-home-native.png
+  .. figure:: images/e2x-hub-home-native.png
     :align: center
 
   **Change password form**
 
-  .. image:: images/e2x-hub-native-change-pw.png
+  .. figure:: images/e2x-hub-native-change-pw.png
     :align: center
 
 .. warning::
@@ -123,14 +123,14 @@ Courses:
   access to the servers. However, the instructor is required to add your FB02 UID to the allowed list,
   and student course list.
 
-  .. image:: images/e2x-jupyterhub-login.png
+  .. figure:: images/e2x-jupyterhub-login.png
     :align: center
 
   You may be prompted with different server options during spawning. In some cases, we provide different environments
   with datasets, particular libraries, etc. However, the default will be loaded with general libraries 
   required for all courses.
 
-  .. image:: images/e2x-spawner-default.png
+  .. figure:: images/e2x-spawner-default.png
     :align: center
   
 
@@ -144,12 +144,12 @@ to submit the assignments before the due date.
 
   * Navigate to the **assignments** tab and click **fetch**
 
-    .. image:: images/assignment-fetch.png
+    .. figure:: images/assignment-fetch.png
       :align: center
 
   * Open the fetched assignments
 
-    .. image:: images/assignment-open.png
+    .. figure:: images/assignment-open.png
       :align: center
 
     You can also go to **Files** tab, and refresh the page to see all fetched assignments.
@@ -163,14 +163,33 @@ to submit the assignments before the due date.
   To submit the assignments, go to **Assignments** tab again, and click **Submit**. You can submit your 
   assignments multiple time as long as you do it before the due date.
 
-  .. image:: images/assignment-submit.png
+  .. figure:: images/assignment-submit.png
     :align: center
-
 
   .. note::
 
     If you have problems submiting the assignments via the servers, you can of course submit them via 
     `LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_.
+
+* **Fetch Feedback**
+
+  Under **Assignments** tab, you will be notified if the feedback has been released by the instructors.
+
+  .. figure:: images/feedback-available.png
+    :align: center
+
+    You will see **feedback available to fetch** if it has been released. You can then fetch it.
+
+  Once you fetch it, you can now open it.
+
+  .. figure:: images/feedback-fetched.png
+    :align: center
+
+    Click **view feedback** to open the assignment feedback.
+
+  .. note:: 
+
+    You can also find your feedback under the assignment directory e.g. *WuS-01/feedback*
 
 Resources and Quota
 ===================
@@ -180,21 +199,14 @@ Anything under `/home/jovyan` is persistent and the rest will be regenerated whe
 server. This storage can be increased according to the request from the instructors, but this can only 
 be done if the request is proposed before the semester starts.
 
-This persistent data will be deleted after `Einsicht` which normally happens in the next semester after 
-you do the exam. 
-
-.. note::
-
-  We suggest you to always backup you data in your local machine.
-
-
 **Automatic kernel and server culling**
 
 * Culling idle kernel
 
   Idle notebook kernel whithout any activities for *one hour* will be culled automatically.
   If this happens and you want to come back to your work, you should restart your kernel by going 
-  to **Kernel** tab and choose **Restart and Clear Output**.
+  to **Kernel** tab and choose **Restart and Clear Output**. You can also close your notebook and 
+  reopen it.
 
   You can also restart your server by going to **Control Panel** menu (on the top right) and choose 
   **Stop My Server** and once it's done stopping the server, click **Start My Server** to 
@@ -204,6 +216,21 @@ you do the exam.
 
   The idle culler automatically shuts down singleuser notebook servers when they are not used for 
   *one hour* to reduce the resource usage. Users need to relogin to spawn a new server.
+
+  We also recommend you to shutdown or close your Jupyter Notebook server if you are not using it 
+  and help us reducing the resource usage. 
+
+.. note::
+
+  The persistent data will be deleted after `Einsicht` which is regularly scheduled in the next 
+  semester after you do the exam. 
+  
+  We suggest you to always backup you data in your local machine.
+
+  Zip and dowload files from the server
+
+  .. figure:: images/zip-and-download-hw.png
+    :align: center
 
 Working on the assignments locally
 ==================================
@@ -249,7 +276,7 @@ our docker image and mount the assignments you have downloaded from the server t
 
   * `Follow this instruction to install docker engine on Windows 10 <https://docs.docker.com/docker-for-windows/install/>`_
   * Once it gets installed, open `Command Prompt`
-  * Run our docker image:
+  * Run our docker figure:
 
     .. code-block:: bash
 
@@ -262,22 +289,25 @@ our docker image and mount the assignments you have downloaded from the server t
   * Once it is done pulling from docker hub, you will get the link and the token, copy that link and open 
     it in your browser
 
-    .. image:: images/e2x-docker-windows-run-token.png
+    .. figure:: images/e2x-docker-windows-run-token.png
       :align: center
 
   * Open Jupyter Notebook server
 
     .. figure:: images/e2x-docker-windows-nb-tree.png
+      :align: center
       
       Notebook tree which shows all files and directories under *C:\\Users\\MohammadWasil\\Downloads\\WuS-WS20*
   
   * Open the assignment
 
     .. figure:: images/e2x-docker-windows-nb-tree-assignment.png
+      :align: center
       
       Assignment 01 directory `(WuS-HW01)` for WuS.
 
     .. figure:: images/e2x-docker-windows-nb-hw.png
+      :align: center
       
       SuperTest.ipynb is the notebook file that you have to work on.
       
