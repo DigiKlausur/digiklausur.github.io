@@ -335,7 +335,7 @@ The DONT'S
 
 .. warning::
 
-  Your submission can be failed to run on the grading server, or cannot be graded if you do the DONT'S.
+  Your submission may fail to run on the grading server, or cannot be graded if you do the DONT'S.
 
 Environment
 ===========
@@ -345,7 +345,7 @@ All environments we use in the servers can be found on our github repository
 
 The docker image we use for each course:
 
-* WuS: `digiklausur/notebook-dev-wus:8bf9827 <https://github.com/DigiKlausur/docker-stacks/tree/8bf9827cc2431e92d09adacb364b3344af84c27c/notebook-dev-wus>`_
+* WuS: `digiklausur/notebook:b78dff3 <https://github.com/DigiKlausur/docker-stacks/tree/b78dff39467ae3013eceaf5f6a7ee2646be456bf>`_
 * MRC: `digiklausur/notebook-dev:0b27705 <https://github.com/DigiKlausur/docker-stacks/tree/0b277052175e1d89a57d838cec73bac67dac66a5/notebook-dev>`_
 
 If you want some libraries to be available on the servers, feel free to contribute to our github repositories.
