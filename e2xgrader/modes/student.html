@@ -113,6 +113,7 @@
 <li class="toctree-l3"><a class="reference internal" href="teacher.html">Teacher Mode</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Student Assignment Mode</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#assignment-view-toolbar">Assignment View Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignment-notebook">Assignment Notebook</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#activate-student-assignment-mode">Activate Student Assignment Mode</a></li>
 </ul>
 </li>
@@ -208,17 +209,36 @@
             
   <div class="section" id="student-assignment-mode">
 <span id="e2xgrader-student-mode"></span><h1>Student Assignment Mode<a class="headerlink" href="#student-assignment-mode" title="Permalink to this headline">¶</a></h1>
-<p>In student assignment mode the assignment list is enabled.</p>
+<p>In student assignment mode the nbgrader assignment list extensions
+are enabled. Additionally two e2xgrader extension are activated.</p>
 <div class="section" id="assignment-view-toolbar">
 <h2>Assignment View Toolbar<a class="headerlink" href="#assignment-view-toolbar" title="Permalink to this headline">¶</a></h2>
-<p>Additionally the <em>Assignment View</em> toolbar will be activated
-whenever a student opens a notebook with nbgrader cells in it.
+<p>The <em>Assignment View</em> toolbar will be activated whenever a student
+opens a notebook with nbgrader cells in it.
 The toolbar displays a blue bar above each solution cell to
 avoid confusion about where a student should write their answer.</p>
 <p>For code cells the bar also includes a button to run the cell.
 For markdown cells the bar allows you to switch between
 edit mode (unrendered cell) and preview mode (rendered cell).</p>
 <img alt="../../_images/assignment_view.png" src="../../_images/assignment_view.png" />
+</div>
+<div class="section" id="assignment-notebook">
+<h2>Assignment Notebook<a class="headerlink" href="#assignment-notebook" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Assignment Notebook</em> extension does the following:</p>
+<ul class="simple">
+<li><p>Disable changing cell types of nbgrader cells</p></li>
+<li><p>Disable moving nbgrader cells</p></li>
+<li><p>Hide empty test cells</p></li>
+<li><p>Disable unrendering of nbgrader read-only cells</p></li>
+<li><p>Show line numbers by default</p></li>
+</ul>
+<p>When a student tries to change the cell type of a nbgrader cell,
+a message will appear that informs the student that the cell type
+can not be changed.</p>
+<img alt="../../_images/cell_type_change.png" src="../../_images/cell_type_change.png" />
+<p>When a student tries to move a cells which contain a nbgrader cell,
+the student will see a similar message.</p>
+<img alt="../../_images/move_cells.png" src="../../_images/move_cells.png" />
 </div>
 <div class="section" id="activate-student-assignment-mode">
 <h2>Activate Student Assignment Mode<a class="headerlink" href="#activate-student-assignment-mode" title="Permalink to this headline">¶</a></h2>
