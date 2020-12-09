@@ -55,6 +55,7 @@ at the departement of Computer Science (FB02), Hochschule Bonn-Rhein-Sieg.
    :maxdepth: 2
    :caption: ExamKernel
 
+   exam_kernel/exam_kernel
    exam_kernel/installation
    exam_kernel/configuration
 

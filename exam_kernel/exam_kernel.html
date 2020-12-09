@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Environment &mdash; E2X H-BRS</title>
+  <title>Exam Kernel &mdash; E2X H-BRS</title>
   
 
   
@@ -37,8 +37,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dynamic Configuration" href="dynamic-config.html" />
-    <link rel="prev" title="E2X JupyterHub" href="e2x-jupyterhub.html" /> 
+    <link rel="next" title="ExamKernel Installation" href="installation.html" />
+    <link rel="prev" title="Nbassignment Installation" href="../nbassignment/installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,11 +100,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
 <p class="caption"><span class="caption-text">JupyterHub</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dynamic-config.html">Dynamic Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
 <p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul>
@@ -118,10 +118,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">ExamKernel</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exam Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">ExamKernel Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">ExamKernel Configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure</span></p>
 <ul>
@@ -173,13 +173,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Environment</li>
+      <li>Exam Kernel</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/jupyterhub/environment.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/exam_kernel/exam_kernel.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,14 +192,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="environment">
-<span id="id1"></span><h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Linux</p></li>
-<li><p>Software</p></li>
-<li><p>Data</p></li>
-<li><p>Jupyter Notebook</p></li>
-</ul>
+  <div class="section" id="exam-kernel">
+<span id="exam-kernel-intro"></span><h1>Exam Kernel<a class="headerlink" href="#exam-kernel" title="Permalink to this headline">¶</a></h1>
+<p>A wrapper for the IPython kernel that sanitizes the input before execution.</p>
+<p>It can block or allow certain imports and magic commands.</p>
+<p>By default all terminal commands (lines starting with <em>!</em>) are removed.</p>
+<p>See the section <a class="reference internal" href="configuration.html#exam-kernel-configuration"><span class="std std-ref">ExamKernel Configuration</span></a> for all configuration options.</p>
 </div>
 
 
@@ -210,10 +208,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dynamic-config.html" class="btn btn-neutral float-right" title="Dynamic Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="ExamKernel Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="e2x-jupyterhub.html" class="btn btn-neutral float-left" title="E2X JupyterHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../nbassignment/installation.html" class="btn btn-neutral float-left" title="Nbassignment Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

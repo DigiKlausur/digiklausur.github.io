@@ -119,11 +119,15 @@
 </ul>
 <p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ExamKernel Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#initialization-code">1. Initialization Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#allowed-imports">2. Allowed Imports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#blocked-imports">3. Blocked Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#allowed-magics">4. Allowed Magics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#blocked-magics">5. Blocked Magics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terminal-commands">6. Terminal Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -238,6 +242,7 @@ see the following message:</p>
 <span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named matplotlib or matplotlib blocked by kernel.&#39;</span><span class="p">)</span>
 
 <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">matplotlib</span> <span class="ow">or</span> <span class="n">matplotlib</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="n">Allowed</span> <span class="n">imports</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -264,6 +269,71 @@ If the user tries to import a blocked library (e.g. math), he or she will see th
 <span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named math or math blocked by kernel.&#39;</span><span class="p">)</span>
 
 <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">math</span> <span class="ow">or</span> <span class="n">math</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">following</span> <span class="n">imports</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="allowed-magics">
+<h2>4. Allowed Magics<a class="headerlink" href="#allowed-magics" title="Permalink to this headline">¶</a></h2>
+<p>If you want to allow the user to only use cell and line magics, you can specify them using
+the allowed_magics configuration option. All other magics will be blocked by default
+if this option is set.</p>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">allowed_magics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;timeit&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example the student can use the magics time and timeit.
+If the user tries to use another magic, he or she will see the following message:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">9</span><span class="n">ac756e7870e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No magic named history or history blocked by kernel.</span><span class="se">\n</span><span class="s1">Allowed magics are: [time, timeit]&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">No</span> <span class="n">magic</span> <span class="n">named</span> <span class="n">history</span> <span class="ow">or</span> <span class="n">history</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="n">Allowed</span> <span class="n">magics</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">timeit</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="blocked-magics">
+<h2>5. Blocked Magics<a class="headerlink" href="#blocked-magics" title="Permalink to this headline">¶</a></h2>
+<p>If you want to block the user from using certain magics,
+but let them use all others, you can use the blocked_magics configuration option.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">allowed_magic</span></code> list is not empty, the <code class="docutils literal notranslate"><span class="pre">blocked_magicss</span></code> option will take no effect.</p>
+</div>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">blocked_magics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example the user can not use the magic <code class="docutils literal notranslate"><span class="pre">history</span></code>.
+If the user tries to use a blocked import (e.g. history), he or she will see the following message:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">9</span><span class="n">ac756e7870e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No magic named history or history blocked by kernel.\The following magics are blocked: [history]&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">No</span> <span class="n">magic</span> <span class="n">named</span> <span class="n">history</span> <span class="ow">or</span> <span class="n">history</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">following</span> <span class="n">magics</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">history</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="terminal-commands">
+<h2>6. Terminal Commands<a class="headerlink" href="#terminal-commands" title="Permalink to this headline">¶</a></h2>
+<p>By default all lines starting with <code class="docutils literal notranslate"><span class="pre">!</span></code> will be removed.
+If you want students to be able to use terminal commands,
+you need to set the <code class="docutils literal notranslate"><span class="pre">`block_terminal_commands`</span></code> option.</p>
+<p>Example config:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample ipython_config.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">block_terminal_commands</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 </div>
