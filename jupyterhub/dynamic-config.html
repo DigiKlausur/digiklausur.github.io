@@ -200,10 +200,10 @@ override the default config through the extra configuration.</p>
 under <cite>hub</cite>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hub</span><span class="p">:</span>
   <span class="n">extraConfig</span><span class="p">:</span>
-      <span class="mi">00</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">override</span><span class="o">-</span><span class="n">singleuser</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+      <span class="mo">00</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">override</span><span class="o">-</span><span class="n">singleuser</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
         <span class="c1"># This config will take effects once the hub is shutdown/restart through admin panel</span>
         <span class="c1"># change this to /srv/jupyterhub/</span>
-        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
         <span class="kn">import</span> <span class="nn">yaml</span>
         <span class="n">config_mount</span> <span class="o">=</span> <span class="s1">&#39;/srv/jupyterhub/config&#39;</span>
         <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config_mount</span><span class="p">,</span> <span class="s1">&#39;config.yaml&#39;</span><span class="p">)</span>
@@ -213,7 +213,7 @@ under <cite>hub</cite>:</p>
                 <span class="n">configs</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 
             <span class="n">hub_config</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="s1">&#39;server&#39;</span><span class="p">][</span><span class="s1">&#39;e2x_hub_exam_staging_01&#39;</span><span class="p">]</span>
-            <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;tag&#39;</span><span class="p">])</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;{}:{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;tag&#39;</span><span class="p">])</span>
             <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">image_pull_policy</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">][</span><span class="s1">&#39;pullPolicy&#39;</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;cpu_guarantee&#39;</span><span class="p">]:</span>
@@ -225,15 +225,15 @@ under <cite>hub</cite>:</p>
             <span class="k">if</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_limit&#39;</span><span class="p">]:</span>
                 <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">mem_limit</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="s1">&#39;mem_limit&#39;</span><span class="p">]</span>
 
-      <span class="mi">00</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">prespawn</span><span class="o">-</span><span class="n">hook</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+      <span class="mo">00</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">prespawn</span><span class="o">-</span><span class="n">hook</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
         <span class="c1"># Find in the database how many courses this user is registered to</span>
         <span class="c1"># Prespawn hook and mount his/her course volumes.</span>
-        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
         <span class="kn">import</span> <span class="nn">yaml</span>
         <span class="c1">#list of command to execute during spawning</span>
         <span class="n">cmds</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">async</span> <span class="k">def</span> <span class="nf">pre_spawn_hook</span><span class="p">(</span><span class="n">spawner</span><span class="p">):</span>
-            <span class="k">await</span> <span class="n">spawner</span><span class="o">.</span><span class="n">load_user_options</span><span class="p">()</span>
+        <span class="n">async</span> <span class="k">def</span> <span class="nf">pre_spawn_hook</span><span class="p">(</span><span class="n">spawner</span><span class="p">):</span>
+            <span class="n">await</span> <span class="n">spawner</span><span class="o">.</span><span class="n">load_user_options</span><span class="p">()</span>
             <span class="n">username</span> <span class="o">=</span> <span class="n">spawner</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span>
 
             <span class="c1">#reset commands</span>
@@ -263,42 +263,42 @@ under <cite>hub</cite>:</p>
                 <span class="n">semester_id</span> <span class="o">=</span> <span class="n">hub_config</span><span class="p">[</span><span class="s1">&#39;semester_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
         <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">pre_spawn_hook</span> <span class="o">=</span> <span class="n">pre_spawn_hook</span>
-      <span class="mi">00</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">other</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
-        <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">disable_user_config</span> <span class="o">=</span> <span class="kc">True</span>
+      <span class="mo">00</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">other</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="o">|</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">KubeSpawner</span><span class="o">.</span><span class="n">disable_user_config</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </div>
 <p>A complete version of this extra config can be found on <a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub">our github</a></p>
 <p>The <cite>config.yaml</cite> which is loaded in this extra config is yaml file which is shared by the NFS server,
 and mounted to the hub container under <cite>/srv/jupyterhub/config</cite>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
-  <span class="nt">e2x_hub_exam_staging_01</span><span class="p">:</span>
-    <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">exam</span>
-    <span class="nt">semester_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ss20</span>
-    <span class="nt">course_list</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">server</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">e2x_hub_exam_staging_01</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">exam</span>
+    <span class="l l-Scalar l-Scalar-Plain">semester_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ss20</span>
+    <span class="l l-Scalar l-Scalar-Plain">course_list</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MRC-Exam</span>
-    <span class="nt">image</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digiklausur/restricted-notebook</span>
-      <span class="nt">tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-      <span class="nt">pullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
-    <span class="nt">resources</span><span class="p">:</span>
-      <span class="nt">cpu_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
-      <span class="nt">cpu_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
-      <span class="nt">mem_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.15G</span>
-      <span class="nt">mem_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75G</span>
-    <span class="nt">nbgrader</span><span class="p">:</span>
-      <span class="nt">personalized_inbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-      <span class="nt">personalized_outbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-      <span class="nt">assignment_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Klausur</span>
-    <span class="nt">extra_mounts</span><span class="p">:</span>
-      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-      <span class="nt">volumes</span><span class="p">:</span>
-      <span class="nt">volume_mounts</span><span class="p">:</span>
-        <span class="nt">1</span><span class="p">:</span>
-          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nfs-disk2-volume</span>
-          <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/shared_files/e2x_instruction</span>
-          <span class="nt">subPath</span><span class="p">:</span> <span class="s">&#39;shared_files/e2x_instruction&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">digiklausur/restricted-notebook</span>
+      <span class="l l-Scalar l-Scalar-Plain">tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+      <span class="l l-Scalar l-Scalar-Plain">pullPolicy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+    <span class="l l-Scalar l-Scalar-Plain">resources</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">cpu_guarantee</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+      <span class="l l-Scalar l-Scalar-Plain">cpu_limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+      <span class="l l-Scalar l-Scalar-Plain">mem_guarantee</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.15G</span>
+      <span class="l l-Scalar l-Scalar-Plain">mem_limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75G</span>
+    <span class="l l-Scalar l-Scalar-Plain">nbgrader</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">personalized_inbound</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="l l-Scalar l-Scalar-Plain">personalized_outbound</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+      <span class="l l-Scalar l-Scalar-Plain">assignment_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Klausur</span>
+    <span class="l l-Scalar l-Scalar-Plain">extra_mounts</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="l l-Scalar l-Scalar-Plain">volumes</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">volume_mounts</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">1</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nfs-disk2-volume</span>
+          <span class="l l-Scalar l-Scalar-Plain">mountPath</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/shared_files/e2x_instruction</span>
+          <span class="l l-Scalar l-Scalar-Plain">subPath</span><span class="p p-Indicator">:</span> <span class="s">&#39;shared_files/e2x_instruction&#39;</span>
     <span class="c1">#Commands to be executed after spawning</span>
-    <span class="nt">commands</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rm -rf $HOME/.jupyter/nbconfig*</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FORCE_COPY=false</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">INSTRUCTION_EN=/srv/shared_files/e2x_instruction/e2x_instruction_en</span>
