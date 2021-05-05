@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Deployment &mdash; E2X H-BRS</title>
@@ -37,7 +38,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deployment on a Single Machine" href="deployment-singlemachine.html" />
+    <link rel="next" title="E2xgrader" href="../e2xgrader/e2xgrader.html" />
     <link rel="prev" title="Dynamic Configuration" href="dynamic-config.html" /> 
 </head>
 
@@ -94,45 +95,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dynamic-config.html">Dynamic Configuration</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Deployment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="deployment-singlemachine.html">Deployment on a Single Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-gce.html">Deployment on GCE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-gke.html">Deployment on GKE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment-k8s.html">JupyterHub Deployment on Kubernetes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deployment</a></li>
 </ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -185,8 +175,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/jupyterhub/deployment.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -198,17 +186,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="deployment">
+  <section id="deployment">
 <span id="id1"></span><h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="deployment-singlemachine.html">Deployment on a Single Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-gce.html">Deployment on GCE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-gke.html">Deployment on GKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployment-k8s.html">JupyterHub Deployment on Kubernetes</a></li>
-</ul>
-</div>
-</div>
+<p>The provisioning and deployment of e2x JupyterHub can be found on
+<a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub">e2x-jupyterhub</a>, while
+the <a class="reference external" href="https://github.com/DigiKlausur/e2x-provisioning">internal documentation of the deployment</a>
+is only accessible by e2x admins.</p>
+</section>
 
 
            </div>
@@ -218,7 +202,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deployment-singlemachine.html" class="btn btn-neutral float-right" title="Deployment on a Single Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../e2xgrader/e2xgrader.html" class="btn btn-neutral float-right" title="E2xgrader" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="dynamic-config.html" class="btn btn-neutral float-left" title="Dynamic Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -231,7 +215,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

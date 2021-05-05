@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>E2xgrader Configuration &mdash; E2X H-BRS</title>
@@ -94,19 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
@@ -116,21 +117,16 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -183,8 +179,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/e2xgrader/configuration.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -196,13 +190,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="e2xgrader-configuration">
+  <section id="e2xgrader-configuration">
 <span id="id1"></span><h1>E2xgrader Configuration<a class="headerlink" href="#e2xgrader-configuration" title="Permalink to this headline">¶</a></h1>
 <p>To make sure all E2xgrader features are working as expected,
 you need to edit your <em>nbgrader_config.py</em>.</p>
 <p>Information about where this file is located can be found
 in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/configuration/nbgrader_config.html">Nbgrader docs</a>.</p>
-<div class="section" id="basic-configuration">
+<section id="basic-configuration">
 <h2>Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbgrader_config.py</span>
 
@@ -214,13 +208,13 @@ in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/st
 <span class="n">configure_base</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configuring-the-exchange">
+</section>
+<section id="configuring-the-exchange">
 <h2>Configuring the Exchange<a class="headerlink" href="#configuring-the-exchange" title="Permalink to this headline">¶</a></h2>
 <p>For configuring the exchange look at the section <a class="reference internal" href="features/exchange.html#e2xgrader-exchange-config"><span class="std std-ref">Configuring the Exchange</span></a>.</p>
 <p>A complete example of the <em>nbgrader_config.py</em> can be found in the <a class="reference external" href="https://github.com/DigiKlausur/e2xgrader/blob/master/nbgrader_config.py">e2xgrader repository</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -243,7 +237,7 @@ in the <a class="reference external" href="https://nbgrader.readthedocs.io/en/st
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Student Exam Mode &mdash; E2X H-BRS</title>
@@ -94,19 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a><ul class="current">
@@ -129,21 +130,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -198,8 +194,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/e2xgrader/modes/exam.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -211,25 +205,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="student-exam-mode">
+  <section id="student-exam-mode">
 <span id="e2xgrader-exam-mode"></span><h1>Student Exam Mode<a class="headerlink" href="#student-exam-mode" title="Permalink to this headline">¶</a></h1>
 <p>The student exam mode includes all extensions from the
 student assignment mode. Additionally it comes with a
 very restricted notebook interface.</p>
-<div class="section" id="restricted-tree">
+<section id="restricted-tree">
 <h2>Restricted Tree<a class="headerlink" href="#restricted-tree" title="Permalink to this headline">¶</a></h2>
 <p>The restricted tree extension blocks students from
 creating new files or notebooks. It also removes
 the shutdown button so students can’t accidentally
 shutdown their notebook server.</p>
 <img alt="../../_images/restricted_tree.png" src="../../_images/restricted_tree.png" />
-</div>
-<div class="section" id="run-control">
+</section>
+<section id="run-control">
 <h2>Run Control<a class="headerlink" href="#run-control" title="Permalink to this headline">¶</a></h2>
 <p>Run control blocks students from unrendering read-only
 nbgrader cells.</p>
-</div>
-<div class="section" id="remap-keys">
+</section>
+<section id="remap-keys">
 <h2>Remap Keys<a class="headerlink" href="#remap-keys" title="Permalink to this headline">¶</a></h2>
 <p>Remap keys blocks and changes some keyboard shortcuts.</p>
 <p>By default executing the last cell in a notebook via
@@ -237,8 +231,8 @@ nbgrader cells.</p>
 After remaping the keys it will just execute the cell.</p>
 <p>Shortcuts for copying cells, deleting cells or inserting
 cells are also blocked.</p>
-</div>
-<div class="section" id="exam-view">
+</section>
+<section id="exam-view">
 <h2>Exam View<a class="headerlink" href="#exam-view" title="Permalink to this headline">¶</a></h2>
 <p>The exam view extension changes the look of a Jupyter notebook.
 It removes all menus and toolbars and replaces them with
@@ -246,8 +240,8 @@ a limited menu that only includes kernel information, buttons
 for saving the notebook, running cells, stopping cells or
 restarting the kernel.</p>
 <img alt="../../_images/exam_view.png" src="../../_images/exam_view.png" />
-</div>
-<div class="section" id="custom-submit">
+</section>
+<section id="custom-submit">
 <h2>Custom Submit<a class="headerlink" href="#custom-submit" title="Permalink to this headline">¶</a></h2>
 <p>In exam mode a submit button is added to the menu that lets
 students submit directly from their notebook.
@@ -260,8 +254,8 @@ the submission.</p>
 <p>The hashcode is displayed only if your assignment is set up
 accordingly. See <a class="reference internal" href="../features/submit.html#e2xgrader-submit"><span class="std std-ref">Hashing of student submissions</span></a>.</p>
 </div>
-</div>
-<div class="section" id="activate-exam-mode">
+</section>
+<section id="activate-exam-mode">
 <h2>Activate Exam Mode<a class="headerlink" href="#activate-exam-mode" title="Permalink to this headline">¶</a></h2>
 <p>To activate student exam mode execute the following
 in a terminal:</p>
@@ -273,8 +267,8 @@ in a terminal:</p>
 <p>Exam mode needs the <a class="reference internal" href="../features/exchange.html#e2xgrader-exchange"><span class="std std-ref">Custom Exchange</span></a>.
 See <a class="reference internal" href="../features/exchange.html#e2xgrader-exchange-config"><span class="std std-ref">Configuring the Exchange</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -297,7 +291,7 @@ See <a class="reference internal" href="../features/exchange.html#e2xgrader-exch
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

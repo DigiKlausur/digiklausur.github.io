@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ExamKernel Configuration &mdash; E2X H-BRS</title>
@@ -37,7 +38,6 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OpenStack" href="../infra/openstack.html" />
     <link rel="prev" title="ExamKernel Installation" href="installation.html" /> 
 </head>
 
@@ -94,30 +94,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">ExamKernel Installation</a></li>
@@ -130,11 +130,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#terminal-commands">6. Terminal Commands</a></li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -187,8 +182,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/exam_kernel/configuration.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -200,14 +193,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="examkernel-configuration">
+  <section id="examkernel-configuration">
 <span id="exam-kernel-configuration"></span><h1>ExamKernel Configuration<a class="headerlink" href="#examkernel-configuration" title="Permalink to this headline">¶</a></h1>
 <p>The ExamKernel can be configured using the
 <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config">IPython Configuration System</a>.
 This file is usually located under <code class="docutils literal notranslate"><span class="pre">~/.ipython/profile_default</span></code>.
 If it does not exist you can create it.</p>
 <p>There are three configuration options for the ExamKernel.</p>
-<div class="section" id="initialization-code">
+<section id="initialization-code">
 <h2>1. Initialization Code<a class="headerlink" href="#initialization-code" title="Permalink to this headline">¶</a></h2>
 <p>This is the code that will be executed every time the kernel is initialized
 and can be set via the configuration option <code class="docutils literal notranslate"><span class="pre">init_code</span></code>.</p>
@@ -220,8 +213,8 @@ and can be set via the configuration option <code class="docutils literal notran
 </div>
 <p>In this example the library <code class="docutils literal notranslate"><span class="pre">random</span></code> is imported every time the kernel is initialized,
 making it available to the user right away. You can execute arbitrary code here.</p>
-</div>
-<div class="section" id="allowed-imports">
+</section>
+<section id="allowed-imports">
 <h2>2. Allowed Imports<a class="headerlink" href="#allowed-imports" title="Permalink to this headline">¶</a></h2>
 <p>If you want to allow the user to only use certain libraries, you can specify them using
 the allowed_imports configuration option. All other libraries will be blocked by default
@@ -237,16 +230,16 @@ if this option is set.</p>
 If the user tries to import any other library (e.g. matplotlib), he or she will
 see the following message:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
-<span class="n">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="ne">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mo">041</span><span class="n">c468338fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="n">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named matplotlib or matplotlib blocked by kernel.&#39;</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named matplotlib or matplotlib blocked by kernel.&#39;</span><span class="p">)</span>
 
-<span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">matplotlib</span> <span class="ow">or</span> <span class="n">matplotlib</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">matplotlib</span> <span class="ow">or</span> <span class="n">matplotlib</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
 <span class="n">Allowed</span> <span class="n">imports</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="blocked-imports">
+</section>
+<section id="blocked-imports">
 <h2>3. Blocked Imports<a class="headerlink" href="#blocked-imports" title="Permalink to this headline">¶</a></h2>
 <p>If you want to block the user from importing certain libraries,
 but let them use all others, you can use the blocked_imports configuration option.</p>
@@ -264,16 +257,16 @@ but let them use all others, you can use the blocked_imports configuration optio
 <p>In this example the user can not import the libraries <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.
 If the user tries to import a blocked library (e.g. math), he or she will see the following message:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
-<span class="n">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="ne">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mo">041</span><span class="n">c468338fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="n">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named math or math blocked by kernel.&#39;</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">raise</span> <span class="ne">ModuleNotFoundError</span><span class="p">(</span><span class="s1">&#39;No module named math or math blocked by kernel.&#39;</span><span class="p">)</span>
 
-<span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">math</span> <span class="ow">or</span> <span class="n">math</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">math</span> <span class="ow">or</span> <span class="n">math</span> <span class="n">blocked</span> <span class="n">by</span> <span class="n">kernel</span><span class="o">.</span>
 <span class="n">The</span> <span class="n">following</span> <span class="n">imports</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="allowed-magics">
+</section>
+<section id="allowed-magics">
 <h2>4. Allowed Magics<a class="headerlink" href="#allowed-magics" title="Permalink to this headline">¶</a></h2>
 <p>If you want to allow the user to only use cell and line magics, you can specify them using
 the allowed_magics configuration option. All other magics will be blocked by default
@@ -296,8 +289,8 @@ If the user tries to use another magic, he or she will see the following message
 <span class="n">Allowed</span> <span class="n">magics</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">timeit</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="blocked-magics">
+</section>
+<section id="blocked-magics">
 <h2>5. Blocked Magics<a class="headerlink" href="#blocked-magics" title="Permalink to this headline">¶</a></h2>
 <p>If you want to block the user from using certain magics,
 but let them use all others, you can use the blocked_magics configuration option.</p>
@@ -323,8 +316,8 @@ If the user tries to use a blocked import (e.g. history), he or she will see the
 <span class="n">The</span> <span class="n">following</span> <span class="n">magics</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">history</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="terminal-commands">
+</section>
+<section id="terminal-commands">
 <h2>6. Terminal Commands<a class="headerlink" href="#terminal-commands" title="Permalink to this headline">¶</a></h2>
 <p>By default all lines starting with <code class="docutils literal notranslate"><span class="pre">!</span></code> will be removed.
 If you want students to be able to use terminal commands,
@@ -336,8 +329,8 @@ you need to set the <code class="docutils literal notranslate"><span class="pre"
 <span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">block_terminal_commands</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -346,8 +339,6 @@ you need to set the <code class="docutils literal notranslate"><span class="pre"
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../infra/openstack.html" class="btn btn-neutral float-right" title="OpenStack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral float-left" title="ExamKernel Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -360,7 +351,7 @@ you need to set the <code class="docutils literal notranslate"><span class="pre"
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

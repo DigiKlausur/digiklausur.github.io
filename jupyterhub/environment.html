@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Environment &mdash; E2X H-BRS</title>
@@ -38,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dynamic Configuration" href="dynamic-config.html" />
-    <link rel="prev" title="E2X JupyterHub" href="e2x-jupyterhub.html" /> 
+    <link rel="prev" title="E2x JupyterHub" href="e2x-jupyterhub.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,39 +95,38 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2x JupyterHub</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grading-and-assignment-environment">Grading and Assignment Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exam-environment">Exam Environment</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -179,8 +179,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/jupyterhub/environment.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -192,15 +190,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="environment">
+  <section id="environment">
 <span id="id1"></span><h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
+<section id="grading-and-assignment-environment">
+<h2>Grading and Assignment Environment<a class="headerlink" href="#grading-and-assignment-environment" title="Permalink to this headline">¶</a></h2>
+<p>All environments we use in the servers can be found on our github repository
+<a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/dev">https://github.com/DigiKlausur/docker-stacks</a>.</p>
+<p>The generic image that we use for all courses:</p>
 <ul class="simple">
-<li><p>Linux</p></li>
-<li><p>Software</p></li>
-<li><p>Data</p></li>
-<li><p>Jupyter Notebook</p></li>
+<li><p><a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/fde8cda987543dc2e4f2957ba5591310ff1d6460">ghcr.io/digiklausur/docker-stacks/notebook-dev:latest</a></p></li>
 </ul>
+<p>The image can be run locally on your local PC running Linux, Mac OS or Windows,
+please follow <a class="reference internal" href="../usage/student.html#working-on-assignments-locally"><span class="std std-ref">this instruction for more details</span></a>.</p>
+</section>
+<section id="exam-environment">
+<h2>Exam Environment<a class="headerlink" href="#exam-environment" title="Permalink to this headline">¶</a></h2>
+<p>The exam environment is derived from the same assignment or grading environment.
+The differences lay on the restrictions on what exam users can do during exams,
+for example: default Jupyter Notebook menus are removed; files cannot be deleted;
+there are some exam extensions installed.</p>
+<figure class="align-center" id="id2">
+<img alt="an example of restricted view in exam environment" src="../_images/exam_environment.png" />
+<figcaption>
+<p><span class="caption-text">an example of restricted view in exam environment</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want some libraries to be available on the servers, feel free to contribute to our github repositories.</p>
+<p>All the software we use and develop are open source,
+feel free to comment and/or contribute to <a class="reference external" href="https://github.com/DigiKlausur/">our github https://github.com/DigiKlausur/</a>.</p>
 </div>
+</section>
+</section>
 
 
            </div>
@@ -213,7 +235,7 @@
         <a href="dynamic-config.html" class="btn btn-neutral float-right" title="Dynamic Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="e2x-jupyterhub.html" class="btn btn-neutral float-left" title="E2X JupyterHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="e2x-jupyterhub.html" class="btn btn-neutral float-left" title="E2x JupyterHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -223,7 +245,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

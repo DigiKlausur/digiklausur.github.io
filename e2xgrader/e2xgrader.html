@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>E2xgrader &mdash; E2X H-BRS</title>
@@ -38,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Teacher Mode" href="modes/teacher.html" />
-    <link rel="prev" title="JupyterHub Deployment on Kubernetes" href="../jupyterhub/deployment-k8s.html" /> 
+    <link rel="prev" title="Deployment" href="../jupyterhub/deployment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,19 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">E2xgrader</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#e2xgrader-modes">E2xgrader Modes</a><ul>
@@ -129,21 +130,16 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -196,8 +192,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/e2xgrader/e2xgrader.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -209,11 +203,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="e2xgrader">
+  <section id="e2xgrader">
 <span id="e2xgrader-intro"></span><h1>E2xgrader<a class="headerlink" href="#e2xgrader" title="Permalink to this headline">¶</a></h1>
 <p>E2xgrader is an add-on for nbgrader that adds functionality
 for teachers and students to nbgrader.</p>
-<div class="section" id="e2xgrader-modes">
+<section id="e2xgrader-modes">
 <h2>E2xgrader Modes<a class="headerlink" href="#e2xgrader-modes" title="Permalink to this headline">¶</a></h2>
 <p>E2xgrader comes in different flavors for teachers and students.</p>
 <div class="toctree-wrapper compound">
@@ -224,8 +218,8 @@ for teachers and students to nbgrader.</p>
 </ul>
 </div>
 <p>To switch between modes look at the section <a class="reference internal" href="installation.html#e2xgrader-modes"><span class="std std-ref">Enable e2xgrader extensions</span></a>.</p>
-</div>
-<div class="section" id="e2xgrader-features">
+</section>
+<section id="e2xgrader-features">
 <h2>E2xgrader Features<a class="headerlink" href="#e2xgrader-features" title="Permalink to this headline">¶</a></h2>
 <p>The following features are included in e2xgrader.</p>
 <div class="toctree-wrapper compound">
@@ -238,8 +232,8 @@ for teachers and students to nbgrader.</p>
 <li class="toctree-l1"><a class="reference internal" href="features/scramble.html">Permute notebook during fetching</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -252,7 +246,7 @@ for teachers and students to nbgrader.</p>
         <a href="modes/teacher.html" class="btn btn-neutral float-right" title="Teacher Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../jupyterhub/deployment-k8s.html" class="btn btn-neutral float-left" title="JupyterHub Deployment on Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../jupyterhub/deployment.html" class="btn btn-neutral float-left" title="Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -262,7 +256,7 @@ for teachers and students to nbgrader.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

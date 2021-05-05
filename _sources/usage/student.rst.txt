@@ -1,4 +1,4 @@
-.. _student:
+.. _usage_student:
 
 *****************************************
 Students
@@ -9,17 +9,17 @@ assignments. These servers can also be used for a light computing or programming
 need more resources (CPU, RAM and GPU) for your projects, you can have a look at 
 `Bonn-Rhein-Sieg university scientific computing <https://wr0.wr.inf.h-brs.de>`_.
 
-1. `Publicly accessible server (https://notebooks.inf.h-brs.de) <https://notebooks.inf.h-brs.de>`_ 
+1. `WuS server (https://notebooks.inf.h-brs.de) <https://notebooks.inf.h-brs.de>`_ 
 used for the following courses:
 
-  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)
+  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WS20)
 
-2. `Local server (10.20.168.244:30300) <10.20.168.244:30300>`_ used for the following courses:
+2. `University server <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ used for the following courses:
 
-  * Mathematics for Robotics and Control (MRC WS20)
+  * Mathematics for Robotics and Control (WS20, SS21)
   * Robot Perception (RP SS20)
-  * Robot Manipulation (RM SS20)
-  * Natural Language Processing (NLP SS20)
+  * Robot Manipulation (SS20, SS21)
+  * Natural Language Processing (SS20, SS21)
 
 .. note::
     
@@ -38,9 +38,6 @@ accessible from inside the university network, VPN or via ssh tunneling to the F
 
 1. `https://notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 ----------------------------------------------------------------------
-
-Courses:
-  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)
 
 First, you need to sign up to the server if you have not done so, then the instructor will authorize you. 
 Keep in mind that you need to be registered in the corresponding `LEA course <https://lea.hochschule-bonn-rhein-sieg.de>`_, 
@@ -84,55 +81,33 @@ otherwise you will not be able to log in.
     If you forget your password, please contact your instructors or e2x admin.
 
 
-2. `Local server (10.20.168.244:30300) <10.20.168.244:30300>`_
----------------------------------------------------------------
-
-Courses:
-  * Mathematics for Robotics and Control (MRC WS20)
-  * Robot Perception (RP SS20)
-  * Robot Manipulation (RM SS20)
-  * Natural Language Processing (NLP SS20)
+2. `University server <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_
+---------------------------------------------------------------------
 
 * **Access**
 
-  There are two ways to connect to the local-hosted JupyterHub:
-
-  * **VPN**
-
-    You need to setup VPN in order to get access to the hub. To use FB02 VPN, you need to follow a complete 
-    instruction from `https://ux-2s18.inf.h-brs.de/faq/vpn <https://ux-2s18.inf.h-brs.de/faq/vpn>`_.
-    Once you get connected to the VPN, you can open the browser and go to `10.20.168.244:30300 <10.20.168.244:30300>`_.
-
-  * **SSH port forwarding**
-
-    The server can also be accessed using ssh port forwarding through the FB02 homepage `home.inf.h-brs.de`.
-    This will tunnel the server hub port to your local machine.
-    If you use Linux or Mac OS, you can just open terminal and type the following
-
-    .. code-block:: bash
-
-      ssh -L 30300:10.20.168.244:30300 username2s@home.inf.h-brs.de
-
-    replace `username2s` with your FB02 UID.
-
-    Then you can open browser, and go to `localhost:30300 <localhost:30300>`_
+  Starting from SS21, students can access the `university server <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ 
+  without using vpn or ssh-ing to the FB02 network.
 
 * **Login**
 
   The local server uses FB02 LDAP to authenticate the users. Thus, you do not need to signup to get 
-  access to the servers. However, the instructor is required to add your FB02 UID to the allowed list,
-  and student course list.
+  access to the server. The username and password are the same as your `horde account <https://horde.inf.h-brs.de>`_.
 
   .. figure:: images/e2x-jupyterhub-login.png
     :align: center
 
-  You may be prompted with different server options during spawning. In some cases, we provide different environments
-  with datasets, particular libraries, etc. However, the default will be loaded with general libraries 
-  required for all courses.
+  If you are registered in multipe courses, you will be prompted with different server options during spawning. 
+  In some cases, we provide different environments with datasets, particular libraries, etc. 
+  Unless requested, each course uses the same environment as defined in :ref:`Environment <server_environment>`.
 
-  .. figure:: images/e2x-spawner-default.png
+  .. figure:: images/e2x-server-options.png
     :align: center
+
+  .. warning::
   
+    `Default` server does not have any course and the data is not persistent, meaning 
+    it will be destroyed once the server is shut down.
 
 Assignments
 ===========
@@ -223,7 +198,7 @@ be done if the request is proposed before the semester starts.
 .. note::
 
   The persistent data will be deleted after `Einsicht` which is regularly scheduled in the next 
-  semester after you do the exam. 
+  semester after the exam. 
   
   We suggest you to always backup you data in your local machine.
 
@@ -231,6 +206,9 @@ be done if the request is proposed before the semester starts.
 
   .. figure:: images/zip-and-download-hw.png
     :align: center
+
+
+.. _working_on_assignments_locally:
 
 Working on the assignments locally
 ==================================
@@ -246,13 +224,13 @@ our docker image and mount the assignments you have downloaded from the server t
 
     .. code-block:: bash
 
-      docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments --rm -p 8888:8888 digiklausur/notebook-dev:latest
+      docker run -it --name notebook -v $HOME/assignments:/home/jovyan/assignments --rm -p 8888:8888 digiklausur/notebook-dev:latest
 
     Replace the following:
-      * `/home/myhome/assignments` --> replace this with the path to your assignment in your local machine
+      * `$HOME/assignments` --> replace this with the path to your assignment in your local machine
     
     You can also replace the image, 
-      * digiklausur/notebook-dev:latest --> digiklausur/notebook-dev-wus:8bf9827
+      * digiklausur/notebook-dev:latest --> digiklausur/notebook:latest
 
     where `latest` and `8bf9827` are the image tags.
 
@@ -318,7 +296,7 @@ our docker image and mount the assignments you have downloaded from the server t
   Also, make sure all the files required to run your assignment are also uploaded and the paths to the files
   are properly given in the notebook file.
 
-The DONT'S
+The Don'ts
 ==========
 
 .. raw:: html
@@ -335,23 +313,16 @@ The DONT'S
 
 .. warning::
 
-  Your submission may fail to run on the grading server, or cannot be graded if you do the DONT'S.
+  Your submission may fail to run on the grading server, or cannot be graded 
+  if you do the don'ts.
+
+.. _server_environment:
 
 Environment
 ===========
 
-All environments we use in the servers can be found on our github repository 
-`https://github.com/DigiKlausur/docker-stacks <https://github.com/DigiKlausur/docker-stacks/tree/dev>`_.
+All environments we use on the servers can be found :ref:`here <environment>`.
 
-The docker image we use for each course:
-
-* WuS: `digiklausur/notebook:b78dff3 <https://github.com/DigiKlausur/docker-stacks/tree/b78dff39467ae3013eceaf5f6a7ee2646be456bf>`_
-* MRC: `digiklausur/notebook-dev:0b27705 <https://github.com/DigiKlausur/docker-stacks/tree/0b277052175e1d89a57d838cec73bac67dac66a5/notebook-dev>`_
-
-If you want some libraries to be available on the servers, feel free to contribute to our github repositories.
-
-All the software we use and develop are open on our github `https://github.com/DigiKlausur/ <https://github.com/DigiKlausur/>`_,
-feel free to comment or raise issues on our github repositories if you want to help us with other things.
 
 FAQs
 ====

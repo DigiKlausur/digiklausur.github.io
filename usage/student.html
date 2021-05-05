@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Students &mdash; E2X H-BRS</title>
@@ -94,52 +95,47 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Students</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#login-to-e2x-jupyterhub">Login to E2x JupyterHub</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">1. https://notebooks.inf.h-brs.de</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2. Local server (10.20.168.244:30300)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2. University server</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignments">Assignments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resources-and-quota">Resources and Quota</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-on-the-assignments-locally">Working on the assignments locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-dont-s">The DONT’S</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-don-ts">The Don’ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#environment">Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#faqs">FAQs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -192,8 +188,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/usage/student.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -205,28 +199,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="students">
-<span id="student"></span><h1>Students<a class="headerlink" href="#students" title="Permalink to this headline">¶</a></h1>
+  <section id="students">
+<span id="usage-student"></span><h1>Students<a class="headerlink" href="#students" title="Permalink to this headline">¶</a></h1>
 <p>Depending on the courses, students can use one of two JupyterHub servers to work on
 assignments. These servers can also be used for a light computing or programming. However, if you
 need more resources (CPU, RAM and GPU) for your projects, you can have a look at
 <a class="reference external" href="https://wr0.wr.inf.h-brs.de">Bonn-Rhein-Sieg university scientific computing</a>.</p>
-<p>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">Publicly accessible server (https://notebooks.inf.h-brs.de)</a>
+<p>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">WuS server (https://notebooks.inf.h-brs.de)</a>
 used for the following courses:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)</p></li>
+<li><p>Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WS20)</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li><p><a class="reference external" href="10.20.168.244:30300">Local server (10.20.168.244:30300)</a> used for the following courses:</p></li>
+<li><p><a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/uebung">University server</a> used for the following courses:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p>Mathematics for Robotics and Control (MRC WS20)</p></li>
+<li><p>Mathematics for Robotics and Control (WS20, SS21)</p></li>
 <li><p>Robot Perception (RP SS20)</p></li>
-<li><p>Robot Manipulation (RM SS20)</p></li>
-<li><p>Natural Language Processing (NLP SS20)</p></li>
+<li><p>Robot Manipulation (SS20, SS21)</p></li>
+<li><p>Natural Language Processing (SS20, SS21)</p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
@@ -237,19 +231,13 @@ resource for students to work on their assignments. The assignments and feedback
 released on <a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA</a>. LEA forum is also available
 should you have any problem with the assignments or the server.</p>
 </div>
-<div class="section" id="login-to-e2x-jupyterhub">
+<section id="login-to-e2x-jupyterhub">
 <h2>Login to E2x JupyterHub<a class="headerlink" href="#login-to-e2x-jupyterhub" title="Permalink to this headline">¶</a></h2>
 <p>One server has a public IP which can be accessed from everywhere and the other server is only
 accessible from inside the university network, VPN or via ssh tunneling to the FB02 homepage
 <cite>home.inf.h-brs.de</cite></p>
-<div class="section" id="id2">
+<section id="id2">
 <h3>1. <a class="reference external" href="https://notebooks.inf.h-brs.de">https://notebooks.inf.h-brs.de</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>Courses:</dt><dd><ul class="simple">
-<li><p>Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WuS WS20)</p></li>
-</ul>
-</dd>
-</dl>
 <p>First, you need to sign up to the server if you have not done so, then the instructor will authorize you.
 Keep in mind that you need to be registered in the corresponding <a class="reference external" href="https://lea.hochschule-bonn-rhein-sieg.de">LEA course</a>,
 otherwise you will not be able to log in.</p>
@@ -258,9 +246,9 @@ otherwise you will not be able to log in.</p>
 <p>Click on Signup and fill in your username (FB02 UID, for examlple <cite>mwasil2s</cite>) and your password.
 The server only accepts <strong>FB02 UID</strong> as username. Also, do not use the same password as your
 username.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/e2x-native-login.jpg" src="../_images/e2x-native-login.jpg" />
-</div>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are already registered on the LEA course, you can sign in automatically. Otherwise, you will
@@ -270,17 +258,17 @@ need to wait until the instructor authorizes you.</p>
 <li><p><strong>Change password</strong></p>
 <p>If you are not happy with your password, you can change it via JupyterHub home. Open <strong>control panel</strong>
 on the top right,</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/e2x-hub-control-panel.png" src="../_images/e2x-hub-control-panel.png" />
-</div>
+</figure>
 <p>Then on the top left, you will find a button <strong>Change password</strong> which brings you to <cite>change-password</cite> form</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/e2x-hub-home-native.png" src="../_images/e2x-hub-home-native.png" />
-</div>
+</figure>
 <p><strong>Change password form</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/e2x-hub-native-change-pw.png" src="../_images/e2x-hub-native-change-pw.png" />
-</div>
+</figure>
 </li>
 </ul>
 <div class="admonition warning">
@@ -288,57 +276,36 @@ on the top right,</p>
 <p>Do not use the same password as your username.
 If you forget your password, please contact your instructors or e2x admin.</p>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. <a class="reference external" href="10.20.168.244:30300">Local server (10.20.168.244:30300)</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>Courses:</dt><dd><ul class="simple">
-<li><p>Mathematics for Robotics and Control (MRC WS20)</p></li>
-<li><p>Robot Perception (RP SS20)</p></li>
-<li><p>Robot Manipulation (RM SS20)</p></li>
-<li><p>Natural Language Processing (NLP SS20)</p></li>
-</ul>
-</dd>
-</dl>
+</section>
+<section id="id4">
+<h3>2. <a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/uebung">University server</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><strong>Access</strong></p>
-<p>There are two ways to connect to the local-hosted JupyterHub:</p>
-<ul>
-<li><p><strong>VPN</strong></p>
-<p>You need to setup VPN in order to get access to the hub. To use FB02 VPN, you need to follow a complete
-instruction from <a class="reference external" href="https://ux-2s18.inf.h-brs.de/faq/vpn">https://ux-2s18.inf.h-brs.de/faq/vpn</a>.
-Once you get connected to the VPN, you can open the browser and go to <a class="reference external" href="10.20.168.244:30300">10.20.168.244:30300</a>.</p>
-</li>
-<li><p><strong>SSH port forwarding</strong></p>
-<p>The server can also be accessed using ssh port forwarding through the FB02 homepage <cite>home.inf.h-brs.de</cite>.
-This will tunnel the server hub port to your local machine.
-If you use Linux or Mac OS, you can just open terminal and type the following</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -L <span class="m">30300</span>:10.20.168.244:30300 username2s@home.inf.h-brs.de
-</pre></div>
-</div>
-<p>replace <cite>username2s</cite> with your FB02 UID.</p>
-<p>Then you can open browser, and go to <a class="reference external" href="localhost:30300">localhost:30300</a></p>
-</li>
-</ul>
+<p>Starting from SS21, students can access the <a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/uebung">university server</a>
+without using vpn or ssh-ing to the FB02 network.</p>
 </li>
 <li><p><strong>Login</strong></p>
 <p>The local server uses FB02 LDAP to authenticate the users. Thus, you do not need to signup to get
-access to the servers. However, the instructor is required to add your FB02 UID to the allowed list,
-and student course list.</p>
-<div class="figure align-center">
+access to the server. The username and password are the same as your <a class="reference external" href="https://horde.inf.h-brs.de">horde account</a>.</p>
+<figure class="align-center">
 <img alt="../_images/e2x-jupyterhub-login.png" src="../_images/e2x-jupyterhub-login.png" />
-</div>
-<p>You may be prompted with different server options during spawning. In some cases, we provide different environments
-with datasets, particular libraries, etc. However, the default will be loaded with general libraries
-required for all courses.</p>
-<div class="figure align-center">
-<img alt="../_images/e2x-spawner-default.png" src="../_images/e2x-spawner-default.png" />
+</figure>
+<p>If you are registered in multipe courses, you will be prompted with different server options during spawning.
+In some cases, we provide different environments with datasets, particular libraries, etc.
+Unless requested, each course uses the same environment as defined in <a class="reference internal" href="#server-environment"><span class="std std-ref">Environment</span></a>.</p>
+<figure class="align-center">
+<img alt="../_images/e2x-server-options.png" src="../_images/e2x-server-options.png" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><cite>Default</cite> server does not have any course and the data is not persistent, meaning
+it will be destroyed once the server is shut down.</p>
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="assignments">
+</section>
+</section>
+<section id="assignments">
 <h2>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
 <p>We use <cite>nbgrader</cite> to manage the assignments. The due date should be the same as on LEA. So you have
 to submit the assignments before the due date.</p>
@@ -346,14 +313,14 @@ to submit the assignments before the due date.</p>
 <li><p><strong>Fetch Assignments</strong></p>
 <ul>
 <li><p>Navigate to the <strong>assignments</strong> tab and click <strong>fetch</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/assignment-fetch.png" src="../_images/assignment-fetch.png" />
-</div>
+</figure>
 </li>
 <li><p>Open the fetched assignments</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/assignment-open.png" src="../_images/assignment-open.png" />
-</div>
+</figure>
 <p>You can also go to <strong>Files</strong> tab, and refresh the page to see all fetched assignments.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -365,9 +332,9 @@ to submit the assignments before the due date.</p>
 <li><p><strong>Submit Assignments</strong></p>
 <p>To submit the assignments, go to <strong>Assignments</strong> tab again, and click <strong>Submit</strong>. You can submit your
 assignments multiple time as long as you do it before the due date.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/assignment-submit.png" src="../_images/assignment-submit.png" />
-</div>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have problems submiting the assignments via the servers, you can of course submit them via
@@ -376,23 +343,27 @@ assignments multiple time as long as you do it before the due date.</p>
 </li>
 <li><p><strong>Fetch Feedback</strong></p>
 <p>Under <strong>Assignments</strong> tab, you will be notified if the feedback has been released by the instructors.</p>
-<div class="figure align-center" id="id7">
+<figure class="align-center" id="id7">
 <img alt="../_images/feedback-available.png" src="../_images/feedback-available.png" />
-<p class="caption"><span class="caption-text">You will see <strong>feedback available to fetch</strong> if it has been released. You can then fetch it.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">You will see <strong>feedback available to fetch</strong> if it has been released. You can then fetch it.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Once you fetch it, you can now open it.</p>
-<div class="figure align-center" id="id8">
+<figure class="align-center" id="id8">
 <img alt="../_images/feedback-fetched.png" src="../_images/feedback-fetched.png" />
-<p class="caption"><span class="caption-text">Click <strong>view feedback</strong> to open the assignment feedback.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Click <strong>view feedback</strong> to open the assignment feedback.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also find your feedback under the assignment directory e.g. <em>WuS-01/feedback</em></p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="resources-and-quota">
+</section>
+<section id="resources-and-quota">
 <h2>Resources and Quota<a class="headerlink" href="#resources-and-quota" title="Permalink to this headline">¶</a></h2>
 <p>The student server is limited to 2 cores of CPUs and 1GB of RAM, and 1GB of storage.
 Anything under <cite>/home/jovyan</cite> is persistent and the rest will be regenerated when you restart the
@@ -419,16 +390,16 @@ and help us reducing the resource usage.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The persistent data will be deleted after <cite>Einsicht</cite> which is regularly scheduled in the next
-semester after you do the exam.</p>
+semester after the exam.</p>
 <p>We suggest you to always backup you data in your local machine.</p>
 <p>Zip and dowload files from the server</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/zip-and-download-hw.png" src="../_images/zip-and-download-hw.png" />
+</figure>
 </div>
-</div>
-</div>
-<div class="section" id="working-on-the-assignments-locally">
-<h2>Working on the assignments locally<a class="headerlink" href="#working-on-the-assignments-locally" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="working-on-the-assignments-locally">
+<span id="working-on-assignments-locally"></span><h2>Working on the assignments locally<a class="headerlink" href="#working-on-the-assignments-locally" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to setup your local environment is via docker. With docker, you can just pull
 our docker image and mount the assignments you have downloaded from the server to your container.</p>
 <ul>
@@ -437,16 +408,16 @@ our docker image and mount the assignments you have downloaded from the server t
 <li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install docker engine for Linux</a></p></li>
 <li><p><a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Install docker engine for Mac OS</a></p></li>
 <li><p>Open terminal and run our image (this will automatically pull and run the docker image)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v /home/myhome/assignments:/home/jovyan/assignments --rm -p <span class="m">8888</span>:8888 digiklausur/notebook-dev:latest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --name notebook -v <span class="nv">$HOME</span>/assignments:/home/jovyan/assignments --rm -p <span class="m">8888</span>:8888 digiklausur/notebook-dev:latest
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Replace the following:</dt><dd><ul class="simple">
-<li><p><cite>/home/myhome/assignments</cite> –&gt; replace this with the path to your assignment in your local machine</p></li>
+<li><p><cite>$HOME/assignments</cite> –&gt; replace this with the path to your assignment in your local machine</p></li>
 </ul>
 </dd>
 <dt>You can also replace the image,</dt><dd><ul class="simple">
-<li><p>digiklausur/notebook-dev:latest –&gt; digiklausur/notebook-dev-wus:8bf9827</p></li>
+<li><p>digiklausur/notebook-dev:latest –&gt; digiklausur/notebook:latest</p></li>
 </ul>
 </dd>
 </dl>
@@ -479,25 +450,31 @@ our docker image and mount the assignments you have downloaded from the server t
 </li>
 <li><p>Once it is done pulling from docker hub, you will get the link and the token, copy that link and open
 it in your browser</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/e2x-docker-windows-run-token.png" src="../_images/e2x-docker-windows-run-token.png" />
-</div>
+</figure>
 </li>
 <li><p>Open Jupyter Notebook server</p>
-<div class="figure align-center" id="id9">
+<figure class="align-center" id="id9">
 <img alt="../_images/e2x-docker-windows-nb-tree.png" src="../_images/e2x-docker-windows-nb-tree.png" />
-<p class="caption"><span class="caption-text">Notebook tree which shows all files and directories under <em>C:\Users\MohammadWasil\Downloads\WuS-WS20</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Notebook tree which shows all files and directories under <em>C:\Users\MohammadWasil\Downloads\WuS-WS20</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Open the assignment</p>
-<div class="figure align-center" id="id10">
+<figure class="align-center" id="id10">
 <img alt="../_images/e2x-docker-windows-nb-tree-assignment.png" src="../_images/e2x-docker-windows-nb-tree-assignment.png" />
-<p class="caption"><span class="caption-text">Assignment 01 directory <cite>(WuS-HW01)</cite> for WuS.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-center" id="id11">
+<figcaption>
+<p><span class="caption-text">Assignment 01 directory <cite>(WuS-HW01)</cite> for WuS.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
 <img alt="../_images/e2x-docker-windows-nb-hw.png" src="../_images/e2x-docker-windows-nb-hw.png" />
-<p class="caption"><span class="caption-text">SuperTest.ipynb is the notebook file that you have to work on.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">SuperTest.ipynb is the notebook file that you have to work on.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </li>
 </ul>
 </li>
@@ -509,9 +486,9 @@ assignment directory. Only files under <cite>assignment directory</cite> are upl
 Also, make sure all the files required to run your assignment are also uploaded and the paths to the files
 are properly given in the notebook file.</p>
 </div>
-</div>
-<div class="section" id="the-dont-s">
-<h2>The DONT’S<a class="headerlink" href="#the-dont-s" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-don-ts">
+<h2>The Don’ts<a class="headerlink" href="#the-don-ts" title="Permalink to this headline">¶</a></h2>
 <font color="red"><b>You are not allowed to:</b></font><ul class="simple">
 <li><p>Change the cell metadata</p></li>
 <li><p>Change directory structure of the assignment</p></li>
@@ -523,23 +500,15 @@ are properly given in the notebook file.</p>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Your submission may fail to run on the grading server, or cannot be graded if you do the DONT’S.</p>
+<p>Your submission may fail to run on the grading server, or cannot be graded
+if you do the don’ts.</p>
 </div>
-</div>
-<div class="section" id="environment">
-<h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
-<p>All environments we use in the servers can be found on our github repository
-<a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/dev">https://github.com/DigiKlausur/docker-stacks</a>.</p>
-<p>The docker image we use for each course:</p>
-<ul class="simple">
-<li><p>WuS: <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/b78dff39467ae3013eceaf5f6a7ee2646be456bf">digiklausur/notebook:b78dff3</a></p></li>
-<li><p>MRC: <a class="reference external" href="https://github.com/DigiKlausur/docker-stacks/tree/0b277052175e1d89a57d838cec73bac67dac66a5/notebook-dev">digiklausur/notebook-dev:0b27705</a></p></li>
-</ul>
-<p>If you want some libraries to be available on the servers, feel free to contribute to our github repositories.</p>
-<p>All the software we use and develop are open on our github <a class="reference external" href="https://github.com/DigiKlausur/">https://github.com/DigiKlausur/</a>,
-feel free to comment or raise issues on our github repositories if you want to help us with other things.</p>
-</div>
-<div class="section" id="faqs">
+</section>
+<section id="environment">
+<span id="server-environment"></span><h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
+<p>All environments we use on the servers can be found <a class="reference internal" href="../jupyterhub/environment.html#environment"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="faqs">
 <h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>[notebooks.inf.h-brs.de] I cannot login after signup</strong>. You may not be registered on the LEA course,
@@ -547,8 +516,8 @@ contact your instructors to authorize you.</p></li>
 <li><p><strong>[notebooks.inf.h-brs.de] my username is already used</strong>. Please contact your instructors, e2x admins
 or post this on LEA forum so that they can check and come back to you as soon as possible.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -571,7 +540,7 @@ or post this on LEA forum so that they can check and come back to you as soon as
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

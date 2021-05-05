@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Dynamic Configuration &mdash; E2X H-BRS</title>
@@ -94,39 +95,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -179,8 +175,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/jupyterhub/dynamic-config.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -192,7 +186,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dynamic-configuration">
+  <section id="dynamic-configuration">
 <span id="dynamic-config"></span><h1>Dynamic Configuration<a class="headerlink" href="#dynamic-configuration" title="Permalink to this headline">¶</a></h1>
 <p>Zero-to-JupyterHub allows extra JupyterHub config to be added to the default config. We can change or
 override the default config through the extra configuration.</p>
@@ -270,35 +264,35 @@ under <cite>hub</cite>:</p>
 <p>A complete version of this extra config can be found on <a class="reference external" href="https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub">our github</a></p>
 <p>The <cite>config.yaml</cite> which is loaded in this extra config is yaml file which is shared by the NFS server,
 and mounted to the hub container under <cite>/srv/jupyterhub/config</cite>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">server</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">e2x_hub_exam_staging_01</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">exam</span>
-    <span class="l l-Scalar l-Scalar-Plain">semester_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ss20</span>
-    <span class="l l-Scalar l-Scalar-Plain">course_list</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">server</span><span class="p">:</span>
+  <span class="nt">e2x_hub_exam_staging_01</span><span class="p">:</span>
+    <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">exam</span>
+    <span class="nt">semester_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ss20</span>
+    <span class="nt">course_list</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MRC-Exam</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">digiklausur/restricted-notebook</span>
-      <span class="l l-Scalar l-Scalar-Plain">tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-      <span class="l l-Scalar l-Scalar-Plain">pullPolicy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
-    <span class="l l-Scalar l-Scalar-Plain">resources</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">cpu_guarantee</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
-      <span class="l l-Scalar l-Scalar-Plain">cpu_limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
-      <span class="l l-Scalar l-Scalar-Plain">mem_guarantee</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.15G</span>
-      <span class="l l-Scalar l-Scalar-Plain">mem_limit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75G</span>
-    <span class="l l-Scalar l-Scalar-Plain">nbgrader</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">personalized_inbound</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-      <span class="l l-Scalar l-Scalar-Plain">personalized_outbound</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
-      <span class="l l-Scalar l-Scalar-Plain">assignment_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Klausur</span>
-    <span class="l l-Scalar l-Scalar-Plain">extra_mounts</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-      <span class="l l-Scalar l-Scalar-Plain">volumes</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">volume_mounts</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">1</span><span class="p p-Indicator">:</span>
-          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nfs-disk2-volume</span>
-          <span class="l l-Scalar l-Scalar-Plain">mountPath</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/shared_files/e2x_instruction</span>
-          <span class="l l-Scalar l-Scalar-Plain">subPath</span><span class="p p-Indicator">:</span> <span class="s">&#39;shared_files/e2x_instruction&#39;</span>
+    <span class="nt">image</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digiklausur/restricted-notebook</span>
+      <span class="nt">tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+      <span class="nt">pullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+    <span class="nt">resources</span><span class="p">:</span>
+      <span class="nt">cpu_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+      <span class="nt">cpu_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+      <span class="nt">mem_guarantee</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.15G</span>
+      <span class="nt">mem_limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75G</span>
+    <span class="nt">nbgrader</span><span class="p">:</span>
+      <span class="nt">personalized_inbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="nt">personalized_outbound</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+      <span class="nt">assignment_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Klausur</span>
+    <span class="nt">extra_mounts</span><span class="p">:</span>
+      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+      <span class="nt">volumes</span><span class="p">:</span>
+      <span class="nt">volume_mounts</span><span class="p">:</span>
+        <span class="nt">1</span><span class="p">:</span>
+          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nfs-disk2-volume</span>
+          <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/shared_files/e2x_instruction</span>
+          <span class="nt">subPath</span><span class="p">:</span> <span class="s">&#39;shared_files/e2x_instruction&#39;</span>
     <span class="c1">#Commands to be executed after spawning</span>
-    <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
+    <span class="nt">commands</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rm -rf $HOME/.jupyter/nbconfig*</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FORCE_COPY=false</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">INSTRUCTION_EN=/srv/shared_files/e2x_instruction/e2x_instruction_en</span>
@@ -317,7 +311,7 @@ added. This extra command is useful when you want the server to remove or add fi
 container.</p>
 <p>This config is very much integrated to our system, so if you want to use it on your system, you
 should probably make some changes.</p>
-</div>
+</section>
 
 
            </div>
@@ -340,7 +334,7 @@ should probably make some changes.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

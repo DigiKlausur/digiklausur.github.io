@@ -80,14 +80,16 @@ accomodate more users into a single server. The following figure shows the numbe
 using Jupyter Notebook.
 
 .. figure:: images/e2x-exam-users.png
+   :align: center
 
-  The number of students taking electronic examinations.
+   The number of students taking electronic examinations.
 
 We switched to a more scalable system and deployed JupyterHub on Kubernetes where we can always 
 spin up more nodes if needed. Thanks to `Zero to JupyterHub <https://zero-to-jupyterhub.readthedocs.io/>`_ 
 which provides a step-by-step instruction on how to deploy Jupyter Hub on Kubernetes. 
 Nevertheless, we heavily modify the configuration to meet our requirements especially. 
 The Kubernetes cluster is deployed locally on FB02 OpenStack Hochschule Bonn-Rhein-Sieg.
+For more details on our JupyterHub deployment, please see :ref:`this page <e2x-jupyterhub>`.
 
 Not only do we provide the JupyterHub server for examinations, but also we provide similar servers for 
 the students to work on their assignments. We also do not want the students using different libraries, 
@@ -101,4 +103,7 @@ parties.
 The following figure shows the number of courses and corresponding students served e2x servers:
 
 .. figure:: images/e2x-assignment-users.png
+   :align: center
+   
+   The number of students that used the server from 2018 to 2020.
 

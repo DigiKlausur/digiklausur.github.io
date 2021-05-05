@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Nbassignment &mdash; E2X H-BRS</title>
@@ -94,25 +95,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Nbassignment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#templates">Templates</a></li>
@@ -122,16 +123,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -184,8 +180,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/nbassignment/nbassignment.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -197,14 +191,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nbassignment">
+  <section id="nbassignment">
 <span id="nbassignment-intro"></span><h1>Nbassignment<a class="headerlink" href="#nbassignment" title="Permalink to this headline">¶</a></h1>
 <p>Nbassignment is a package that helps in creating exercise notebooks
 from tasks and templates.
 The general process is to first define a template for notebooks,
 then create tasks which are organized in task pools and create
 notebooks from this.</p>
-<div class="section" id="templates">
+<section id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
 <p>A template predefines the structure of a notebook. It consists of
 header cells, footer cells and student info cells.</p>
@@ -219,8 +213,8 @@ and a student info cell.
 The header cell has the three variables <em>exercise_name</em>, <em>semester</em>
 and <em>variable</em>.</p>
 <img alt="../_images/template.png" src="../_images/template.png" />
-</div>
-<div class="section" id="tasks-and-task-pools">
+</section>
+<section id="tasks-and-task-pools">
 <h2>Tasks and Task Pools<a class="headerlink" href="#tasks-and-task-pools" title="Permalink to this headline">¶</a></h2>
 <p>Task pools are collections of tasks about the same topic.
 A task is a collection of questions that are dependent on each other.</p>
@@ -235,8 +229,8 @@ can add questions such as <em>Multiple Choice</em>, <em>Freetext</em> or
 the <em>Add Files</em> menu. Images are supposed to go into the subfolder
 <em>img</em>, while other files go into the subfolder <em>data</em>. Filename
 collisions with other tasks will be resolved when creating an exercise.</p>
-</div>
-<div class="section" id="creating-exercises">
+</section>
+<section id="creating-exercises">
 <h2>Creating Exercises<a class="headerlink" href="#creating-exercises" title="Permalink to this headline">¶</a></h2>
 <p>Once we have a template and some tasks, we can create an exercise.
 For this we need to have created an assignment via nbgrader already.</p>
@@ -259,8 +253,8 @@ created.</p>
 will only appear once. If two tasks use a different file with
 the same name, the second file will be renamed and all references
 in the notebook will be updated.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -283,7 +277,7 @@ in the notebook will be updated.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>

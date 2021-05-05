@@ -58,10 +58,3 @@ at the departement of Computer Science (FB02), Hochschule Bonn-Rhein-Sieg.
    exam_kernel/exam_kernel
    exam_kernel/installation
    exam_kernel/configuration
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Infrastructure
-
-   infra/openstack
-   infra/tutorials

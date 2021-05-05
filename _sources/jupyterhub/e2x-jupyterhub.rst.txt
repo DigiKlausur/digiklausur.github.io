@@ -1,87 +1,97 @@
 .. _e2x-jupyterhub:
 
 *****************
-E2X JupyterHub
+E2x JupyterHub
 *****************
 
-JupyterHub serves Jupyter Notebook to multiple users and frees them from the hassle of installing
-environment and managing resources. We use JupyterHub in most of 
-`Master Autonomous Systems <https://www.h-brs.de/en/inf/study/master/autonomous-systems>`_
-courses both for teaching and examination.
+JupyterHub is a multi user hub that spawns, manages, and proxies multiple 
+Jupyter Notebook servers. We use JupyterHub for some 
+`Master Autonomous Systems <https://www.h-brs.de/en/inf/study/master/autonomous-systems>`_, 
+`Master Informatik <https://www.h-brs.de/de/inf/studienangebot/master/informatik>`_,
+and `Bachelor Informatik <https://www.h-brs.de/de/inf/studienangebot/bachelor/informatik>`_ 
+courses for both teaching and examination.
 
-We separate instructor (grading) and student JupyterHub servers. 
+We deploy JupyterHub on Kubernetes cluster using using 
+`Zero-to-JupyterHub <https://zero-to-jupyterhub.readthedocs.io>`_ which provides 
+a nice, step-by-step tutorial on how to install JupyterHub on Kubernetes on 
+different cloud providers. Our Kubernetes (k8s) cluster is provisioned on FB02 OpenStack 
+using `Kubespray <https://github.com/kubernetes-sigs/kubespray>`_.
 
-.. image:: ../images/e2x-infra.png
+There are three servers running on e2x Kubernetes cluster:
+
+1. `Assignment server <https://e2x.inf.h-brs.de/jupyteSrhub/uebung>`_
+
+  The assignment server is used by graders and students for teaching purposes.
+  The usage guidelines can be found in :ref:`student's guidelines <usage_student>` and 
+  :ref:`grader's guidelines  <usage_instructor>` for students and graders 
+  respectively.
+
+2. `Exam server <https://e2x.inf.h-brs.de/jupyterhub/klausur>`_ 
+  
+  The exam server is used by students during exams. The server is only accessible 
+  from pool rooms, laptop pool and staff vpn. One time password is used as 
+  the JupyterHub authentication. The `environment for exam <https://github.com/DigiKlausur/docker-stacks/tree/master/exam-notebook>`_ 
+  is restricted using `e2x view extension <https://github.com/DigiKlausur/e2xgrader>`_.
+  Internal and external network communications are also blocked using Kubernetes
+  `Network Policy <https://kubernetes.io/docs/concepts/services-networking/network-policies/>`_.
+  For the sake of the originality of student's work, the submissions are always hashed 
+  to make sure that they have not been tempered with.
+
+  .. note::
+
+    During Covid-19 pandemic, the exam server is open to public during examination period,
+    since the exams are conducted at home.
+
+3. `Exam grading server <https://e2x.inf.h-brs.de/jupyterhub/klausur>`_
+
+  The grading server is used by graders for grading exam submissions.
+  The server uses LDAP authentication. The guidelines for the graders 
+  can be found :ref:`here <usage_instructor>`.
+
+The whole system architecture is illustrated in the following figure:
+
+.. image:: ../images/e2x-infra-k8s-openstack.png
     :align: center
 
-Grading Server
-================
 
-The grading server runs on a single server and also has nbgrader installed which supports multiple graders 
-and courses. This server is shared among instructors, graders and professors so that they can create, release, 
-collect and grade the assignments through this server. They can only have access to specific courses 
-thet they teach.
+* **Kubernetes cluster**: e2x k8s cluster is an hihgly available (HA) cluster 
+  running 3 etcd nodes and 2 master nodes. This would ensure the cluster  
+  running if one etcd node is down.
 
-.. image:: ../images/grading-server.png
-    :align: center
+* **Nodes**: 1) Master nodes are dedicated nodes for apiserver, controller manager, 
+  scheduler and etcd; 2) Worker nodes are used for JupyterHub server, assignment 
+  user, and exam user container.
 
-The courses are shared via JupyterHub services which give professors, instructors and graders access to the courses they teach.
-Professors and instructors have access to the formgrader to create, release, collect and grade the assignments.
-However, the graders can only grade the assignments.
+* **JupyterHub servers**: the hub servers are deployed using Z2JH and are separated 
+  by a namespace on the cluster. Each server runs in its own container. We heavily 
+  customized `jupyterhub_config` in order to meet the requirements we need.
+  Z2JH provides an extra config that we use to modify spawner. Our extra config 
+  can be found `here <https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub>`_.
 
-.. image:: ../images/grading-server-courses.png
-    :align: center
+* **Spawner**: utilizes `kubespawner <https://github.com/jupyterhub/kubespawner>`_, 
+  which enables JupyterHub to spawn a single user notebook on the worker nodes. 
+  Kubespawner spawns multiple single user notebook server with JupyterHub without 
+  requiring an extra layer such as ansible. Resource allocation, persistent 
+  volume mount (with NFS), security policy setting can also be done easily with kubespawner.
+  We also modify the spawner in such a way that it can mount the corresponding 
+  user home directory, exchange and other personalized shared directories. 
+  The user information is stored in DB, which is nothing but a csv file containing 
+  the user information such as courses. With this information, we also generate 
+  a personalized profile list for each student, a profile which contains the 
+  courses he/she is registered to, resource allocation, image and personalized 
+  volume mount.
 
-The assignments are released to a NFS shared directory, which resides on the grading server as well.
+* **User's notebook server**: runs in its own container. Kubernetes provides an isolation 
+  of the user container among other user containers in the same namespace or 
+  different namespace. The specification of the container is generated by the spawner.
 
-Teaching and Exam Servers
-==========================
+* **NFS server**: runs on a separate instance on OpenStack. It is used to host 
+  and share `db and home, exchange and shared directories`.
 
-The students servers run on Kubernetes cluster provisioned using `Zero-to-JupyterHub <https://zero-to-jupyterhub.readthedocs.io>`_ 
-which provides a great step-by-step tutorial on how to install JupyterHub on Kubernetes on different cloud providers.
-
-The Hub for teaching and examination also comes with nbgrader installed. FB02 LDAP is used as the 
-authentication. We mount the courses using `nfs` client provisioner. 
-
-.. image:: ../images/student-servers.png
-    :align: center
-
-Both servers are designed in such a way that only registered students can have 
-access to the courses they are registered for. Thus, students who have access to the JupyterHub are 
-not necessarily able to see the courses if they are not registered.
-
-To achieve this, we add a bunch of `config <https://github.com/DigiKlausur/e2x-jupyterhub/tree/master/kubernetes/jupyterhub>`_ 
-to the JupyterHub prespawn hook. Once the user log in, the hook will check the courses the user is registered for, 
-if none is found no courses will be mounted. Otherwise, the user can fetch and submit all the released assigments 
-of all courses he or she is registered for. 
-
-Teaching Server
-----------------
-
-* Accessible via ssh port forwarding to `home.inf.h-brs.de` or via FB02 vpn.
-* The environment can be changed by the users
-* Internal and external network communications are allowed
-* Support multiple courses
-
-
-Exam Server
-------------
-
-* Only accessible from pool rooms, laptop pools and staff vpn
-* The environment cannot be changed
-* Internal and external network communications are blocked
-* `Exam view extension <https://github.com/DigiKlausur/Jupyter-Extensions/tree/master/nbextensions/exam_extensions>`_ is enabled by default and cleans up unnecessary buttons which come by default in Jupyter Notebook
-* The submission is always hashed
-* Using `E2x exam kernel <https://github.com/DigiKlausur/exam_kernel>`_
-
-The data under `/home/{username}` is persistent and is saved in the local university storage. Currently, 
-this data is removed after Einsicht or evaluation on the exam which normally happens the next semester 
-after the exam is scheduled. We strongly recommend the users to always backup your data locally.
-
-Both exam and teaching enviroments are opensource and available on `our github <https://github.com/DigiKlausur/docker-stacks>`_.
-
-.. note::
-
-    There may be multiple environments offered for each class. For example, Robot Perception environment 
-    has some computer-vision related libraries and Natural Language Processing (NLP) image may come 
-    with some NLP database.
+* **Load balancer**: Since the OpenStack does not have a load balancer service,
+  we runs on a separate instance on OpenStack. One way to access the k8s cluster is
+  to expose JupyterHub service via `NodePort <https://kubernetes.io/docs/concepts/services-networking/service/>`_.
+  With NodePort it will open the specified port on all k8s nodes. However, since 
+  the k8s nodes are only accessible within the cluster nodes and staff vpn, 
+  a load balancer has to be deployed and users can get access to the cluster via 
+  the load balancer.

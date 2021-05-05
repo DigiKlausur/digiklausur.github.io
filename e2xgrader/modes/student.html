@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Student Assignment Mode &mdash; E2X H-BRS</title>
@@ -94,19 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
 </ul>
-<p class="caption"><span class="caption-text">JupyterHub</span></p>
+<p><span class="caption-text">JupyterHub</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2X JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p class="caption"><span class="caption-text">E2xgrader</span></p>
+<p><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a><ul class="current">
@@ -126,21 +127,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Nbassignment</span></p>
+<p><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">ExamKernel</span></p>
+<p><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/configuration.html">ExamKernel Configuration</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Infrastructure</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../infra/openstack.html">OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../infra/tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -195,8 +191,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/e2xgrader/modes/student.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -208,11 +202,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="student-assignment-mode">
+  <section id="student-assignment-mode">
 <span id="e2xgrader-student-mode"></span><h1>Student Assignment Mode<a class="headerlink" href="#student-assignment-mode" title="Permalink to this headline">¶</a></h1>
 <p>In student assignment mode the nbgrader assignment list extensions
 are enabled. Additionally two e2xgrader extension are activated.</p>
-<div class="section" id="assignment-view-toolbar">
+<section id="assignment-view-toolbar">
 <h2>Assignment View Toolbar<a class="headerlink" href="#assignment-view-toolbar" title="Permalink to this headline">¶</a></h2>
 <p>The <em>Assignment View</em> toolbar will be activated whenever a student
 opens a notebook with nbgrader cells in it.
@@ -222,8 +216,8 @@ avoid confusion about where a student should write their answer.</p>
 For markdown cells the bar allows you to switch between
 edit mode (unrendered cell) and preview mode (rendered cell).</p>
 <img alt="../../_images/assignment_view.png" src="../../_images/assignment_view.png" />
-</div>
-<div class="section" id="assignment-notebook">
+</section>
+<section id="assignment-notebook">
 <h2>Assignment Notebook<a class="headerlink" href="#assignment-notebook" title="Permalink to this headline">¶</a></h2>
 <p>The <em>Assignment Notebook</em> extension does the following:</p>
 <ul class="simple">
@@ -240,16 +234,16 @@ can not be changed.</p>
 <p>When a student tries to move a cells which contain a nbgrader cell,
 the student will see a similar message.</p>
 <img alt="../../_images/move_cells.png" src="../../_images/move_cells.png" />
-</div>
-<div class="section" id="activate-student-assignment-mode">
+</section>
+<section id="activate-student-assignment-mode">
 <h2>Activate Student Assignment Mode<a class="headerlink" href="#activate-student-assignment-mode" title="Permalink to this headline">¶</a></h2>
 <p>To activate student assignment mode execute the following
 in a terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate student --sys-prefix
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -272,7 +266,7 @@ in a terminal:</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, E2X H-BRS
+        &copy; Copyright 2021, E2X H-BRS
 
     </p>
   </div>
