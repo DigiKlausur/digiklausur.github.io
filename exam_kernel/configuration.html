@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>ExamKernel Configuration &mdash; E2X H-BRS</title>
   
@@ -14,10 +13,15 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -52,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+            <a href="../index.html" class="icon icon-home"> E2X H-BRS
           
 
           
@@ -94,30 +98,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/instructor.html">Instructors</a></li>
 </ul>
-<p><span class="caption-text">JupyterHub</span></p>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p><span class="caption-text">E2xgrader</span></p>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/e2xgrader.html">E2xgrader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e2xgrader/configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p><span class="caption-text">Nbassignment</span></p>
+<p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p><span class="caption-text">ExamKernel</span></p>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">ExamKernel Installation</a></li>
@@ -170,6 +174,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -181,7 +187,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -193,14 +199,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="examkernel-configuration">
+  <div class="section" id="examkernel-configuration">
 <span id="exam-kernel-configuration"></span><h1>ExamKernel Configuration<a class="headerlink" href="#examkernel-configuration" title="Permalink to this headline">¶</a></h1>
 <p>The ExamKernel can be configured using the
 <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config">IPython Configuration System</a>.
 This file is usually located under <code class="docutils literal notranslate"><span class="pre">~/.ipython/profile_default</span></code>.
 If it does not exist you can create it.</p>
 <p>There are three configuration options for the ExamKernel.</p>
-<section id="initialization-code">
+<div class="section" id="initialization-code">
 <h2>1. Initialization Code<a class="headerlink" href="#initialization-code" title="Permalink to this headline">¶</a></h2>
 <p>This is the code that will be executed every time the kernel is initialized
 and can be set via the configuration option <code class="docutils literal notranslate"><span class="pre">init_code</span></code>.</p>
@@ -213,8 +219,8 @@ and can be set via the configuration option <code class="docutils literal notran
 </div>
 <p>In this example the library <code class="docutils literal notranslate"><span class="pre">random</span></code> is imported every time the kernel is initialized,
 making it available to the user right away. You can execute arbitrary code here.</p>
-</section>
-<section id="allowed-imports">
+</div>
+<div class="section" id="allowed-imports">
 <h2>2. Allowed Imports<a class="headerlink" href="#allowed-imports" title="Permalink to this headline">¶</a></h2>
 <p>If you want to allow the user to only use certain libraries, you can specify them using
 the allowed_imports configuration option. All other libraries will be blocked by default
@@ -238,8 +244,8 @@ see the following message:</p>
 <span class="n">Allowed</span> <span class="n">imports</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="blocked-imports">
+</div>
+<div class="section" id="blocked-imports">
 <h2>3. Blocked Imports<a class="headerlink" href="#blocked-imports" title="Permalink to this headline">¶</a></h2>
 <p>If you want to block the user from importing certain libraries,
 but let them use all others, you can use the blocked_imports configuration option.</p>
@@ -265,8 +271,8 @@ If the user tries to import a blocked library (e.g. math), he or she will see th
 <span class="n">The</span> <span class="n">following</span> <span class="n">imports</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">math</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">scipy</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="allowed-magics">
+</div>
+<div class="section" id="allowed-magics">
 <h2>4. Allowed Magics<a class="headerlink" href="#allowed-magics" title="Permalink to this headline">¶</a></h2>
 <p>If you want to allow the user to only use cell and line magics, you can specify them using
 the allowed_magics configuration option. All other magics will be blocked by default
@@ -289,8 +295,8 @@ If the user tries to use another magic, he or she will see the following message
 <span class="n">Allowed</span> <span class="n">magics</span> <span class="n">are</span><span class="p">:</span> <span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">timeit</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="blocked-magics">
+</div>
+<div class="section" id="blocked-magics">
 <h2>5. Blocked Magics<a class="headerlink" href="#blocked-magics" title="Permalink to this headline">¶</a></h2>
 <p>If you want to block the user from using certain magics,
 but let them use all others, you can use the blocked_magics configuration option.</p>
@@ -316,8 +322,8 @@ If the user tries to use a blocked import (e.g. history), he or she will see the
 <span class="n">The</span> <span class="n">following</span> <span class="n">magics</span> <span class="n">are</span> <span class="n">blocked</span><span class="p">:</span> <span class="p">[</span><span class="n">history</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="terminal-commands">
+</div>
+<div class="section" id="terminal-commands">
 <h2>6. Terminal Commands<a class="headerlink" href="#terminal-commands" title="Permalink to this headline">¶</a></h2>
 <p>By default all lines starting with <code class="docutils literal notranslate"><span class="pre">!</span></code> will be removed.
 If you want students to be able to use terminal commands,
@@ -329,43 +335,36 @@ you need to set the <code class="docutils literal notranslate"><span class="pre"
 <span class="n">c</span><span class="o">.</span><span class="n">ExamKernel</span><span class="o">.</span><span class="n">block_terminal_commands</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="installation.html" class="btn btn-neutral float-left" title="ExamKernel Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="installation.html" class="btn btn-neutral float-left" title="ExamKernel Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, E2X H-BRS
+        &#169; Copyright 2021, E2X H-BRS.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

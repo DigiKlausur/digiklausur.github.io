@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Hashing of student submissions &mdash; E2X H-BRS</title>
   
@@ -14,10 +13,15 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -53,7 +57,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+            <a href="../../index.html" class="icon icon-home"> E2X H-BRS
           
 
           
@@ -95,19 +99,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
 </ul>
-<p><span class="caption-text">JupyterHub</span></p>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p><span class="caption-text">E2xgrader</span></p>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a></li>
@@ -129,12 +133,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p><span class="caption-text">Nbassignment</span></p>
+<p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p><span class="caption-text">ExamKernel</span></p>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
@@ -179,6 +183,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -192,7 +198,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -204,9 +210,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="hashing-of-student-submissions">
+  <div class="section" id="hashing-of-student-submissions">
 <span id="e2xgrader-submit"></span><h1>Hashing of student submissions<a class="headerlink" href="#hashing-of-student-submissions" title="Permalink to this headline">¶</a></h1>
-<section id="motivation">
+<div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following scenario:</p>
 <p>A student submits an exam and after receiving the grade claims, that the exam
@@ -220,8 +226,8 @@ Because of that we hash the student submission and let students sign a sheet
 with this hashcode. This way the exam of the student can be hashed again and
 compared to the signed hashcode. If it is the same, the exam has not been
 tampered with.</p>
-</section>
-<section id="how-it-works">
+</div>
+<div class="section" id="how-it-works">
 <h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p>To enable hashing of student submissions, the assignment has to fulfill the
 following requirements:</p>
@@ -253,45 +259,37 @@ both the timestamp and the hashcode is generated and shown to the student</p></l
 <li><p>The student copies the hashcode to a sheet of paper, signs it and submits it
 after the exam</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="scramble.html" class="btn btn-neutral float-right" title="Permute notebook during fetching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="grade_export.html" class="btn btn-neutral float-left" title="Grade export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="scramble.html" class="btn btn-neutral float-right" title="Permute notebook during fetching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="grade_export.html" class="btn btn-neutral float-left" title="Grade export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, E2X H-BRS
+        &#169; Copyright 2021, E2X H-BRS.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

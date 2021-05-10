@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Student Assignment Mode &mdash; E2X H-BRS</title>
   
@@ -14,10 +13,15 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -53,7 +57,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> E2X H-BRS
+            <a href="../../index.html" class="icon icon-home"> E2X H-BRS
           
 
           
@@ -95,19 +99,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../incident-reports.html">Incident Reports</a></li>
 </ul>
-<p><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/student.html">Students</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/instructor.html">Instructors</a></li>
 </ul>
-<p><span class="caption-text">JupyterHub</span></p>
+<p class="caption"><span class="caption-text">JupyterHub</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/e2x-jupyterhub.html">E2x JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/dynamic-config.html">Dynamic Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyterhub/deployment.html">Deployment</a></li>
 </ul>
-<p><span class="caption-text">E2xgrader</span></p>
+<p class="caption"><span class="caption-text">E2xgrader</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../e2xgrader.html">E2xgrader</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../e2xgrader.html#e2xgrader-modes">E2xgrader Modes</a><ul class="current">
@@ -127,12 +131,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">E2xgrader Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">E2xgrader Configuration</a></li>
 </ul>
-<p><span class="caption-text">Nbassignment</span></p>
+<p class="caption"><span class="caption-text">Nbassignment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/nbassignment.html">Nbassignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../nbassignment/installation.html">Nbassignment Installation</a></li>
 </ul>
-<p><span class="caption-text">ExamKernel</span></p>
+<p class="caption"><span class="caption-text">ExamKernel</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/exam_kernel.html">Exam Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../exam_kernel/installation.html">ExamKernel Installation</a></li>
@@ -177,6 +181,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -190,7 +196,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -202,11 +208,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="student-assignment-mode">
+  <div class="section" id="student-assignment-mode">
 <span id="e2xgrader-student-mode"></span><h1>Student Assignment Mode<a class="headerlink" href="#student-assignment-mode" title="Permalink to this headline">¶</a></h1>
 <p>In student assignment mode the nbgrader assignment list extensions
 are enabled. Additionally two e2xgrader extension are activated.</p>
-<section id="assignment-view-toolbar">
+<div class="section" id="assignment-view-toolbar">
 <h2>Assignment View Toolbar<a class="headerlink" href="#assignment-view-toolbar" title="Permalink to this headline">¶</a></h2>
 <p>The <em>Assignment View</em> toolbar will be activated whenever a student
 opens a notebook with nbgrader cells in it.
@@ -216,8 +222,8 @@ avoid confusion about where a student should write their answer.</p>
 For markdown cells the bar allows you to switch between
 edit mode (unrendered cell) and preview mode (rendered cell).</p>
 <img alt="../../_images/assignment_view.png" src="../../_images/assignment_view.png" />
-</section>
-<section id="assignment-notebook">
+</div>
+<div class="section" id="assignment-notebook">
 <h2>Assignment Notebook<a class="headerlink" href="#assignment-notebook" title="Permalink to this headline">¶</a></h2>
 <p>The <em>Assignment Notebook</em> extension does the following:</p>
 <ul class="simple">
@@ -234,53 +240,45 @@ can not be changed.</p>
 <p>When a student tries to move a cells which contain a nbgrader cell,
 the student will see a similar message.</p>
 <img alt="../../_images/move_cells.png" src="../../_images/move_cells.png" />
-</section>
-<section id="activate-student-assignment-mode">
+</div>
+<div class="section" id="activate-student-assignment-mode">
 <h2>Activate Student Assignment Mode<a class="headerlink" href="#activate-student-assignment-mode" title="Permalink to this headline">¶</a></h2>
 <p>To activate student assignment mode execute the following
 in a terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m e2xgrader activate student --sys-prefix
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="exam.html" class="btn btn-neutral float-right" title="Student Exam Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="teacher.html" class="btn btn-neutral float-left" title="Teacher Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="exam.html" class="btn btn-neutral float-right" title="Student Exam Mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="teacher.html" class="btn btn-neutral float-left" title="Teacher Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, E2X H-BRS
+        &#169; Copyright 2021, E2X H-BRS.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
