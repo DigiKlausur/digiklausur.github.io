@@ -12,7 +12,8 @@ People
 
 * Student assistants
 
-  * Protyush Kumar Das.
+  * Protyush Kumar Das (since 2020)
+  * Devaiah Ulliyada Arun (since 2020)
 
 Contact Information
 ===================
