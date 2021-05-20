@@ -8,7 +8,7 @@ Research
 
   * Kumar, Ramesh - Evaluation of Semantic Textual Similarity Approaches for Automatic Short Answer Grading - RnD Project,  March 2018
   
-  * Ovchinnikova, Evgeniya - AI-assisted short answer grading: comprehensive classification and evaliation pf the exoisting state of the art techniques - RnD Project, June 2018
+  * Ovchinnikova, Evgeniya - AI-assisted short answer grading: comprehensive classification and evaluation of the existing state of the art techniques - RnD Project, June 2018
   
   * Zahiduzzaman, Md - Semantic Textual Similarity: A Comparative Evaluation of Deep Learning Based Models - RnD Project, November 2018
   
