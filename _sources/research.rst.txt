@@ -37,8 +37,6 @@ Research
   * Löffelsender, Jan Lukas - An active learning realization for computer assisted grading - Master Thesis, January 2021
   
   * Talha, Muhammad - Clustering Techniques in Computer-Assisted Short Answer Grading - RnD Project, January 2021
-
-  * Balabin, Helena - Exploratory Analysis of Natural Language Processing Approaches in Psychiatry and Clinical Psychology - Master Project, 01.02.2021
   
   * Gaddipatti, Sasi Kiran - Automatic Formative Assessment for Students' Short Text Answers through Feature Extraction - Master Thesis, 05.04.2021
   
