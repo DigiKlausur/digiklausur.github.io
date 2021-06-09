@@ -12,7 +12,7 @@ All environments we use in the servers can be found on our github repository
 
 The generic image that we use for all courses:
 
-* `ghcr.io/digiklausur/docker-stacks/notebook-dev:latest <https://github.com/DigiKlausur/docker-stacks/tree/fde8cda987543dc2e4f2957ba5591310ff1d6460>`_
+* `ghcr.io/digiklausur/docker-stacks/notebook:latest <https://github.com/DigiKlausur/docker-stacks/tree/1ba0bc25385b8b45883cab6dccfe27d7941ea9a9>`_
 
 The image can be run locally on your local PC running Linux, Mac OS or Windows, 
 please follow :ref:`this instruction for more details <working_on_assignments_locally>`.

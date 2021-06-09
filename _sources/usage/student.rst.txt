@@ -32,10 +32,6 @@ used for the following courses:
 Login to E2x JupyterHub
 =======================
 
-One server has a public IP which can be accessed from everywhere and the other server is only 
-accessible from inside the university network, VPN or via ssh tunneling to the FB02 homepage
-`home.inf.h-brs.de`
-
 1. `https://notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 ----------------------------------------------------------------------
 
