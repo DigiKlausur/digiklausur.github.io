@@ -96,14 +96,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../research.html">Research</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../talks.html">Talks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../people.html">People</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../incident-reports.html">Incident Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news.html">News</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="student.html">Students</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Instructors</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requesting-a-course">Requesting a course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#course-profile">Course profile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#user-management">User management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#course-management">Course management</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-course">Creating a course</a></li>
@@ -215,18 +216,35 @@
             
   <div class="section" id="instructors">
 <span id="usage-instructor"></span><h1>Instructors<a class="headerlink" href="#instructors" title="Permalink to this headline">¶</a></h1>
-<p>Currently, there are two grading servers:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/uebung">Assignment grading server</a></p></li>
+<p>Depending on the usage and courses, there are three JupyterHub servers
+running on both in-house infrastructure and Hetzner cloud.</p>
+<p><strong>1. Hetzner cloud</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://notebooks.inf.h-brs.de">notebooks.inf.h-brs.de</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, this server is used for WuS-WS21.</p>
+</div>
+</div></blockquote>
+<p><strong>2. In-house server</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/uebung">MAS course grading server</a></p></li>
 <li><p><a class="reference external" href="https://e2x.inf.h-brs.de/jupyterhub/gs1">Exam grading server</a></p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Both servers use <strong>LDAP as login</strong>.</p>
+</div>
+</div></blockquote>
 <p>The grading servers have <cite>nbgrader</cite>, <cite>nbassignment</cite> and other e2x softaware to
 support instructors managing assignments. <cite>nbgrader</cite> can be used to manage assignments
 such as creating, releasing, collectiong and grading them. However, we do not force
 the instructors to use nbgrader exchange. They can use any other tools
 such as <cite>nbgitpuller</cite> to release assignments, or LEA to submit the assignments.
-Nevertheless, we provide <a class="reference external" href="https://github.com/DigiKlausur/ilias2nbgrader">ilias2nbgrader</a>
+Nevertheless, we also provide <a class="reference external" href="https://github.com/DigiKlausur/ilias2nbgrader">ilias2nbgrader</a>
 package which can be used to convert LEA submissions to nbgrader format.</p>
 <div class="section" id="requesting-a-course">
 <span id="instructor-requesting-a-course"></span><h2>Requesting a course<a class="headerlink" href="#requesting-a-course" title="Permalink to this headline">¶</a></h2>
@@ -239,8 +257,8 @@ package which can be used to convert LEA submissions to nbgrader format.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Course</strong></p></td>
-<td><p>The name of the course and its abbreviation.</p>
-<p>For example <cite>name: Robot Perception</cite> <cite>abbreviation: RP</cite></p>
+<td><p>The name of the course and its course slug.</p>
+<p>For example <cite>name: Robot Perception</cite> <cite>course slug: RP</cite></p>
 <p>A complete course identifier for WS 2020 will be <em>RP-WS20</em></p>
 </td>
 </tr>
@@ -260,21 +278,39 @@ package which can be used to convert LEA submissions to nbgrader format.</p>
 <p>So you should let us know if the course requires a lot of storage.</p>
 </td>
 </tr>
+<tr class="row-odd"><td><p><strong>Environment</strong></p></td>
+<td><p>A generic image is used for all course as explained in <a class="reference internal" href="../jupyterhub/environment.html#environment"><span class="std std-ref">here</span></a>.</p>
+<p>However, instructors could request own environment if required.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <ul>
 <li><p><strong>Additional resources</strong></p>
 <p>Graders have access to the following shared directories:</p>
 <ul>
-<li><p><strong>/srv/shares/&lt;course_id&gt;</strong>: is shared among the respective students of the course.</p>
+<li><p><strong>/srv/shares/&lt;course_id&gt;</strong>: is shared among the students registered in the course.</p>
 <p>Where <cite>&lt;course_id&gt;</cite> is the course identifier e.g. <cite>/srv/shares/RP-SS20</cite>.
 This can be used to store e.g. datasets, assignment images, etc.</p>
 </li>
 <li><p><strong>/srv/shares/public</strong>: is shared with all JupyterHub users e.g. <cite>latex_math_editor</cite></p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Both directories are read-write to graders and read-only to students.</p>
+</div>
 </li>
 </ul>
+</div>
+<div class="section" id="course-profile">
+<span id="instructor-course-profile"></span><h2>Course profile<a class="headerlink" href="#course-profile" title="Permalink to this headline">¶</a></h2>
+<p>Once e2x sys-admins add the requested courses to the hub, the course should be available
+as a profile. Only the corresponding instructors or graders should be able to
+see and select the course in the profile list during spawning.</p>
+<div class="figure align-center" id="id4">
+<img alt="Example of instructor profile list" src="../_images/grader_profile_list.png" />
+<p class="caption"><span class="caption-text">Example of instructor profile list</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="user-management">
 <span id="instructor-user-management"></span><h2>User management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h2>
@@ -305,40 +341,40 @@ assignment files</span></a></p></li>
 <p>The simplest way to create an assignment directory is to open the
 <em>Formgrader</em> tab and press “Add new assignment…” at the bottom of the
 page:</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="Adding a new assignment" src="../_images/add_new_assignment.png" />
-<p class="caption"><span class="caption-text">Adding a new assignment</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Adding a new assignment</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This will open a dialog window that allows us to specify a name and a
 due date for the assignment:</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="Dialog for creating an assignment" src="../_images/create_assignment_dialog.png" />
-<p class="caption"><span class="caption-text">Dialog for creating an assignment</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Dialog for creating an assignment</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>By pressing <em>Save</em> in the dialog window, a directory with the assignment
 name will be created inside the <em>source</em> directory of the course (in the
 example from the above figure, the directory will be called <em>quiz01</em>).
 The assignment will now be visible under the <em>Formgrader</em> tab:</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="The newly created assignment is now displayed under the Formgrader tab" src="../_images/newly_created_assignment.png" />
-<p class="caption"><span class="caption-text">The newly created assignment is now displayed under the Formgrader tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The newly created assignment is now displayed under the Formgrader tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>As shown in the figure above, the newly created assignment has a draft
 status and is thus not visible to students. In addition, if we explore
 the directory structure under the <em>Files</em> tab, we can see that the
 assignment directory is empty:</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id8">
 <img alt="After creating an assignment, we end up with an empty assignment directory in the course’s *source* directory" src="../_images/new_assignment_dir.png" />
-<p class="caption"><span class="caption-text">After creating an assignment, we end up with an empty assignment directory in the course’s <em>source</em> directory</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">After creating an assignment, we end up with an empty assignment directory in the course’s <em>source</em> directory</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>An assignment can be graded through the nbgrader interface <em>only</em> if
 the notebook contains assignment metadata. To make a Jupyter notebook
 an assignment notebook, open the notebook and select the <em>Create
 Assignment</em> option under the <em>View :math:`rightarrow` Cell Toolbar</em>
 menu.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id9">
 <img alt="Creating an assignment Jupyter notebook" src="../_images/creating_an_assignment_notebook.png" />
-<p class="caption"><span class="caption-text">Creating an assignment Jupyter notebook</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Creating an assignment Jupyter notebook</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once a notebook is converted into an assignment notebook, each cell
 can be defined as</p>
@@ -357,24 +393,24 @@ can be defined as</p>
 </div></blockquote>
 <p>these values whether the cells should be autograded or will be graded manually.
 The folllowing image is an example of e2xgrader cell types:</p>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id10">
 <img alt="e2xgrader cell types" src="../_images/e2xgrader_cell_types.png" />
-<p class="caption"><span class="caption-text">e2xgrader cell types</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">e2xgrader cell types</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you need to upload some files for the assignment, we can upload them to the
 hub by pressing the <em>Upload</em> button that is just above the directory tree:</p>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id11">
 <img alt="Uploading files to the assignment directory" src="../_images/assignment_file_uploading.png" />
-<p class="caption"><span class="caption-text">Uploading files to the assignment directory</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Uploading files to the assignment directory</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>This will open a file browsing dialog where we can select a file to
 upload. It should be noted that files are not uploaded automatically
 after we select them in the file browser; we need to instead confirm
 that we want to upload them by pressing the <em>Upload</em> button next to the
 file name as shown below:</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id12">
 <img alt="A file upload has to be confirmed before the file is uploaded" src="../_images/file_upload_confirmation.png" />
-<p class="caption"><span class="caption-text">A file upload has to be confirmed before the file is uploaded</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">A file upload has to be confirmed before the file is uploaded</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>The upload can similarly be cancelled if the selected file is incorrect.
 If we have multiple files that we need to upload, we need to select them
@@ -400,9 +436,9 @@ can work on it; making an assignment public is called <em>releasing</em> in the
 nbgrader terminology.</p>
 <p>To release an assignment, we need to go back to the <em>Formgrader</em> tab and
 then press the assignment’s <em>Generate</em> button as shown below:</p>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id13">
 <img alt="Generating an assignment" src="../_images/generating_an_assignment.png" />
-<p class="caption"><span class="caption-text">Generating an assignment</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Generating an assignment</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Assignment generation simply copies the assignment contents to a
 <em>release</em> subdirectory under the course directory (the <em>release</em>
@@ -412,35 +448,35 @@ means that it is still not visible to students. This allows us to
 preview the assignment contents before releasing it to students (e.g.
 make sure that the notebook is correctly formatted/displayed and that
 all necessary files are present in the assignment directory):</p>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id14">
 <img alt="Previewing an assignment" src="../_images/previewing_an_assignment.png" />
-<p class="caption"><span class="caption-text">Previewing an assignment</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Previewing an assignment</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>Previewing an assignment simply opens the assignment’s directory tree in
 the <em>release</em> subdirectory:</p>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id15">
 <img alt="Generating an assignment copies the assignment directory to the course’s release subdirectory" src="../_images/released_assignment_dir_tree.png" />
-<p class="caption"><span class="caption-text">Generating an assignment copies the assignment directory to the course’s release subdirectory</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Generating an assignment copies the assignment directory to the course’s release subdirectory</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>To finally make the assignment public, we need to press the assignment’s
 <em>Release</em> button under <em>Formgrader</em>:</p>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id16">
 <img alt="Releasing an assignment makes the assignment visible to students" src="../_images/releasing_an_assignment.png" />
-<p class="caption"><span class="caption-text">Releasing an assignment makes the assignment visible to students</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Releasing an assignment makes the assignment visible to students</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>After releasing an assignment, the assignment gets a released status:</p>
-<div class="figure align-center" id="id16">
+<div class="figure align-center" id="id17">
 <img alt="A released assignment gets a released status, which means that it is now visible to students" src="../_images/released_assignment_status.png" />
 <p class="caption"><span class="caption-text">A released assignment gets a released status, which means that it is
-now visible to students</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+now visible to students</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once an assignment is released, it becomes visible under the
 <em>Assignments</em> tab, which means that students can fetch it (i.e. download
 their own copy of the assignment) and then submit it once they are done
 working on it:</p>
-<div class="figure align-center" id="id17">
+<div class="figure align-center" id="id18">
 <img alt="Released assignments are visible under the Assignments tab" src="../_images/assignments_tab_released_assignment.png" />
-<p class="caption"><span class="caption-text">Released assignments are visible under the Assignments tab</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Released assignments are visible under the Assignments tab</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -477,9 +513,9 @@ grading an assignment:</p>
 <div class="section" id="collecting-submissions">
 <h4>Collecting submissions<a class="headerlink" href="#collecting-submissions" title="Permalink to this headline">¶</a></h4>
 <p>The submissions can be collected by pressing the assignment’s <em>Collect</em> button:</p>
-<div class="figure align-center" id="id18">
+<div class="figure align-center" id="id19">
 <img alt="Collecting assignment submissions" src="../_images/collecting_an_assignment.png" />
-<p class="caption"><span class="caption-text">Collecting assignment submissions</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Collecting assignment submissions</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>Collecting an assignment copies all submissions to a <em>submitted</em>
 subdirectory in the course’s directory (the <em>submitted</em> directory is
@@ -487,23 +523,23 @@ created automatically if it does not already exist). The submissions
 in the <em>submitted</em> directory are organised per student, namely each
 student gets their own subdirectory and all assignment submissions
 are copied there:</p>
-<div class="figure align-center" id="id19">
+<div class="figure align-center" id="id20">
 <img alt="After collection, submitted assignments are copied to a submitted subdirectory under the course’s directory" src="../_images/submitted_assignments.png" />
-<p class="caption"><span class="caption-text">After collection, submitted assignments are copied to a submitted subdirectory under the course’s directory</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">After collection, submitted assignments are copied to a submitted subdirectory under the course’s directory</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>After collecting student submissions, the number of submissions is
 displayed as well:</p>
-<div class="figure align-center" id="id20">
+<div class="figure align-center" id="id21">
 <img alt="The number of submissions for a particular assignment is appropriately updated after collecting the submissions" src="../_images/submission_number.png" />
-<p class="caption"><span class="caption-text">The number of submissions for a particular assignment is appropriately updated after collecting the submissions</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The number of submissions for a particular assignment is appropriately updated after collecting the submissions</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>In this particular example, we only have a single submission for the
 <em>quiz01</em> assignment. To access the submissions for a particular
 assignment, we need to click on the number of submissions, which then
 opens the submission view:</p>
-<div class="figure align-center" id="id21">
+<div class="figure align-center" id="id22">
 <img alt="Assignment submission view" src="../_images/submission_view.png" />
-<p class="caption"><span class="caption-text">Assignment submission view</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Assignment submission view</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="autograding-submissions">
@@ -511,9 +547,9 @@ opens the submission view:</p>
 <p>This is seen by the <em>needs autograding</em> status displayed next to each submission.
 Through the interface, this has to be done for each submission individually and
 is accomplished by pressing the submission’s <em>Autograde</em> button:</p>
-<div class="figure align-center" id="id22">
+<div class="figure align-center" id="id23">
 <img alt="Autograding submissions" src="../_images/autograding_submissions.png" />
-<p class="caption"><span class="caption-text">Autograding submissions</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Autograding submissions</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>If there are a lot of submissions, autograding them through the
 interface becomes impractical; it is instead considerably convenient
@@ -531,17 +567,17 @@ browser:</p>
 there are questions that need to be graded manually; otherwise, they
 get a <em>graded</em> status. Either way, the current score is displayed
 next to the status:</p>
-<div class="figure align-center" id="id23">
+<div class="figure align-center" id="id24">
 <img alt="Autograded submissions are ready to be graded manually" src="../_images/autograded_submissions.png" />
-<p class="caption"><span class="caption-text">Autograded submissions are ready to be graded manually</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Autograded submissions are ready to be graded manually</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="manual-grading">
 <h4>Manual grading<a class="headerlink" href="#manual-grading" title="Permalink to this headline">¶</a></h4>
 <p>Manual grading can be done in two ways as depicted in the following picture:</p>
-<div class="figure align-center" id="id24">
+<div class="figure align-center" id="id25">
 <img alt="e2xgrader formgrader with task view manual grading" src="../_images/e2xgrader_formgrader.png" />
-<p class="caption"><span class="caption-text">e2xgrader formgrader with task view manual grading</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">e2xgrader formgrader with task view manual grading</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><em>Per user manual grading</em>: this will open thw whole tasks in the
@@ -555,24 +591,24 @@ To do that, we first need to open either Manual Grading or Manual Grading
 (Task View), then click the assignment name as in the following example</p>
 <ul>
 <li><p><strong>Manual Grading</strong> (<em>Per user manual grading</em>):</p>
-<div class="figure align-center" id="id25">
+<div class="figure align-center" id="id26">
 <img alt="Per user manual grading" src="../_images/e2xgrader_per_user_manual_grading.png" />
-<p class="caption"><span class="caption-text">Per user manual grading</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Per user manual grading</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>Manual Grading (Task View)</strong> (<em>Per task manual grading</em>):</p>
-<div class="figure align-center" id="id26">
+<div class="figure align-center" id="id27">
 <img alt="Per task manual grading" src="../_images/e2xgrader_per_task_manual_grading.png" />
-<p class="caption"><span class="caption-text">Per task manual grading</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Per task manual grading</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 </ul>
 <p>We can now open the grading interface by clicking on the <em>Submission#1</em>, which
 is the username but is hidden, and it can be shown by clicking <em>eye button</em>.
 The following figure is the example of manual grading interface</p>
-<div class="figure align-center" id="id27">
+<div class="figure align-center" id="id28">
 <img alt="Manual submission grading" src="../_images/grading_submissions_manually.png" />
-<p class="caption"><span class="caption-text">Manual submission grading</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Manual submission grading</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the grading interface, there is a text box below each answer (both
 under manually graded and under autograded answers). Graders can
@@ -605,9 +641,9 @@ their initials) so that they are distinguishable.</p>
 <span id="id1"></span><h3>Generating and releasing feedback<a class="headerlink" href="#generating-and-releasing-feedback" title="Permalink to this headline">¶</a></h3>
 <p>Once an assignment has been graded, we can release feedback to students.
 Feedback can be generated and released under <em>Manage Assigments</em> tab</p>
-<div class="figure align-center" id="id28">
+<div class="figure align-center" id="id29">
 <img alt="Generate and release feedback" src="../_images/formgrader_generate_feedback.png" />
-<p class="caption"><span class="caption-text">Generate and release feedback</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Generate and release feedback</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -621,9 +657,9 @@ subdirectory in the course’s directory. The feedback files
 in the <em>feedback</em> directory are organised per student, namely each
 student gets their own subdirectory and the feedback file is copied
 there:</p>
-<div class="figure align-center" id="id29">
+<div class="figure align-center" id="id30">
 <img alt="Generated feedback for each student" src="../_images/assignment_feedback.png" />
-<p class="caption"><span class="caption-text">Generated feedback for each student</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Generated feedback for each student</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="exporting-grades">
@@ -631,9 +667,9 @@ there:</p>
 <p>You can either export the grades on an assignment level (total score per
 assignment per student) or on a notebook level (total score per notebook per
 student) or on a task level (total score per task per student).</p>
-<div class="figure align-center" id="id30">
+<div class="figure align-center" id="id31">
 <img alt="Export grades" src="../_images/formgrader_export_grades.png" />
-<p class="caption"><span class="caption-text">Export grades</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Export grades</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

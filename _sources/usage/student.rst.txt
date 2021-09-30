@@ -4,40 +4,54 @@
 Students
 *****************************************
 
-Depending on the courses, students can use one of two JupyterHub servers to work on 
+Depending on the courses, students can have access to e2x JupyterHub servers to work on
 assignments. These servers can also be used for a light computing or programming. However, if you 
 need more resources (CPU, RAM and GPU) for your projects, you can have a look at 
 `Bonn-Rhein-Sieg university scientific computing <https://wr0.wr.inf.h-brs.de>`_.
 
-1. `WuS server (https://notebooks.inf.h-brs.de) <https://notebooks.inf.h-brs.de>`_ 
+Currently, there are two JupyterHub servers running on our in-house infrastructure 
+and external server running on Hetzner cloud.
+
+**1. Hetzner cloud**: `notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 used for the following courses:
 
-  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WS20)
+  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik
 
-2. `University server <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ used for the following courses:
+**2. In-house server**: `e2x.inf.h-brs.de/jupyterhub/uebung <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ 
+used for the following courses:
 
-  * Mathematics for Robotics and Control (WS20, SS21)
-  * Robot Perception (RP SS20)
-  * Robot Manipulation (SS20, SS21)
-  * Natural Language Processing (SS20, SS21)
+  Active courses:
+
+  * Autonomous Mobile Robots (WS21)
+  * Mathematics for Robotics and Control (WS21)
+  * Natural Language Processing (WS21)
+  * Neural Networks (WS21)
+  
+  Archived courses:
+
+  * Robot Perception
+  * Robot Manipulation
 
 .. note::
     
-    These JupyterHub servers are not a replacement of the current LMS 
-    (`LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_.). These are just compute 
-    resource for students to work on their assignments. The assignments and feedback might also be
+    The JupyterHub servers are not a replacement of the current LMS 
+    (`LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_.). The servers are compute 
+    resource for students to work on your assignments where in most courses assignments 
+    are managed through the hub, while some prefer the distribution and submission through LEA.
+    The assignments and feedback might also be
     released on `LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_. LEA forum is also available 
     should you have any problem with the assignments or the server.
 
 Login to E2x JupyterHub
 =======================
 
-1. `https://notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
-----------------------------------------------------------------------
+1. Hetzner cloud: `notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
+--------------------------------------------------------------------------------------
 
 First, you need to sign up to the server if you have not done so, then the instructor will authorize you. 
-Keep in mind that you need to be registered in the corresponding `LEA course <https://lea.hochschule-bonn-rhein-sieg.de>`_, 
-otherwise you will not be able to log in.
+However, if you have been registered on LEA course, you should be able to log in automatically 
+once you have signed up. Otherwise you should contact you instructors in order 
+to get access to the server.
 
 * **Signup**
 
@@ -50,8 +64,9 @@ otherwise you will not be able to log in.
 
   .. note::
     
-    If you are already registered on the LEA course, you can sign in automatically. Otherwise, you will
-    need to wait until the instructor authorizes you.
+    If you are already registered on the LEA course, you can sign in automatically
+    after you have signed up. Otherwise you should contact you instructors and e2x 
+    sys admin will authorize you upon your instructors approval.
 
 * **Change password**
 
@@ -77,8 +92,8 @@ otherwise you will not be able to log in.
     If you forget your password, please contact your instructors or e2x admin.
 
 
-2. `University server <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_
----------------------------------------------------------------------
+2. In-house server: `e2x.inf.h-brs.de/jupyterhub/uebung <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_
+-------------------------------------------------------------------------------------------------------
 
 * **Access**
 

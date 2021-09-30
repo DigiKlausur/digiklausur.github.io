@@ -93,8 +93,8 @@ For more details on our JupyterHub deployment, please see :ref:`this page <e2x-j
 
 Not only do we provide the JupyterHub server for examinations, but also we provide similar servers for 
 the students to work on their assignments. We also do not want the students using different libraries, 
-other than what we provide, to work on the assignments, which may result in unrannable submissions 
-on the grading server. Morever, we are also dealing with 3rd semester bachelor students who may not 
+other than what we provide, to work on the assignments, and thus their codes should be runnable on 
+both student and grading servers. Morever, we are also dealing with 3rd semester bachelor students who may not 
 be familiar with seeting up a Python environment. However, since our software is open source, we let 
 the students to actively help and contribute to the software should they need new libraries to be 
 available on the server. This way we could minimize the hassle of installing the environment on both 
@@ -107,3 +107,9 @@ The following figure shows the number of courses and corresponding students serv
    
    The number of students that used the server from 2018 to 2020.
 
+Resources
+---------
+
+* 380 GB memory
+* 120 cores CPU
+* 1.2 TB HDD

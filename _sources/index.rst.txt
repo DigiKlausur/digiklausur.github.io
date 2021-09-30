@@ -7,18 +7,28 @@
 E2X E-assessment
 ################
 
-The documentation and guidelines of e2x e-assessment project for teaching and examinations for some courses 
-at the departement of Computer Science (FB02), Hochschule Bonn-Rhein-Sieg.
+This site contains documentation and guidelines for :ref:`instructors <usage_instructor>` 
+and :ref:`students <usage_student>` for using our service. The guidelines are mainly 
+for teaching and examination purposes. The :ref:`JupyterHub section <e2x-jupyterhub>` describes 
+our system architecture and environment we use.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    about
    research
    talks
    people
+   incident-reports
    news
-   incident-reports 
+
+.. admonition:: News
+
+  .. include:: /news.rst
+    :start-line: 6
+    :end-line: 11
+
+  :ref:`More on news <news>`
 
 .. toctree::
    :maxdepth: 2

@@ -95,14 +95,17 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-idea-of-e-assessment">The Idea of E-assessment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#software">Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#infrastructure">Infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#infrastructure">Infrastructure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="research.html">Research</a></li>
 <li class="toctree-l1"><a class="reference internal" href="talks.html">Talks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="people.html">People</a></li>
-<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
 <li class="toctree-l1"><a class="reference internal" href="incident-reports.html">Incident Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html">News</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
 <ul>
@@ -276,8 +279,8 @@ The Kubernetes cluster is deployed locally on FB02 OpenStack Hochschule Bonn-Rhe
 For more details on our JupyterHub deployment, please see <a class="reference internal" href="jupyterhub/e2x-jupyterhub.html#e2x-jupyterhub"><span class="std std-ref">this page</span></a>.</p>
 <p>Not only do we provide the JupyterHub server for examinations, but also we provide similar servers for
 the students to work on their assignments. We also do not want the students using different libraries,
-other than what we provide, to work on the assignments, which may result in unrannable submissions
-on the grading server. Morever, we are also dealing with 3rd semester bachelor students who may not
+other than what we provide, to work on the assignments, and thus their codes should be runnable on
+both student and grading servers. Morever, we are also dealing with 3rd semester bachelor students who may not
 be familiar with seeting up a Python environment. However, since our software is open source, we let
 the students to actively help and contribute to the software should they need new libraries to be
 available on the server. This way we could minimize the hassle of installing the environment on both
@@ -286,6 +289,14 @@ parties.</p>
 <div class="figure align-center" id="id3">
 <img alt="_images/e2x-assignment-users.png" src="_images/e2x-assignment-users.png" />
 <p class="caption"><span class="caption-text">The number of students that used the server from 2018 to 2020.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>380 GB memory</p></li>
+<li><p>120 cores CPU</p></li>
+<li><p>1.2 TB HDD</p></li>
+</ul>
 </div>
 </div>
 </div>
