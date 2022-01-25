@@ -21,7 +21,8 @@ used for the following courses:
 used for the following courses:
 
   Active courses:
-
+  
+  * Artificial Intelligence for Robotics (WS21)
   * Autonomous Mobile Robots (WS21)
   * Mathematics for Robotics and Control (WS21)
   * Natural Language Processing (WS21)
