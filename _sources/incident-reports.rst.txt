@@ -4,6 +4,30 @@
 Incident Reports
 ************************
 
+21.03.2022 
+==========
+
+* Summary:
+
+  * Safe Exam Browser (SEB) asks for an admin passoword on the client side (Windows)
+  * SEB client is already running (macOS)
+
+* Solution:
+
+  * Windows
+
+    * Navigate to `C:\\Users\\<PC\_USER>\\AppData\\Roaming\\SafeExamBrowser` 
+      (Replace <PC\_USER> with your PC name)
+    * Remove `SebClientSettings`
+  * MacOS
+
+    * Close SEB
+    * Open terminal and run 
+    
+      .. code-block:: bash
+        
+        defaults delete org.safeexambrowser.SafeExamBrowser
+
 24.11.2021 
 ==========
 
@@ -14,9 +38,6 @@ Incident Reports
     * On Windows: SEB service was nor running
     * On Mac: SEB was already running
   * Some students who came in person to the exam room brought laptops which do not have LAN port.
-    
-* Actions taken
-
 
 10.03.2021 
 ==========
@@ -61,7 +82,7 @@ Incident Reports
     by some students, and it worked for them). This was caused by some plots. 
     The feature has been added to e2xgrader by this `pull request <https://github.com/DigiKlausur/e2xgrader/pull/26>`_.
     
- 24.07.2020 
+24.07.2020 
 ==========
 
 * Summary: 

@@ -24,7 +24,7 @@ running on both in-house infrastructure and Hetzner cloud.
 
      Both servers use **LDAP as login**.
 
-The grading servers have `nbgrader`, `nbassignment` and other e2x softaware to 
+The grading servers have `nbgrader`, `nbassignment` and other e2x software to 
 support instructors managing assignments. `nbgrader` can be used to manage assignments 
 such as creating, releasing, collectiong and grading them. However, we do not force 
 the instructors to use nbgrader exchange. They can use any other tools 

@@ -15,32 +15,35 @@ and external server running on Hetzner cloud.
 **1. Hetzner cloud**: `notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 used for the following courses:
 
-  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik
+  * `Berechenbarkeit und Komplexität <https://notebooks.inf.h-brs.de/hub/spawn?profile=BuK-SS22--Student>`_
 
 **2. In-house server**: `e2x.inf.h-brs.de/jupyterhub/uebung <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ 
 used for the following courses:
 
   Active courses:
   
-  * Artificial Intelligence for Robotics (WS21)
-  * Autonomous Mobile Robots (WS21)
-  * Mathematics for Robotics and Control (WS21)
-  * Natural Language Processing (WS21)
-  * Neural Networks (WS21)
-  
-  Archived courses:
+  * `Artificial Intelligence for Robotics (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AIR-SS22--Student>`_
+  * `Autonomous Mobile Robots (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AMR-SS22--Student>`_
+  * `Mathematics for Robotics and Control (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=MRC-SS22--Student>`_
+  * `Deep Learning for Robot Vision (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=DLRV-SS22--Student>`_
+  * `Bayesian Inference and Gaussian Processes (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=BIGP-SS22--Student>`_
 
+Archived courses:
+
+  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik
   * Robot Perception
   * Robot Manipulation
+  * Natural Language Processing
+  * Neural Networks
 
 .. note::
     
     The JupyterHub servers are not a replacement of the current LMS 
-    (`LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_.). The servers are compute 
-    resource for students to work on your assignments where in most courses assignments 
-    are managed through the hub, while some prefer the distribution and submission through LEA.
-    The assignments and feedback might also be
-    released on `LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_. LEA forum is also available 
+    (`LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_.). You can use the servers 
+    to work on your assignments. Most courses assignments are managed through the hub, 
+    while some graders prefer the distribution and submission through LEA.
+    The assignments and feedback might also be released on 
+    `LEA <https://lea.hochschule-bonn-rhein-sieg.de>`_. LEA forum is also available 
     should you have any problem with the assignments or the server.
 
 Login to E2x JupyterHub

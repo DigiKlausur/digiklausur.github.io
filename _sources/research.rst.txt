@@ -41,3 +41,7 @@ Research
   * Gaddipatti, Sasi Kiran - Automatic Formative Assessment for Students' Short Text Answers through Feature Extraction - Master Thesis, April 2021
   
   * MohammadiGahrooei, Vahid - Automatic Question and Answer Generation from Domain-Specific Text for Exams - Master Thesis, May 2021
+
+* 2022
+
+  * Pohland, Clara - Question/Answer Generation based on the T5 Model - Master Project, February 2022
