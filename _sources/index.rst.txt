@@ -26,7 +26,7 @@ our system architecture and environment we use.
 
   .. include:: /news.rst
     :start-line: 6
-    :end-line: 11
+    :end-line: 13
 
   :ref:`More on news <news>`
 
