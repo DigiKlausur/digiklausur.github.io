@@ -9,32 +9,40 @@ assignments. These servers can also be used for a light computing or programming
 need more resources (CPU, RAM and GPU) for your projects, you can have a look at 
 `Bonn-Rhein-Sieg university scientific computing <https://wr0.wr.inf.h-brs.de>`_.
 
+.. hint:: 
+
+ We are currently testing GPU-capable Jupyter Notebook server on our workstations
+ equipped with dual NVIDIA RTX3090 with 24GB memory each.
+ 
+ You can find the details `here <https://b-it-bots.readthedocs.io/en/noetic/infrastructure.html>`_.
+
 Currently, there are two JupyterHub servers running on our in-house infrastructure 
 and external server running on Hetzner cloud.
 
 **1. Hetzner cloud**: `notebooks.inf.h-brs.de <https://notebooks.inf.h-brs.de>`_ 
 used for the following courses:
 
-  * `Berechenbarkeit und Komplexität <https://notebooks.inf.h-brs.de/hub/spawn?profile=BuK-SS22--Student>`_
+  * `Grundlagen von Wahrscheinlichkeitstheorie und Statistik (WS22) <https://notebooks.inf.h-brs.de/hub/spawn?profile=WuS-WS22--Student>`_
+  
 
 **2. In-house server**: `e2x.inf.h-brs.de/jupyterhub/uebung <https://e2x.inf.h-brs.de/jupyterhub/uebung>`_ 
 used for the following courses:
 
   Active courses:
   
-  * `Artificial Intelligence for Robotics (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AIR-SS22--Student>`_
-  * `Autonomous Mobile Robots (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AMR-SS22--Student>`_
-  * `Mathematics for Robotics and Control (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=MRC-SS22--Student>`_
-  * `Deep Learning for Robot Vision (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=DLRV-SS22--Student>`_
-  * `Bayesian Inference and Gaussian Processes (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=BIGP-SS22--Student>`_
+  * `Artificial Intelligence for Robotics (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AIR-WS22--Student>`_
+  * `Autonomous Mobile Robots (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=AMR-WS22--Student>`_
+  * `Mathematics for Robotics and Control (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=MRC-WS22--Student>`_
+  * `Neural Networks (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=NN-WS22--Student>`_
+  * `Natural Language Processing (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=NLP-WS22--Student>`_
+  * `Robot Manipulation (WS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=RM-WS22--Student>`_
 
 Archived courses:
 
-  * Grundlagen von Wahrscheinlichkeitstheorie und Statistik
+  * `Deep Learning for Robot Vision (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=DLRV-SS22--Student>`_
+  * `Berechenbarkeit und Komplexität (SS22) <https://notebooks.inf.h-brs.de/hub/spawn?profile=BuK-SS22--Student>`_
+  * `Bayesian Inference and Gaussian Processes (SS22) <https://e2x.inf.h-brs.de/jupyterhub/uebung/hub/spawn?profile=BIGP-SS22--Student>`_
   * Robot Perception
-  * Robot Manipulation
-  * Natural Language Processing
-  * Neural Networks
 
 .. note::
     
