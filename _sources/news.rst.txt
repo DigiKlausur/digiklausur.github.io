@@ -11,10 +11,10 @@ News
 **[20.10.2022]** We are giving a talk at Tag der Lehre 2022: `Learning Interactive: e2x als ein praktisches Beispiel zur Integration
 von modernen SW-Werkzeugen in den Lehr/Lern-Betrieb <https://www.h-brs.de/de/ziel/tag-der-lehre-2022-zurueck-in-die-zukunft>`_
 
-**[25.11.2021]** We are presenting our paper at e-Prüfung-Symposium (ePS) 2021: `Elektronisches Prüfen mit Jupyter Notebook und JupyterHub – Vor Ort, Online oder hybrid <https://e-pruefungs-symposium.de/wp-content/uploads/2022/02/Elektronisches-Pru%CC%88fen-mit-Jupyter-Notebook-und-JupyterHub-Metzler_Ploeger_Wasil.pdf>`_
+Archive
+=======
 
-Archived
-========
+**[25.11.2021]** We are presenting our paper at e-Prüfung-Symposium (ePS) 2021: `Elektronisches Prüfen mit Jupyter Notebook und JupyterHub – Vor Ort, Online oder hybrid <https://e-pruefungs-symposium.de/wp-content/uploads/2022/02/Elektronisches-Pru%CC%88fen-mit-Jupyter-Notebook-und-JupyterHub-Metzler_Ploeger_Wasil.pdf>`_
 
 **[30.09.2021]** WuS-WS21 hub server will be running on Hetzner cloud
 
