@@ -4,6 +4,8 @@
 News
 ****
 
+**[17.02.2023]** Our proposals, `e2xgrader <https://cfp.jupytercon.com/2023/talk/WCA38T/>`_ and `e2xhub <https://cfp.jupytercon.com/2023/talk/GBZXWX/>`_, are accepted as a presentation and a poster respectively at `JupyterCon 2023 <https://www.jupytercon.com/>`_
+
 **[25.10.2022]** We will be presenting our paper at ePS 2022: `Nutzungungsfälle von e-assessment mit Jupyter Hub <https://www.mat.tuhh.de/veranstaltungen/eps2022/program.php>`_
 
 **[20.10.2022]** We are giving a talk at Tag der Lehre 2022: `Learning Interactive: e2x als ein praktisches Beispiel zur Integration
